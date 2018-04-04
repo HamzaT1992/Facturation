@@ -16,5 +16,14 @@ namespace Facturation
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            using (var db = new FacturationEntities())
+            {
+                comboBox1.DataSource = db.Eaus.ToList();
+                comboBox1.DisplayMember = "NPolice";
+            }
+        }
     }
 }
