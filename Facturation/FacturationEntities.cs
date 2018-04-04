@@ -12,6 +12,7 @@ namespace Facturation
         public FacturationEntities()
             :base("name=FacturationEntities")
         {
+
         }
     }
 

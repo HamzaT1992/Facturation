@@ -70,7 +70,7 @@
   <ItemGroup>
     <Compile Include="Eau.cs" />
     <Compile Include="Electricite.cs" />
-    <Compile Include="FacturationModel.cs" />
+    <Compile Include="FacturationEntities.cs" />
     <Compile Include="Facture.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

@@ -22,7 +22,7 @@ namespace Facturation
             using (var db = new FacturationEntities())
             {
                 comboBox1.DataSource = db.Eaus.ToList();
-                comboBox1.DisplayMember = "NPolice";
+                comboBox1.DisplayMember = "NCompteur";
             }
         }
     }
