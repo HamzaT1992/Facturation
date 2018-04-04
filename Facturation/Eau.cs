@@ -10,12 +10,12 @@ namespace Facturation
     public enum TypeEau
     {
         Domestique,
-        [Description("Bouche D'Arrossage")] Bouche_D_Arrossage,
-        [Description("Borne Foutaie")] Borne_Foutaie
+        Bouche_D_Arrossage,
+        Borne_Foutaie
     }
 
     public class Eau : Facture
     {
-        public TypeEau Type { get; set; }
+        public TypeEau Type = TypeEau.Bouche_D_Arrossage;
     }
 }
