@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Facturation
 {
-    class Electricite:Facture
+    public class Electricite:Facture
     {
         public TypeElectricite TypeElec { get; set; }
         
