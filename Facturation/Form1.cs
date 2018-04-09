@@ -16,5 +16,21 @@ namespace Facturation
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            FacturationEntities db = new FacturationEntities();
+            textBox1.Text = db.Eaus.ToString();
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

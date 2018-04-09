@@ -15,7 +15,7 @@ namespace Facturation
 
         public virtual DbSet<Etat> Etats { get; set; }
         public FacturationEntities()
-            : base("name=FacturationEntities")
+
         {
         }
     }
