@@ -26,18 +26,16 @@ namespace Facturation
                 if (ActiveForm.GetType() == typeof(FormEau))
                     return;    
                 ActiveForm.Close();
-                createFormEau();
+                createNewForm(new FormEau());
             }
             else
-                createFormEau();
+                createNewForm(new FormEau());
         }
-        private void createFormEau()
+        private void createNewForm(Form form)
         {
-            ActiveForm = new FormEau
-            {
-                MdiParent = this,
-                WindowState = FormWindowState.Maximized
-            };
+            ActiveForm = form;
+            ActiveForm.MdiParent = this;
+            ActiveForm.WindowState = FormWindowState.Maximized;
             ActiveForm.FormClosed += new FormClosedEventHandler(ActiveFormNull);
             ActiveForm.Show();
         }
