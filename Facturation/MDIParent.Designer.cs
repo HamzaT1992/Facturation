@@ -40,12 +40,15 @@
             this.relevéToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.paiementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.paiementToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
             this.eauToolStripMenuItem,
             this.electricitéToolStripMenuItem,
             this.télécommunicationToolStripMenuItem,
@@ -134,6 +137,20 @@
             this.paiementToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
             this.paiementToolStripMenuItem1.Text = "Paiement";
             // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.fileToolStripMenuItem.Text = "Fichier";
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Text = "Quitter";
+            // 
             // MDIParent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -141,6 +158,7 @@
             this.ClientSize = new System.Drawing.Size(935, 535);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "MDIParent";
             this.Text = "MDIParent";
             this.menuStrip1.ResumeLayout(false);
@@ -163,6 +181,8 @@
         private System.Windows.Forms.ToolStripMenuItem relevéToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem paiementToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem paiementToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
     }
 }
 
