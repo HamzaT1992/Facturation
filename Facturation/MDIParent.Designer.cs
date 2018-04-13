@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eauToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.identificationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relevéToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,8 +42,6 @@
             this.relevéToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.paiementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.paiementToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,6 +58,20 @@
             this.menuStrip1.Size = new System.Drawing.Size(935, 24);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.fileToolStripMenuItem.Text = "Fichier";
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.exitToolStripMenuItem.Text = "Quitter";
             // 
             // eauToolStripMenuItem
             // 
@@ -114,13 +128,14 @@
             // identificationToolStripMenuItem2
             // 
             this.identificationToolStripMenuItem2.Name = "identificationToolStripMenuItem2";
-            this.identificationToolStripMenuItem2.Size = new System.Drawing.Size(144, 22);
+            this.identificationToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
             this.identificationToolStripMenuItem2.Text = "Identification";
+            this.identificationToolStripMenuItem2.Click += new System.EventHandler(this.identificationToolStripMenuItem2_Click);
             // 
             // relevéToolStripMenuItem1
             // 
             this.relevéToolStripMenuItem1.Name = "relevéToolStripMenuItem1";
-            this.relevéToolStripMenuItem1.Size = new System.Drawing.Size(144, 22);
+            this.relevéToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.relevéToolStripMenuItem1.Text = "Relevé";
             // 
             // paiementToolStripMenuItem
@@ -136,20 +151,6 @@
             this.paiementToolStripMenuItem1.Name = "paiementToolStripMenuItem1";
             this.paiementToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
             this.paiementToolStripMenuItem1.Text = "Paiement";
-            // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exitToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
-            this.fileToolStripMenuItem.Text = "Fichier";
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.exitToolStripMenuItem.Text = "Quitter";
             // 
             // MDIParent
             // 

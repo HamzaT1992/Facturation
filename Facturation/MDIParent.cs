@@ -36,12 +36,26 @@ namespace Facturation
             ActiveForm = form;
             ActiveForm.MdiParent = this;
             ActiveForm.WindowState = FormWindowState.Maximized;
+            ActiveForm.ControlBox = false;
             ActiveForm.FormClosed += new FormClosedEventHandler(ActiveFormNull);
             ActiveForm.Show();
         }
         private void ActiveFormNull(object sender, EventArgs e)
         {
             ActiveForm = null;
+        }
+
+        private void identificationToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            if (ActiveForm != null)
+            {
+                if (ActiveForm.GetType() == typeof(FormTelecommunication))
+                    return;
+                ActiveForm.Close();
+                createNewForm(new FormTelecommunication());
+            }
+            else
+                createNewForm(new FormTelecommunication());
         }
     }
 }
