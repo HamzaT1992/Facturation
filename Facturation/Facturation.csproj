@@ -70,6 +70,12 @@
     <Compile Include="FormEau.Designer.cs">
       <DependentUpon>FormEau.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormElec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormElec.Designer.cs">
+      <DependentUpon>FormElec.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTelecommunication.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormEau.resx">
       <DependentUpon>FormEau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormElec.resx">
+      <DependentUpon>FormElec.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTelecommunication.resx">
       <DependentUpon>FormTelecommunication.cs</DependentUpon>

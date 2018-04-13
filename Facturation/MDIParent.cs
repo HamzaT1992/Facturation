@@ -56,6 +56,21 @@ namespace Facturation
             }
             else
                 createNewForm(new FormTelecommunication());
+
+
+        }
+
+        private void identificationToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (ActiveForm != null)
+            {
+                if (ActiveForm.GetType() == typeof(FormElec))
+                    return;
+                ActiveForm.Close();
+                createNewForm(new FormElec());
+            }
+            else
+                createNewForm(new FormElec());
         }
     }
 }
