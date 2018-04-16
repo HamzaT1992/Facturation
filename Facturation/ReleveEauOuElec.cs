@@ -12,7 +12,10 @@ namespace Facturation
 {
     public partial class ReleveEauOuElec : Form
     {
-        public Label LabelTitle { get => labelTitle; set => labelTitle = value; }
+        public Label LabelTitle {
+            get { return labelTitle; }
+            set { labelTitle = value; }
+        }
         public ReleveEauOuElec()
         {
             InitializeComponent();
