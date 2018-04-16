@@ -21,56 +21,64 @@ namespace Facturation
         }
         private void identificationToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            lancerForm(new FormEau());
+        }
+
+        private void lancerForm(Form form)
+        {
             if (ActiveForm != null)
             {
-                if (ActiveForm.GetType() == typeof(FormEau))
-                    return;    
-                ActiveForm.Close();
-                createNewForm(new FormEau());
+                if (ActiveForm.GetType() == form.GetType())
+                    return;
+                ActiveForm = null;
+                createNewForm(form);
             }
             else
-                createNewForm(new FormEau());
-        }
+                createNewForm(form);
+        } 
+
         private void createNewForm(Form form)
         {
             ActiveForm = form;
             ActiveForm.MdiParent = this;
             ActiveForm.WindowState = FormWindowState.Maximized;
             ActiveForm.ControlBox = false;
-            ActiveForm.FormClosed += new FormClosedEventHandler(ActiveFormNull);
             ActiveForm.Show();
-        }
-        private void ActiveFormNull(object sender, EventArgs e)
-        {
-            ActiveForm = null;
         }
 
         private void identificationToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            if (ActiveForm != null)
-            {
-                if (ActiveForm.GetType() == typeof(FormTelecommunication))
-                    return;
-                ActiveForm.Close();
-                createNewForm(new FormTelecommunication());
-            }
-            else
-                createNewForm(new FormTelecommunication());
-
-
+            lancerForm(new FormTelecommunication());
         }
 
         private void identificationToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            lancerForm(new FormElec());
+        }
+        private void lancerReleve(string titre,ReleveEauOuElec rel)
+        {
             if (ActiveForm != null)
             {
-                if (ActiveForm.GetType() == typeof(FormElec))
+                if (ActiveForm.GetType() == typeof(ReleveEauOuElec) && rel.LabelTitle.Text == titre)
                     return;
-                ActiveForm.Close();
-                createNewForm(new FormElec());
+                ActiveForm = null;
+                rel.LabelTitle.Text = titre;
+                createNewForm(rel);
             }
             else
-                createNewForm(new FormElec());
+            {
+                rel.LabelTitle.Text = titre;
+                createNewForm(rel);
+            }         
+        }
+        private void relevéToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            lancerReleve("Relevé de l'Eau", new ReleveEauOuElec());
+        }
+
+        private void releveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            lancerReleve("Relevé de l'Electricité", new ReleveEauOuElec());
         }
     }
 }

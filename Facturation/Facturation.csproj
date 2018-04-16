@@ -90,6 +90,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReleveEauOuElec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReleveEauOuElec.Designer.cs">
+      <DependentUpon>ReleveEauOuElec.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telecommunication.cs" />
     <Compile Include="TypeEau.cs" />
     <Compile Include="TypeElectricite.cs" />
@@ -118,6 +124,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ReleveEauOuElec.resx">
+      <DependentUpon>ReleveEauOuElec.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
