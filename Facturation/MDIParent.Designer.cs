@@ -153,8 +153,9 @@
             // paiementToolStripMenuItem1
             // 
             this.paiementToolStripMenuItem1.Name = "paiementToolStripMenuItem1";
-            this.paiementToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
+            this.paiementToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.paiementToolStripMenuItem1.Text = "Paiement";
+            this.paiementToolStripMenuItem1.Click += new System.EventHandler(this.paiementToolStripMenuItem1_Click);
             // 
             // MDIParent
             // 
