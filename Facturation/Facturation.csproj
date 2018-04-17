@@ -96,6 +96,12 @@
     <Compile Include="ReleveEauOuElec.Designer.cs">
       <DependentUpon>ReleveEauOuElec.cs</DependentUpon>
     </Compile>
+    <Compile Include="RelveeTele.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RelveeTele.Designer.cs">
+      <DependentUpon>RelveeTele.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telecommunication.cs" />
     <Compile Include="TypeEau.cs" />
     <Compile Include="TypeElectricite.cs" />
@@ -127,6 +133,9 @@
     </Compile>
     <EmbeddedResource Include="ReleveEauOuElec.resx">
       <DependentUpon>ReleveEauOuElec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RelveeTele.resx">
+      <DependentUpon>RelveeTele.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

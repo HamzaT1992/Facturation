@@ -80,5 +80,10 @@ namespace Facturation
         {
             lancerReleve("Relevé de l'Electricité", new ReleveEauOuElec());
         }
+
+        private void relevéToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            lancerForm(new RelveeTele());
+        }
     }
 }

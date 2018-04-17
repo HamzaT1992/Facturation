@@ -70,7 +70,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
             this.exitToolStripMenuItem.Text = "Quitter";
             // 
             // eauToolStripMenuItem
@@ -85,14 +85,14 @@
             // identificationToolStripMenuItem
             // 
             this.identificationToolStripMenuItem.Name = "identificationToolStripMenuItem";
-            this.identificationToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.identificationToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.identificationToolStripMenuItem.Text = "Identification";
             this.identificationToolStripMenuItem.Click += new System.EventHandler(this.identificationToolStripMenuItem_Click);
             // 
             // relevéToolStripMenuItem
             // 
             this.relevéToolStripMenuItem.Name = "relevéToolStripMenuItem";
-            this.relevéToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.relevéToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.relevéToolStripMenuItem.Text = "Relevé";
             this.relevéToolStripMenuItem.Click += new System.EventHandler(this.relevéToolStripMenuItem_Click);
             // 
@@ -115,7 +115,7 @@
             // releveToolStripMenuItem
             // 
             this.releveToolStripMenuItem.Name = "releveToolStripMenuItem";
-            this.releveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.releveToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.releveToolStripMenuItem.Text = "Releve";
             this.releveToolStripMenuItem.Click += new System.EventHandler(this.releveToolStripMenuItem_Click);
             // 
@@ -131,15 +131,16 @@
             // identificationToolStripMenuItem2
             // 
             this.identificationToolStripMenuItem2.Name = "identificationToolStripMenuItem2";
-            this.identificationToolStripMenuItem2.Size = new System.Drawing.Size(144, 22);
+            this.identificationToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
             this.identificationToolStripMenuItem2.Text = "Identification";
             this.identificationToolStripMenuItem2.Click += new System.EventHandler(this.identificationToolStripMenuItem2_Click);
             // 
             // relevéToolStripMenuItem1
             // 
             this.relevéToolStripMenuItem1.Name = "relevéToolStripMenuItem1";
-            this.relevéToolStripMenuItem1.Size = new System.Drawing.Size(144, 22);
+            this.relevéToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.relevéToolStripMenuItem1.Text = "Relevé";
+            this.relevéToolStripMenuItem1.Click += new System.EventHandler(this.relevéToolStripMenuItem1_Click);
             // 
             // paiementToolStripMenuItem
             // 
