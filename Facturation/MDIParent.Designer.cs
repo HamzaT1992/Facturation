@@ -70,7 +70,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
             this.exitToolStripMenuItem.Text = "Quitter";
             // 
             // eauToolStripMenuItem
@@ -85,14 +85,14 @@
             // identificationToolStripMenuItem
             // 
             this.identificationToolStripMenuItem.Name = "identificationToolStripMenuItem";
-            this.identificationToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.identificationToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.identificationToolStripMenuItem.Text = "Identification";
             this.identificationToolStripMenuItem.Click += new System.EventHandler(this.identificationToolStripMenuItem_Click);
             // 
             // relevéToolStripMenuItem
             // 
             this.relevéToolStripMenuItem.Name = "relevéToolStripMenuItem";
-            this.relevéToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.relevéToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.relevéToolStripMenuItem.Text = "Relevé";
             this.relevéToolStripMenuItem.Click += new System.EventHandler(this.relevéToolStripMenuItem_Click);
             // 
@@ -115,7 +115,7 @@
             // releveToolStripMenuItem
             // 
             this.releveToolStripMenuItem.Name = "releveToolStripMenuItem";
-            this.releveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.releveToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.releveToolStripMenuItem.Text = "Releve";
             this.releveToolStripMenuItem.Click += new System.EventHandler(this.releveToolStripMenuItem_Click);
             // 
@@ -152,8 +152,9 @@
             // paiementToolStripMenuItem1
             // 
             this.paiementToolStripMenuItem1.Name = "paiementToolStripMenuItem1";
-            this.paiementToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
+            this.paiementToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.paiementToolStripMenuItem1.Text = "Paiement";
+            this.paiementToolStripMenuItem1.Click += new System.EventHandler(this.paiementToolStripMenuItem1_Click);
             // 
             // MDIParent
             // 

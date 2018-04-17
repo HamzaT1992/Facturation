@@ -76,6 +76,12 @@
     <Compile Include="FormElec.Designer.cs">
       <DependentUpon>FormElec.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormPaiement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPaiement.Designer.cs">
+      <DependentUpon>FormPaiement.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTelecommunication.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +114,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormElec.resx">
       <DependentUpon>FormElec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPaiement.resx">
+      <DependentUpon>FormPaiement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTelecommunication.resx">
       <DependentUpon>FormTelecommunication.cs</DependentUpon>
