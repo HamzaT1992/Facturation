@@ -13,14 +13,14 @@ namespace Facturation
         [Key, Column(Order = 1)]
         public int NPolice { get; set; }
         [Key, Column(Order = 2)]
+        [MaxLength(100)]
         public string Adresse { get; set; }
         [Key, Column(Order = 3)]
-        public int NCompteur { get; set; }
-        [Key, Column(Order = 4)]
         public Etat Etat { get; set; }
-        [Key, Column(Order = 5)]
+        [Key, Column(Order = 4)]
         public DateTime Date { get; private set; }
-        [Key, Column(Order = 6)]
+        [Key, Column(Order = 5)]
+        [MaxLength (20)]
         public string Tel { get; set; }
     }
 }

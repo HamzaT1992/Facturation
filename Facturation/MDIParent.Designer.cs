@@ -70,8 +70,9 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "Quitter";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // eauToolStripMenuItem
             // 
@@ -131,14 +132,14 @@
             // identificationToolStripMenuItem2
             // 
             this.identificationToolStripMenuItem2.Name = "identificationToolStripMenuItem2";
-            this.identificationToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.identificationToolStripMenuItem2.Size = new System.Drawing.Size(144, 22);
             this.identificationToolStripMenuItem2.Text = "Identification";
             this.identificationToolStripMenuItem2.Click += new System.EventHandler(this.identificationToolStripMenuItem2_Click);
             // 
             // relevéToolStripMenuItem1
             // 
             this.relevéToolStripMenuItem1.Name = "relevéToolStripMenuItem1";
-            this.relevéToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.relevéToolStripMenuItem1.Size = new System.Drawing.Size(144, 22);
             this.relevéToolStripMenuItem1.Text = "Relevé";
             this.relevéToolStripMenuItem1.Click += new System.EventHandler(this.relevéToolStripMenuItem1_Click);
             // 
@@ -153,7 +154,7 @@
             // paiementToolStripMenuItem1
             // 
             this.paiementToolStripMenuItem1.Name = "paiementToolStripMenuItem1";
-            this.paiementToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.paiementToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
             this.paiementToolStripMenuItem1.Text = "Paiement";
             this.paiementToolStripMenuItem1.Click += new System.EventHandler(this.paiementToolStripMenuItem1_Click);
             // 

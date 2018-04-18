@@ -23,7 +23,6 @@ namespace Facturation
         {
             lancerForm(new FormEau());
         }
-
         private void lancerForm(Form form)
         {
             if (ActiveForm != null)
@@ -36,7 +35,6 @@ namespace Facturation
             else
                 createNewForm(form);
         } 
-
         private void createNewForm(Form form)
         {
             ActiveForm = form;
@@ -75,13 +73,10 @@ namespace Facturation
         {
             lancerReleve("Relevé de l'Eau", new ReleveEauOuElec());
         }
-
         private void releveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             lancerReleve("Relevé de l'Electricité", new ReleveEauOuElec());
         }
-
-
         private void relevéToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             lancerForm(new RelveeTele());
@@ -89,6 +84,10 @@ namespace Facturation
         private void paiementToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             lancerForm(new FormPaiement());
+        }
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

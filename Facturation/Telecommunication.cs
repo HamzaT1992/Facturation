@@ -10,7 +10,11 @@ namespace Facturation
 {
     public class TeleCommunication : Facture
     {
-        [Key, Column(Order = 1)]
+        [Key, Column(Order = 6)]
         public TypeTelecommunication TypeTelecom { get; set; }
+        [Key, Column(Order = 7)]
+        [MaxLength (20)]
+        public string MD { get; set; }
+        public int Forfait { get; set; }
     }
 }

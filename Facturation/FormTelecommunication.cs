@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace Facturation
 {
+    
     public partial class FormTelecommunication : Form
     {
         public FormTelecommunication()
         {
             InitializeComponent();
+
         }
     }
 }
