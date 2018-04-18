@@ -28,24 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.textBox27 = new System.Windows.Forms.TextBox();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.rech = new System.Windows.Forms.Button();
+            this.textBoxRech = new System.Windows.Forms.TextBox();
+            this.dataGridViewTelec = new System.Windows.Forms.DataGridView();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.textBox31 = new System.Windows.Forms.TextBox();
-            this.textBox30 = new System.Windows.Forms.TextBox();
+            this.textBoxForfait = new System.Windows.Forms.TextBox();
+            this.textBoxPrice = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.textBox21 = new System.Windows.Forms.TextBox();
-            this.textBox22 = new System.Windows.Forms.TextBox();
-            this.textBox23 = new System.Windows.Forms.TextBox();
-            this.textBox24 = new System.Windows.Forms.TextBox();
-            this.textBox25 = new System.Windows.Forms.TextBox();
-            this.textBox26 = new System.Windows.Forms.TextBox();
+            this.comboBoxType = new System.Windows.Forms.ComboBox();
+            this.textBoxTel = new System.Windows.Forms.TextBox();
+            this.textBoxDate = new System.Windows.Forms.TextBox();
+            this.textBoxEtat = new System.Windows.Forms.TextBox();
+            this.textBoxMD = new System.Windows.Forms.TextBox();
+            this.textBoxAdresse = new System.Windows.Forms.TextBox();
+            this.textBoxPolice = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
@@ -54,86 +50,53 @@
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
-            this.groupBox6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.nv = new System.Windows.Forms.Button();
+            this.del = new System.Windows.Forms.Button();
+            this.edit = new System.Windows.Forms.Button();
+            this.add = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTelec)).BeginInit();
             this.groupBox5.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox6
+            // rech
             // 
-            this.groupBox6.Controls.Add(this.button12);
-            this.groupBox6.Controls.Add(this.button13);
-            this.groupBox6.Controls.Add(this.button14);
-            this.groupBox6.Location = new System.Drawing.Point(26, 419);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(322, 69);
-            this.groupBox6.TabIndex = 20;
-            this.groupBox6.TabStop = false;
+            this.rech.Location = new System.Drawing.Point(598, 437);
+            this.rech.Name = "rech";
+            this.rech.Size = new System.Drawing.Size(75, 32);
+            this.rech.TabIndex = 19;
+            this.rech.Text = "Rechercher";
+            this.rech.UseVisualStyleBackColor = true;
             // 
-            // button12
+            // textBoxRech
             // 
-            this.button12.Location = new System.Drawing.Point(228, 18);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(75, 37);
-            this.button12.TabIndex = 4;
-            this.button12.Text = "Supprimer";
-            this.button12.UseVisualStyleBackColor = true;
+            this.textBoxRech.Location = new System.Drawing.Point(474, 444);
+            this.textBoxRech.Name = "textBoxRech";
+            this.textBoxRech.Size = new System.Drawing.Size(100, 20);
+            this.textBoxRech.TabIndex = 18;
             // 
-            // button13
+            // dataGridViewTelec
             // 
-            this.button13.Location = new System.Drawing.Point(121, 18);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(75, 37);
-            this.button13.TabIndex = 5;
-            this.button13.Text = "Ajouter";
-            this.button13.UseVisualStyleBackColor = true;
-            // 
-            // button14
-            // 
-            this.button14.Location = new System.Drawing.Point(11, 18);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(75, 37);
-            this.button14.TabIndex = 6;
-            this.button14.Text = "Modifier";
-            this.button14.UseVisualStyleBackColor = true;
-            // 
-            // button15
-            // 
-            this.button15.Location = new System.Drawing.Point(598, 437);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(75, 32);
-            this.button15.TabIndex = 19;
-            this.button15.Text = "Rechercher";
-            this.button15.UseVisualStyleBackColor = true;
-            // 
-            // textBox27
-            // 
-            this.textBox27.Location = new System.Drawing.Point(474, 444);
-            this.textBox27.Name = "textBox27";
-            this.textBox27.Size = new System.Drawing.Size(100, 20);
-            this.textBox27.TabIndex = 18;
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(397, 29);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(456, 341);
-            this.dataGridView3.TabIndex = 17;
+            this.dataGridViewTelec.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewTelec.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewTelec.Location = new System.Drawing.Point(397, 29);
+            this.dataGridViewTelec.Name = "dataGridViewTelec";
+            this.dataGridViewTelec.Size = new System.Drawing.Size(456, 341);
+            this.dataGridViewTelec.TabIndex = 17;
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.textBox31);
-            this.groupBox5.Controls.Add(this.textBox30);
+            this.groupBox5.Controls.Add(this.textBoxForfait);
+            this.groupBox5.Controls.Add(this.textBoxPrice);
             this.groupBox5.Controls.Add(this.label8);
-            this.groupBox5.Controls.Add(this.comboBox3);
-            this.groupBox5.Controls.Add(this.textBox21);
-            this.groupBox5.Controls.Add(this.textBox22);
-            this.groupBox5.Controls.Add(this.textBox23);
-            this.groupBox5.Controls.Add(this.textBox24);
-            this.groupBox5.Controls.Add(this.textBox25);
-            this.groupBox5.Controls.Add(this.textBox26);
+            this.groupBox5.Controls.Add(this.comboBoxType);
+            this.groupBox5.Controls.Add(this.textBoxTel);
+            this.groupBox5.Controls.Add(this.textBoxDate);
+            this.groupBox5.Controls.Add(this.textBoxEtat);
+            this.groupBox5.Controls.Add(this.textBoxMD);
+            this.groupBox5.Controls.Add(this.textBoxAdresse);
+            this.groupBox5.Controls.Add(this.textBoxPolice);
             this.groupBox5.Controls.Add(this.label28);
             this.groupBox5.Controls.Add(this.label21);
             this.groupBox5.Controls.Add(this.label22);
@@ -150,19 +113,19 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Télécommunication";
             // 
-            // textBox31
+            // textBoxForfait
             // 
-            this.textBox31.Location = new System.Drawing.Point(165, 269);
-            this.textBox31.Name = "textBox31";
-            this.textBox31.Size = new System.Drawing.Size(142, 20);
-            this.textBox31.TabIndex = 41;
+            this.textBoxForfait.Location = new System.Drawing.Point(165, 269);
+            this.textBoxForfait.Name = "textBoxForfait";
+            this.textBoxForfait.Size = new System.Drawing.Size(142, 20);
+            this.textBoxForfait.TabIndex = 41;
             // 
-            // textBox30
+            // textBoxPrice
             // 
-            this.textBox30.Location = new System.Drawing.Point(165, 302);
-            this.textBox30.Name = "textBox30";
-            this.textBox30.Size = new System.Drawing.Size(142, 20);
-            this.textBox30.TabIndex = 41;
+            this.textBoxPrice.Location = new System.Drawing.Point(165, 302);
+            this.textBoxPrice.Name = "textBoxPrice";
+            this.textBoxPrice.Size = new System.Drawing.Size(142, 20);
+            this.textBoxPrice.TabIndex = 41;
             // 
             // label8
             // 
@@ -174,55 +137,55 @@
             this.label8.TabIndex = 40;
             this.label8.Text = "Montant :";
             // 
-            // comboBox3
+            // comboBoxType
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(165, 235);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(142, 21);
-            this.comboBox3.TabIndex = 30;
+            this.comboBoxType.FormattingEnabled = true;
+            this.comboBoxType.Location = new System.Drawing.Point(165, 235);
+            this.comboBoxType.Name = "comboBoxType";
+            this.comboBoxType.Size = new System.Drawing.Size(142, 21);
+            this.comboBoxType.TabIndex = 30;
             // 
-            // textBox21
+            // textBoxTel
             // 
-            this.textBox21.Location = new System.Drawing.Point(165, 205);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(142, 20);
-            this.textBox21.TabIndex = 24;
+            this.textBoxTel.Location = new System.Drawing.Point(165, 205);
+            this.textBoxTel.Name = "textBoxTel";
+            this.textBoxTel.Size = new System.Drawing.Size(142, 20);
+            this.textBoxTel.TabIndex = 24;
             // 
-            // textBox22
+            // textBoxDate
             // 
-            this.textBox22.Location = new System.Drawing.Point(165, 175);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(142, 20);
-            this.textBox22.TabIndex = 25;
+            this.textBoxDate.Location = new System.Drawing.Point(165, 175);
+            this.textBoxDate.Name = "textBoxDate";
+            this.textBoxDate.Size = new System.Drawing.Size(142, 20);
+            this.textBoxDate.TabIndex = 25;
             // 
-            // textBox23
+            // textBoxEtat
             // 
-            this.textBox23.Location = new System.Drawing.Point(165, 145);
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(142, 20);
-            this.textBox23.TabIndex = 26;
+            this.textBoxEtat.Location = new System.Drawing.Point(165, 145);
+            this.textBoxEtat.Name = "textBoxEtat";
+            this.textBoxEtat.Size = new System.Drawing.Size(142, 20);
+            this.textBoxEtat.TabIndex = 26;
             // 
-            // textBox24
+            // textBoxMD
             // 
-            this.textBox24.Location = new System.Drawing.Point(165, 113);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(142, 20);
-            this.textBox24.TabIndex = 27;
+            this.textBoxMD.Location = new System.Drawing.Point(165, 113);
+            this.textBoxMD.Name = "textBoxMD";
+            this.textBoxMD.Size = new System.Drawing.Size(142, 20);
+            this.textBoxMD.TabIndex = 27;
             // 
-            // textBox25
+            // textBoxAdresse
             // 
-            this.textBox25.Location = new System.Drawing.Point(165, 81);
-            this.textBox25.Name = "textBox25";
-            this.textBox25.Size = new System.Drawing.Size(142, 20);
-            this.textBox25.TabIndex = 28;
+            this.textBoxAdresse.Location = new System.Drawing.Point(165, 81);
+            this.textBoxAdresse.Name = "textBoxAdresse";
+            this.textBoxAdresse.Size = new System.Drawing.Size(142, 20);
+            this.textBoxAdresse.TabIndex = 28;
             // 
-            // textBox26
+            // textBoxPolice
             // 
-            this.textBox26.Location = new System.Drawing.Point(165, 49);
-            this.textBox26.Name = "textBox26";
-            this.textBox26.Size = new System.Drawing.Size(142, 20);
-            this.textBox26.TabIndex = 29;
+            this.textBoxPolice.Location = new System.Drawing.Point(165, 49);
+            this.textBoxPolice.Name = "textBoxPolice";
+            this.textBoxPolice.Size = new System.Drawing.Size(142, 20);
+            this.textBoxPolice.TabIndex = 29;
             // 
             // label28
             // 
@@ -304,47 +267,91 @@
             this.label27.TabIndex = 23;
             this.label27.Text = "n° Police :";
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.nv);
+            this.groupBox2.Controls.Add(this.del);
+            this.groupBox2.Controls.Add(this.edit);
+            this.groupBox2.Controls.Add(this.add);
+            this.groupBox2.Location = new System.Drawing.Point(26, 411);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(387, 69);
+            this.groupBox2.TabIndex = 28;
+            this.groupBox2.TabStop = false;
+            // 
+            // nv
+            // 
+            this.nv.Location = new System.Drawing.Point(7, 18);
+            this.nv.Name = "nv";
+            this.nv.Size = new System.Drawing.Size(75, 37);
+            this.nv.TabIndex = 7;
+            this.nv.Text = "Nouveau";
+            this.nv.UseVisualStyleBackColor = true;
+            // 
+            // del
+            // 
+            this.del.Location = new System.Drawing.Point(304, 18);
+            this.del.Name = "del";
+            this.del.Size = new System.Drawing.Size(75, 37);
+            this.del.TabIndex = 4;
+            this.del.Text = "Supprimer";
+            this.del.UseVisualStyleBackColor = true;
+            // 
+            // edit
+            // 
+            this.edit.Location = new System.Drawing.Point(205, 18);
+            this.edit.Name = "edit";
+            this.edit.Size = new System.Drawing.Size(75, 37);
+            this.edit.TabIndex = 5;
+            this.edit.Text = "Modifier";
+            this.edit.UseVisualStyleBackColor = true;
+            // 
+            // add
+            // 
+            this.add.Location = new System.Drawing.Point(106, 18);
+            this.add.Name = "add";
+            this.add.Size = new System.Drawing.Size(75, 37);
+            this.add.TabIndex = 6;
+            this.add.Text = "Ajouter";
+            this.add.UseVisualStyleBackColor = true;
+            // 
             // FormTelecommunication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(879, 516);
-            this.Controls.Add(this.groupBox6);
-            this.Controls.Add(this.button15);
-            this.Controls.Add(this.textBox27);
-            this.Controls.Add(this.dataGridView3);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.rech);
+            this.Controls.Add(this.textBoxRech);
+            this.Controls.Add(this.dataGridViewTelec);
             this.Controls.Add(this.groupBox5);
             this.Name = "FormTelecommunication";
             this.Text = "FormTelecommunication";
-            this.groupBox6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTelec)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.TextBox textBox27;
-        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.Button rech;
+        private System.Windows.Forms.TextBox textBoxRech;
+        private System.Windows.Forms.DataGridView dataGridViewTelec;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.TextBox textBox31;
-        private System.Windows.Forms.TextBox textBox30;
+        private System.Windows.Forms.TextBox textBoxForfait;
+        private System.Windows.Forms.TextBox textBoxPrice;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.TextBox textBox21;
-        private System.Windows.Forms.TextBox textBox22;
-        private System.Windows.Forms.TextBox textBox23;
-        private System.Windows.Forms.TextBox textBox24;
-        private System.Windows.Forms.TextBox textBox25;
-        private System.Windows.Forms.TextBox textBox26;
+        private System.Windows.Forms.ComboBox comboBoxType;
+        private System.Windows.Forms.TextBox textBoxTel;
+        private System.Windows.Forms.TextBox textBoxDate;
+        private System.Windows.Forms.TextBox textBoxEtat;
+        private System.Windows.Forms.TextBox textBoxMD;
+        private System.Windows.Forms.TextBox textBoxAdresse;
+        private System.Windows.Forms.TextBox textBoxPolice;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
@@ -353,5 +360,10 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button nv;
+        private System.Windows.Forms.Button del;
+        private System.Windows.Forms.Button edit;
+        private System.Windows.Forms.Button add;
     }
 }
