@@ -32,14 +32,15 @@
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.dateTimePickerEtat = new System.Windows.Forms.DateTimePicker();
+            this.comboBoxType = new System.Windows.Forms.ComboBox();
+            this.textBoxTeli = new System.Windows.Forms.TextBox();
+            this.textBoxDate = new System.Windows.Forms.TextBox();
+            this.textBoxNcompteur = new System.Windows.Forms.TextBox();
+            this.textBoxAdresse = new System.Windows.Forms.TextBox();
+            this.textBoxAnnee = new System.Windows.Forms.TextBox();
+            this.textBoxReference = new System.Windows.Forms.TextBox();
+            this.textBoxPolice = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -49,12 +50,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.New = new System.Windows.Forms.Button();
+            this.dellete = new System.Windows.Forms.Button();
+            this.edit = new System.Windows.Forms.Button();
+            this.add = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -88,15 +88,15 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.comboBox6);
-            this.groupBox1.Controls.Add(this.textBox8);
-            this.groupBox1.Controls.Add(this.textBox9);
-            this.groupBox1.Controls.Add(this.textBox11);
-            this.groupBox1.Controls.Add(this.textBox12);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.textBox13);
+            this.groupBox1.Controls.Add(this.dateTimePickerEtat);
+            this.groupBox1.Controls.Add(this.comboBoxType);
+            this.groupBox1.Controls.Add(this.textBoxTeli);
+            this.groupBox1.Controls.Add(this.textBoxDate);
+            this.groupBox1.Controls.Add(this.textBoxNcompteur);
+            this.groupBox1.Controls.Add(this.textBoxAdresse);
+            this.groupBox1.Controls.Add(this.textBoxAnnee);
+            this.groupBox1.Controls.Add(this.textBoxReference);
+            this.groupBox1.Controls.Add(this.textBoxPolice);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label11);
@@ -114,62 +114,69 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Eléctricité";
             // 
-            // comboBox6
+            // dateTimePickerEtat
             // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(143, 296);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(161, 21);
-            this.comboBox6.TabIndex = 46;
+            this.dateTimePickerEtat.Location = new System.Drawing.Point(143, 205);
+            this.dateTimePickerEtat.Name = "dateTimePickerEtat";
+            this.dateTimePickerEtat.Size = new System.Drawing.Size(161, 20);
+            this.dateTimePickerEtat.TabIndex = 47;
             // 
-            // textBox8
+            // comboBoxType
             // 
-            this.textBox8.Location = new System.Drawing.Point(143, 266);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(161, 20);
-            this.textBox8.TabIndex = 39;
+            this.comboBoxType.FormattingEnabled = true;
+            this.comboBoxType.Location = new System.Drawing.Point(143, 296);
+            this.comboBoxType.Name = "comboBoxType";
+            this.comboBoxType.Size = new System.Drawing.Size(161, 21);
+            this.comboBoxType.TabIndex = 46;
             // 
-            // textBox9
+            // textBoxTeli
             // 
-            this.textBox9.Location = new System.Drawing.Point(143, 236);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(161, 20);
-            this.textBox9.TabIndex = 40;
+            this.textBoxTeli.Location = new System.Drawing.Point(143, 266);
+            this.textBoxTeli.Name = "textBoxTeli";
+            this.textBoxTeli.Size = new System.Drawing.Size(161, 20);
+            this.textBoxTeli.TabIndex = 39;
             // 
-            // textBox11
+            // textBoxDate
             // 
-            this.textBox11.Location = new System.Drawing.Point(143, 174);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(161, 20);
-            this.textBox11.TabIndex = 42;
+            this.textBoxDate.Location = new System.Drawing.Point(143, 236);
+            this.textBoxDate.Name = "textBoxDate";
+            this.textBoxDate.Size = new System.Drawing.Size(161, 20);
+            this.textBoxDate.TabIndex = 40;
             // 
-            // textBox12
+            // textBoxNcompteur
             // 
-            this.textBox12.Location = new System.Drawing.Point(143, 142);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(161, 20);
-            this.textBox12.TabIndex = 43;
+            this.textBoxNcompteur.Location = new System.Drawing.Point(143, 174);
+            this.textBoxNcompteur.Name = "textBoxNcompteur";
+            this.textBoxNcompteur.Size = new System.Drawing.Size(161, 20);
+            this.textBoxNcompteur.TabIndex = 42;
             // 
-            // textBox2
+            // textBoxAdresse
             // 
-            this.textBox2.Location = new System.Drawing.Point(143, 110);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(161, 20);
-            this.textBox2.TabIndex = 44;
+            this.textBoxAdresse.Location = new System.Drawing.Point(143, 142);
+            this.textBoxAdresse.Name = "textBoxAdresse";
+            this.textBoxAdresse.Size = new System.Drawing.Size(161, 20);
+            this.textBoxAdresse.TabIndex = 43;
             // 
-            // textBox1
+            // textBoxAnnee
             // 
-            this.textBox1.Location = new System.Drawing.Point(143, 80);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(161, 20);
-            this.textBox1.TabIndex = 44;
+            this.textBoxAnnee.Location = new System.Drawing.Point(143, 110);
+            this.textBoxAnnee.Name = "textBoxAnnee";
+            this.textBoxAnnee.Size = new System.Drawing.Size(161, 20);
+            this.textBoxAnnee.TabIndex = 44;
             // 
-            // textBox13
+            // textBoxReference
             // 
-            this.textBox13.Location = new System.Drawing.Point(143, 49);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(161, 20);
-            this.textBox13.TabIndex = 44;
+            this.textBoxReference.Location = new System.Drawing.Point(143, 80);
+            this.textBoxReference.Name = "textBoxReference";
+            this.textBoxReference.Size = new System.Drawing.Size(161, 20);
+            this.textBoxReference.TabIndex = 44;
+            // 
+            // textBoxPolice
+            // 
+            this.textBoxPolice.Location = new System.Drawing.Point(143, 49);
+            this.textBoxPolice.Name = "textBoxPolice";
+            this.textBoxPolice.Size = new System.Drawing.Size(161, 20);
+            this.textBoxPolice.TabIndex = 44;
             // 
             // label9
             // 
@@ -261,60 +268,53 @@
             this.label30.TabIndex = 38;
             this.label30.Text = "n° Police :";
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(143, 205);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(161, 20);
-            this.dateTimePicker1.TabIndex = 47;
-            // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.button5);
-            this.groupBox2.Controls.Add(this.button6);
-            this.groupBox2.Controls.Add(this.button7);
+            this.groupBox2.Controls.Add(this.New);
+            this.groupBox2.Controls.Add(this.dellete);
+            this.groupBox2.Controls.Add(this.edit);
+            this.groupBox2.Controls.Add(this.add);
             this.groupBox2.Location = new System.Drawing.Point(12, 410);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(387, 69);
             this.groupBox2.TabIndex = 27;
             this.groupBox2.TabStop = false;
             // 
-            // button1
+            // New
             // 
-            this.button1.Location = new System.Drawing.Point(7, 18);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 37);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Nouveau";
-            this.button1.UseVisualStyleBackColor = true;
+            this.New.Location = new System.Drawing.Point(7, 18);
+            this.New.Name = "New";
+            this.New.Size = new System.Drawing.Size(75, 37);
+            this.New.TabIndex = 7;
+            this.New.Text = "Nouveau";
+            this.New.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // dellete
             // 
-            this.button5.Location = new System.Drawing.Point(304, 18);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 37);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Supprimer";
-            this.button5.UseVisualStyleBackColor = true;
+            this.dellete.Location = new System.Drawing.Point(304, 18);
+            this.dellete.Name = "dellete";
+            this.dellete.Size = new System.Drawing.Size(75, 37);
+            this.dellete.TabIndex = 4;
+            this.dellete.Text = "Supprimer";
+            this.dellete.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // edit
             // 
-            this.button6.Location = new System.Drawing.Point(205, 18);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 37);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "Modifier";
-            this.button6.UseVisualStyleBackColor = true;
+            this.edit.Location = new System.Drawing.Point(205, 18);
+            this.edit.Name = "edit";
+            this.edit.Size = new System.Drawing.Size(75, 37);
+            this.edit.TabIndex = 5;
+            this.edit.Text = "Modifier";
+            this.edit.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // add
             // 
-            this.button7.Location = new System.Drawing.Point(106, 18);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 37);
-            this.button7.TabIndex = 6;
-            this.button7.Text = "Ajouter";
-            this.button7.UseVisualStyleBackColor = true;
+            this.add.Location = new System.Drawing.Point(106, 18);
+            this.add.Name = "add";
+            this.add.Size = new System.Drawing.Size(75, 37);
+            this.add.TabIndex = 6;
+            this.add.Text = "Ajouter";
+            this.add.UseVisualStyleBackColor = true;
             // 
             // FormElec
             // 
@@ -344,14 +344,14 @@
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.ComboBox comboBoxType;
+        private System.Windows.Forms.TextBox textBoxTeli;
+        private System.Windows.Forms.TextBox textBoxDate;
+        private System.Windows.Forms.TextBox textBoxNcompteur;
+        private System.Windows.Forms.TextBox textBoxAdresse;
+        private System.Windows.Forms.TextBox textBoxAnnee;
+        private System.Windows.Forms.TextBox textBoxReference;
+        private System.Windows.Forms.TextBox textBoxPolice;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
@@ -361,11 +361,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePickerEtat;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button New;
+        private System.Windows.Forms.Button dellete;
+        private System.Windows.Forms.Button edit;
+        private System.Windows.Forms.Button add;
     }
 }
