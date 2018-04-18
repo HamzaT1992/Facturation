@@ -40,7 +40,7 @@
             this.textBoxConsommation = new System.Windows.Forms.TextBox();
             this.textBoxMD = new System.Windows.Forms.TextBox();
             this.textBoxPrevIndex = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.textBoxAdress = new System.Windows.Forms.TextBox();
             this.textBoxMotif = new System.Windows.Forms.TextBox();
             this.textBoxNetPayer = new System.Windows.Forms.TextBox();
             this.textBoxAnnee = new System.Windows.Forms.TextBox();
@@ -159,12 +159,12 @@
             this.textBoxPrevIndex.Size = new System.Drawing.Size(164, 20);
             this.textBoxPrevIndex.TabIndex = 76;
             // 
-            // textBox12
+            // textBoxAdress
             // 
-            this.textBox12.Location = new System.Drawing.Point(159, 138);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(164, 20);
-            this.textBox12.TabIndex = 75;
+            this.textBoxAdress.Location = new System.Drawing.Point(159, 138);
+            this.textBoxAdress.Name = "textBoxAdress";
+            this.textBoxAdress.Size = new System.Drawing.Size(164, 20);
+            this.textBoxAdress.TabIndex = 75;
             // 
             // textBoxMotif
             // 
@@ -360,7 +360,7 @@
             this.Controls.Add(this.textBoxConsommation);
             this.Controls.Add(this.textBoxMD);
             this.Controls.Add(this.textBoxPrevIndex);
-            this.Controls.Add(this.textBox12);
+            this.Controls.Add(this.textBoxAdress);
             this.Controls.Add(this.textBoxMotif);
             this.Controls.Add(this.textBoxNetPayer);
             this.Controls.Add(this.textBoxAnnee);
@@ -404,7 +404,7 @@
         private System.Windows.Forms.TextBox textBoxConsommation;
         private System.Windows.Forms.TextBox textBoxMD;
         private System.Windows.Forms.TextBox textBoxPrevIndex;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox textBoxAdress;
         private System.Windows.Forms.TextBox textBoxMotif;
         private System.Windows.Forms.TextBox textBoxNetPayer;
         private System.Windows.Forms.TextBox textBoxAnnee;
