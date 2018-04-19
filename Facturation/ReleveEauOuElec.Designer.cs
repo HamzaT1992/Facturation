@@ -28,69 +28,69 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.textBoxNCompt = new System.Windows.Forms.TextBox();
+            this.textBoxAdress = new System.Windows.Forms.TextBox();
+            this.textBoxAnnee = new System.Windows.Forms.TextBox();
+            this.textBoxPolice = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxTrimestre = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerDate = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.textBoxNewIndex = new System.Windows.Forms.TextBox();
+            this.textBoxNetPayer = new System.Windows.Forms.TextBox();
+            this.textBoxPrevIndex = new System.Windows.Forms.TextBox();
+            this.textBoxConsommation = new System.Windows.Forms.TextBox();
+            this.textBoxMotif = new System.Windows.Forms.TextBox();
+            this.annuler = new System.Windows.Forms.Button();
+            this.confirm = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.labelTitle = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Npolice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.adresse = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rapport = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labelTitle = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox11
+            // textBoxNCompt
             // 
-            this.textBox11.Location = new System.Drawing.Point(147, 150);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(164, 20);
-            this.textBox11.TabIndex = 49;
+            this.textBoxNCompt.Location = new System.Drawing.Point(147, 150);
+            this.textBoxNCompt.Name = "textBoxNCompt";
+            this.textBoxNCompt.Size = new System.Drawing.Size(164, 20);
+            this.textBoxNCompt.TabIndex = 49;
             // 
-            // textBox12
+            // textBoxAdress
             // 
-            this.textBox12.Location = new System.Drawing.Point(147, 122);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(164, 20);
-            this.textBox12.TabIndex = 50;
+            this.textBoxAdress.Location = new System.Drawing.Point(147, 122);
+            this.textBoxAdress.Name = "textBoxAdress";
+            this.textBoxAdress.Size = new System.Drawing.Size(164, 20);
+            this.textBoxAdress.TabIndex = 50;
             // 
-            // textBox2
+            // textBoxAnnee
             // 
-            this.textBox2.Location = new System.Drawing.Point(147, 178);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(164, 20);
-            this.textBox2.TabIndex = 51;
+            this.textBoxAnnee.Location = new System.Drawing.Point(147, 178);
+            this.textBoxAnnee.Name = "textBoxAnnee";
+            this.textBoxAnnee.Size = new System.Drawing.Size(164, 20);
+            this.textBoxAnnee.TabIndex = 51;
             // 
-            // textBox13
+            // textBoxPolice
             // 
-            this.textBox13.Location = new System.Drawing.Point(147, 94);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(164, 20);
-            this.textBox13.TabIndex = 52;
+            this.textBoxPolice.Location = new System.Drawing.Point(147, 94);
+            this.textBoxPolice.Name = "textBoxPolice";
+            this.textBoxPolice.Size = new System.Drawing.Size(164, 20);
+            this.textBoxPolice.TabIndex = 52;
             // 
             // label2
             // 
@@ -142,13 +142,13 @@
             this.label1.TabIndex = 47;
             this.label1.Text = "Trimèstre :";
             // 
-            // comboBox1
+            // comboBoxTrimestre
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(147, 206);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(164, 21);
-            this.comboBox1.TabIndex = 53;
+            this.comboBoxTrimestre.FormattingEnabled = true;
+            this.comboBoxTrimestre.Location = new System.Drawing.Point(147, 206);
+            this.comboBoxTrimestre.Name = "comboBoxTrimestre";
+            this.comboBoxTrimestre.Size = new System.Drawing.Size(164, 21);
+            this.comboBoxTrimestre.TabIndex = 53;
             // 
             // label3
             // 
@@ -160,12 +160,12 @@
             this.label3.TabIndex = 47;
             this.label3.Text = "Date :";
             // 
-            // dateTimePicker1
+            // dateTimePickerDate
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(147, 235);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(164, 20);
-            this.dateTimePicker1.TabIndex = 54;
+            this.dateTimePickerDate.Location = new System.Drawing.Point(147, 235);
+            this.dateTimePickerDate.Name = "dateTimePickerDate";
+            this.dateTimePickerDate.Size = new System.Drawing.Size(164, 20);
+            this.dateTimePickerDate.TabIndex = 54;
             // 
             // label4
             // 
@@ -219,60 +219,60 @@
             this.label8.Text = "Motif :";
             this.label8.Visible = false;
             // 
-            // textBox1
+            // textBoxNewIndex
             // 
-            this.textBox1.Location = new System.Drawing.Point(147, 263);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(164, 20);
-            this.textBox1.TabIndex = 52;
+            this.textBoxNewIndex.Location = new System.Drawing.Point(147, 263);
+            this.textBoxNewIndex.Name = "textBoxNewIndex";
+            this.textBoxNewIndex.Size = new System.Drawing.Size(164, 20);
+            this.textBoxNewIndex.TabIndex = 52;
             // 
-            // textBox3
+            // textBoxNetPayer
             // 
-            this.textBox3.Location = new System.Drawing.Point(147, 347);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(164, 20);
-            this.textBox3.TabIndex = 51;
+            this.textBoxNetPayer.Location = new System.Drawing.Point(147, 347);
+            this.textBoxNetPayer.Name = "textBoxNetPayer";
+            this.textBoxNetPayer.Size = new System.Drawing.Size(164, 20);
+            this.textBoxNetPayer.TabIndex = 51;
             // 
-            // textBox4
+            // textBoxPrevIndex
             // 
-            this.textBox4.Location = new System.Drawing.Point(147, 291);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(164, 20);
-            this.textBox4.TabIndex = 50;
+            this.textBoxPrevIndex.Location = new System.Drawing.Point(147, 291);
+            this.textBoxPrevIndex.Name = "textBoxPrevIndex";
+            this.textBoxPrevIndex.Size = new System.Drawing.Size(164, 20);
+            this.textBoxPrevIndex.TabIndex = 50;
             // 
-            // textBox5
+            // textBoxConsommation
             // 
-            this.textBox5.Location = new System.Drawing.Point(147, 319);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(164, 20);
-            this.textBox5.TabIndex = 49;
+            this.textBoxConsommation.Location = new System.Drawing.Point(147, 319);
+            this.textBoxConsommation.Name = "textBoxConsommation";
+            this.textBoxConsommation.Size = new System.Drawing.Size(164, 20);
+            this.textBoxConsommation.TabIndex = 49;
             // 
-            // textBox6
+            // textBoxMotif
             // 
-            this.textBox6.Enabled = false;
-            this.textBox6.Location = new System.Drawing.Point(147, 436);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(164, 20);
-            this.textBox6.TabIndex = 51;
-            this.textBox6.Visible = false;
+            this.textBoxMotif.Enabled = false;
+            this.textBoxMotif.Location = new System.Drawing.Point(147, 436);
+            this.textBoxMotif.Name = "textBoxMotif";
+            this.textBoxMotif.Size = new System.Drawing.Size(164, 20);
+            this.textBoxMotif.TabIndex = 51;
+            this.textBoxMotif.Visible = false;
             // 
-            // button1
+            // annuler
             // 
-            this.button1.Location = new System.Drawing.Point(236, 488);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 25);
-            this.button1.TabIndex = 56;
-            this.button1.Text = "Annuler";
-            this.button1.UseVisualStyleBackColor = true;
+            this.annuler.Location = new System.Drawing.Point(236, 488);
+            this.annuler.Name = "annuler";
+            this.annuler.Size = new System.Drawing.Size(75, 25);
+            this.annuler.TabIndex = 56;
+            this.annuler.Text = "Annuler";
+            this.annuler.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // confirm
             // 
-            this.button2.Location = new System.Drawing.Point(147, 488);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 25);
-            this.button2.TabIndex = 56;
-            this.button2.Text = "Confirmer";
-            this.button2.UseVisualStyleBackColor = true;
+            this.confirm.Location = new System.Drawing.Point(147, 488);
+            this.confirm.Name = "confirm";
+            this.confirm.Size = new System.Drawing.Size(75, 25);
+            this.confirm.TabIndex = 56;
+            this.confirm.Text = "Confirmer";
+            this.confirm.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -289,28 +289,6 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(442, 428);
             this.dataGridView1.TabIndex = 58;
-            // 
-            // labelTitle
-            // 
-            this.labelTitle.AutoSize = true;
-            this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitle.Location = new System.Drawing.Point(308, 25);
-            this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(109, 24);
-            this.labelTitle.TabIndex = 48;
-            this.labelTitle.Text = "Relevé de l\'";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::Facturation.Properties.Resources.go;
-            this.pictureBox1.Location = new System.Drawing.Point(281, 400);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 59;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Npolice
             // 
@@ -337,6 +315,28 @@
             this.rapport.Name = "rapport";
             this.rapport.ReadOnly = true;
             // 
+            // labelTitle
+            // 
+            this.labelTitle.AutoSize = true;
+            this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitle.Location = new System.Drawing.Point(308, 25);
+            this.labelTitle.Name = "labelTitle";
+            this.labelTitle.Size = new System.Drawing.Size(109, 24);
+            this.labelTitle.TabIndex = 48;
+            this.labelTitle.Text = "Relevé de l\'";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::Facturation.Properties.Resources.go;
+            this.pictureBox1.Location = new System.Drawing.Point(281, 400);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 59;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // groupBox1
             // 
             this.groupBox1.Location = new System.Drawing.Point(12, 65);
@@ -353,26 +353,26 @@
             this.ClientSize = new System.Drawing.Size(843, 570);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox11);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox12);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.confirm);
+            this.Controls.Add(this.annuler);
+            this.Controls.Add(this.dateTimePickerDate);
+            this.Controls.Add(this.comboBoxTrimestre);
+            this.Controls.Add(this.textBoxConsommation);
+            this.Controls.Add(this.textBoxNCompt);
+            this.Controls.Add(this.textBoxPrevIndex);
+            this.Controls.Add(this.textBoxAdress);
+            this.Controls.Add(this.textBoxMotif);
+            this.Controls.Add(this.textBoxNetPayer);
+            this.Controls.Add(this.textBoxAnnee);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxNewIndex);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox13);
+            this.Controls.Add(this.textBoxPolice);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label29);
@@ -391,30 +391,30 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox textBoxNCompt;
+        private System.Windows.Forms.TextBox textBoxAdress;
+        private System.Windows.Forms.TextBox textBoxAnnee;
+        private System.Windows.Forms.TextBox textBoxPolice;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxTrimestre;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePickerDate;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textBoxNewIndex;
+        private System.Windows.Forms.TextBox textBoxNetPayer;
+        private System.Windows.Forms.TextBox textBoxPrevIndex;
+        private System.Windows.Forms.TextBox textBoxConsommation;
+        private System.Windows.Forms.TextBox textBoxMotif;
+        private System.Windows.Forms.Button annuler;
+        private System.Windows.Forms.Button confirm;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.PictureBox pictureBox1;

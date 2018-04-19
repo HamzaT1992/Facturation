@@ -10,8 +10,6 @@ namespace Facturation
 {
     public class Eau : Facture
     {
-
-       
         public short Annee { get; set; }
         [Key, Column(Order = 6)]
         public int NCompteur { get; set; }
@@ -20,6 +18,5 @@ namespace Facturation
         [Key, Column(Order = 8)]
         [MaxLength ( 15)]
         public string Reference { get; set; }
-
     }
 }

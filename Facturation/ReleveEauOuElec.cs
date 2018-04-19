@@ -37,12 +37,12 @@ namespace Facturation
             if (imageCheck)
             {
                 pictureBox1.Image = Resources.go;
-                label8.Enabled = label8.Visible = textBox6.Enabled = textBox6.Visible = imageCheck = false;
+                label8.Enabled = label8.Visible = textBoxMotif.Enabled = textBoxMotif.Visible = imageCheck = false;
             }
             else
             {
                 pictureBox1.Image = Resources.stop;
-                label8.Enabled = label8.Visible = textBox6.Enabled = textBox6.Visible = imageCheck = true;
+                label8.Enabled = label8.Visible = textBoxMotif.Enabled = textBoxMotif.Visible = imageCheck = true;
             }
         }
     }

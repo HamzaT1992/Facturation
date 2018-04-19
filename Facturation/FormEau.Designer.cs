@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button4 = new System.Windows.Forms.Button();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.Search = new System.Windows.Forms.Button();
+            this.textBoxRech = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.del = new System.Windows.Forms.Button();
+            this.edit = new System.Windows.Forms.Button();
+            this.add = new System.Windows.Forms.Button();
+            this.dataGridViewEau = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.dateTimePickerEau = new System.Windows.Forms.DateTimePicker();
+            this.comboBoxType = new System.Windows.Forms.ComboBox();
+            this.textBoxTel = new System.Windows.Forms.TextBox();
+            this.textBoxNCompt = new System.Windows.Forms.TextBox();
+            this.textBoxAdresse = new System.Windows.Forms.TextBox();
+            this.textBoxAnnee = new System.Windows.Forms.TextBox();
+            this.textBoxRef = new System.Windows.Forms.TextBox();
+            this.textBoxPolice = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -53,89 +53,91 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
+            this.enregister = new System.Windows.Forms.Button();
+            this.comboBoxEtat = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEau)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button4
+            // Search
             // 
-            this.button4.Location = new System.Drawing.Point(577, 420);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 32);
-            this.button4.TabIndex = 21;
-            this.button4.Text = "Rechercher";
-            this.button4.UseVisualStyleBackColor = true;
+            this.Search.Location = new System.Drawing.Point(507, 369);
+            this.Search.Name = "Search";
+            this.Search.Size = new System.Drawing.Size(75, 32);
+            this.Search.TabIndex = 21;
+            this.Search.Text = "Rechercher";
+            this.Search.UseVisualStyleBackColor = true;
             // 
-            // textBox7
+            // textBoxRech
             // 
-            this.textBox7.Location = new System.Drawing.Point(457, 427);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 20;
+            this.textBoxRech.Location = new System.Drawing.Point(387, 376);
+            this.textBoxRech.Name = "textBoxRech";
+            this.textBoxRech.Size = new System.Drawing.Size(100, 20);
+            this.textBoxRech.TabIndex = 20;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.button5);
-            this.groupBox2.Controls.Add(this.button6);
-            this.groupBox2.Controls.Add(this.button7);
+            this.groupBox2.Controls.Add(this.del);
+            this.groupBox2.Controls.Add(this.edit);
+            this.groupBox2.Controls.Add(this.add);
             this.groupBox2.Location = new System.Drawing.Point(9, 397);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(387, 69);
+            this.groupBox2.Size = new System.Drawing.Size(303, 69);
             this.groupBox2.TabIndex = 19;
             this.groupBox2.TabStop = false;
             // 
-            // button5
+            // del
             // 
-            this.button5.Location = new System.Drawing.Point(304, 18);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 37);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Supprimer";
-            this.button5.UseVisualStyleBackColor = true;
+            this.del.Location = new System.Drawing.Point(212, 19);
+            this.del.Name = "del";
+            this.del.Size = new System.Drawing.Size(75, 37);
+            this.del.TabIndex = 4;
+            this.del.Text = "Supprimer";
+            this.del.UseVisualStyleBackColor = true;
+            this.del.Click += new System.EventHandler(this.del_Click);
             // 
-            // button6
+            // edit
             // 
-            this.button6.Location = new System.Drawing.Point(205, 18);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 37);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "Modifier";
-            this.button6.UseVisualStyleBackColor = true;
+            this.edit.Location = new System.Drawing.Point(113, 19);
+            this.edit.Name = "edit";
+            this.edit.Size = new System.Drawing.Size(75, 37);
+            this.edit.TabIndex = 5;
+            this.edit.Text = "Modifier";
+            this.edit.UseVisualStyleBackColor = true;
+            this.edit.Click += new System.EventHandler(this.edit_Click);
             // 
-            // button7
+            // add
             // 
-            this.button7.Location = new System.Drawing.Point(106, 18);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 37);
-            this.button7.TabIndex = 6;
-            this.button7.Text = "Ajouter";
-            this.button7.UseVisualStyleBackColor = true;
+            this.add.Location = new System.Drawing.Point(14, 19);
+            this.add.Name = "add";
+            this.add.Size = new System.Drawing.Size(75, 37);
+            this.add.TabIndex = 6;
+            this.add.Text = "Ajouter";
+            this.add.UseVisualStyleBackColor = true;
+            this.add.Click += new System.EventHandler(this.add_Click);
             // 
-            // dataGridView1
+            // dataGridViewEau
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(387, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(456, 341);
-            this.dataGridView1.TabIndex = 18;
+            this.dataGridViewEau.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewEau.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewEau.Location = new System.Drawing.Point(387, 12);
+            this.dataGridViewEau.Name = "dataGridViewEau";
+            this.dataGridViewEau.Size = new System.Drawing.Size(456, 341);
+            this.dataGridViewEau.TabIndex = 18;
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.comboBox6);
-            this.groupBox1.Controls.Add(this.textBox8);
-            this.groupBox1.Controls.Add(this.textBox10);
-            this.groupBox1.Controls.Add(this.textBox11);
-            this.groupBox1.Controls.Add(this.textBox12);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.textBox13);
+            this.groupBox1.Controls.Add(this.comboBoxEtat);
+            this.groupBox1.Controls.Add(this.dateTimePickerEau);
+            this.groupBox1.Controls.Add(this.comboBoxType);
+            this.groupBox1.Controls.Add(this.textBoxTel);
+            this.groupBox1.Controls.Add(this.textBoxNCompt);
+            this.groupBox1.Controls.Add(this.textBoxAdresse);
+            this.groupBox1.Controls.Add(this.textBoxAnnee);
+            this.groupBox1.Controls.Add(this.textBoxRef);
+            this.groupBox1.Controls.Add(this.textBoxPolice);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label11);
@@ -153,62 +155,62 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Eau";
             // 
-            // comboBox6
+            // dateTimePickerEau
             // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(142, 296);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(162, 21);
-            this.comboBox6.TabIndex = 46;
+            this.dateTimePickerEau.Location = new System.Drawing.Point(142, 237);
+            this.dateTimePickerEau.Name = "dateTimePickerEau";
+            this.dateTimePickerEau.Size = new System.Drawing.Size(162, 20);
+            this.dateTimePickerEau.TabIndex = 47;
             // 
-            // textBox8
+            // comboBoxType
             // 
-            this.textBox8.Location = new System.Drawing.Point(142, 266);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(162, 20);
-            this.textBox8.TabIndex = 39;
+            this.comboBoxType.FormattingEnabled = true;
+            this.comboBoxType.Location = new System.Drawing.Point(142, 296);
+            this.comboBoxType.Name = "comboBoxType";
+            this.comboBoxType.Size = new System.Drawing.Size(162, 21);
+            this.comboBoxType.TabIndex = 46;
             // 
-            // textBox10
+            // textBoxTel
             // 
-            this.textBox10.Location = new System.Drawing.Point(142, 206);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(162, 20);
-            this.textBox10.TabIndex = 41;
+            this.textBoxTel.Location = new System.Drawing.Point(142, 266);
+            this.textBoxTel.Name = "textBoxTel";
+            this.textBoxTel.Size = new System.Drawing.Size(162, 20);
+            this.textBoxTel.TabIndex = 39;
             // 
-            // textBox11
+            // textBoxNCompt
             // 
-            this.textBox11.Location = new System.Drawing.Point(142, 174);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(162, 20);
-            this.textBox11.TabIndex = 42;
+            this.textBoxNCompt.Location = new System.Drawing.Point(142, 174);
+            this.textBoxNCompt.Name = "textBoxNCompt";
+            this.textBoxNCompt.Size = new System.Drawing.Size(162, 20);
+            this.textBoxNCompt.TabIndex = 42;
             // 
-            // textBox12
+            // textBoxAdresse
             // 
-            this.textBox12.Location = new System.Drawing.Point(142, 142);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(162, 20);
-            this.textBox12.TabIndex = 43;
+            this.textBoxAdresse.Location = new System.Drawing.Point(142, 142);
+            this.textBoxAdresse.Name = "textBoxAdresse";
+            this.textBoxAdresse.Size = new System.Drawing.Size(162, 20);
+            this.textBoxAdresse.TabIndex = 43;
             // 
-            // textBox2
+            // textBoxAnnee
             // 
-            this.textBox2.Location = new System.Drawing.Point(142, 110);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(162, 20);
-            this.textBox2.TabIndex = 44;
+            this.textBoxAnnee.Location = new System.Drawing.Point(142, 110);
+            this.textBoxAnnee.Name = "textBoxAnnee";
+            this.textBoxAnnee.Size = new System.Drawing.Size(162, 20);
+            this.textBoxAnnee.TabIndex = 44;
             // 
-            // textBox1
+            // textBoxRef
             // 
-            this.textBox1.Location = new System.Drawing.Point(142, 80);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(162, 20);
-            this.textBox1.TabIndex = 44;
+            this.textBoxRef.Location = new System.Drawing.Point(142, 80);
+            this.textBoxRef.Name = "textBoxRef";
+            this.textBoxRef.Size = new System.Drawing.Size(162, 20);
+            this.textBoxRef.TabIndex = 44;
             // 
-            // textBox13
+            // textBoxPolice
             // 
-            this.textBox13.Location = new System.Drawing.Point(142, 49);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(162, 20);
-            this.textBox13.TabIndex = 44;
+            this.textBoxPolice.Location = new System.Drawing.Point(142, 49);
+            this.textBoxPolice.Name = "textBoxPolice";
+            this.textBoxPolice.Size = new System.Drawing.Size(162, 20);
+            this.textBoxPolice.TabIndex = 44;
             // 
             // label9
             // 
@@ -300,36 +302,41 @@
             this.label30.TabIndex = 38;
             this.label30.Text = "n° Police :";
             // 
-            // dateTimePicker1
+            // enregister
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(142, 237);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(162, 20);
-            this.dateTimePicker1.TabIndex = 47;
+            this.enregister.Location = new System.Drawing.Point(768, 451);
+            this.enregister.Name = "enregister";
+            this.enregister.Size = new System.Drawing.Size(75, 37);
+            this.enregister.TabIndex = 7;
+            this.enregister.Text = "Enregistrer";
+            this.enregister.UseVisualStyleBackColor = true;
+            this.enregister.Click += new System.EventHandler(this.enregister_Click);
             // 
-            // button1
+            // comboBoxEtat
             // 
-            this.button1.Location = new System.Drawing.Point(7, 18);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 37);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Nouveau";
-            this.button1.UseVisualStyleBackColor = true;
+            this.comboBoxEtat.FormattingEnabled = true;
+            this.comboBoxEtat.Location = new System.Drawing.Point(142, 205);
+            this.comboBoxEtat.Name = "comboBoxEtat";
+            this.comboBoxEtat.Size = new System.Drawing.Size(162, 21);
+            this.comboBoxEtat.TabIndex = 48;
             // 
             // FormEau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(863, 500);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.enregister);
+            this.Controls.Add(this.Search);
+            this.Controls.Add(this.textBoxRech);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewEau);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormEau";
             this.Text = "L\'Eau";
+            this.Load += new System.EventHandler(this.FormEau_Load);
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEau)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -339,20 +346,19 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Button Search;
+        private System.Windows.Forms.TextBox textBoxRech;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button del;
+        private System.Windows.Forms.Button edit;
+        private System.Windows.Forms.Button add;
+        private System.Windows.Forms.DataGridView dataGridViewEau;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.ComboBox comboBoxType;
+        private System.Windows.Forms.TextBox textBoxTel;
+        private System.Windows.Forms.TextBox textBoxNCompt;
+        private System.Windows.Forms.TextBox textBoxAdresse;
+        private System.Windows.Forms.TextBox textBoxPolice;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
@@ -360,11 +366,12 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxAnnee;
+        private System.Windows.Forms.TextBox textBoxRef;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePickerEau;
+        private System.Windows.Forms.Button enregister;
+        private System.Windows.Forms.ComboBox comboBoxEtat;
     }
 }

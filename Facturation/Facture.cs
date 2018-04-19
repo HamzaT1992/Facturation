@@ -18,7 +18,7 @@ namespace Facturation
         [Key, Column(Order = 3)]
         public Etat Etat { get; set; }
         [Key, Column(Order = 4)]
-        public DateTime Date { get; private set; }
+        public DateTime Date { get; set; }
         [Key, Column(Order = 5)]
         [MaxLength (20)]
         public string Tel { get; set; }
