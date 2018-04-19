@@ -36,9 +36,9 @@
             this.add = new System.Windows.Forms.Button();
             this.dataGridViewEau = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dateTimePickerEau = new System.Windows.Forms.DateTimePicker();
             this.comboBoxType = new System.Windows.Forms.ComboBox();
             this.textBoxTel = new System.Windows.Forms.TextBox();
-            this.textBoxEtat = new System.Windows.Forms.TextBox();
             this.textBoxNCompt = new System.Windows.Forms.TextBox();
             this.textBoxAdresse = new System.Windows.Forms.TextBox();
             this.textBoxAnnee = new System.Windows.Forms.TextBox();
@@ -53,8 +53,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
-            this.dateTimePickerEau = new System.Windows.Forms.DateTimePicker();
-            this.nv = new System.Windows.Forms.Button();
+            this.enregister = new System.Windows.Forms.Button();
+            this.comboBoxEtat = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEau)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -62,7 +62,7 @@
             // 
             // Search
             // 
-            this.Search.Location = new System.Drawing.Point(577, 420);
+            this.Search.Location = new System.Drawing.Point(507, 369);
             this.Search.Name = "Search";
             this.Search.Size = new System.Drawing.Size(75, 32);
             this.Search.TabIndex = 21;
@@ -71,49 +71,51 @@
             // 
             // textBoxRech
             // 
-            this.textBoxRech.Location = new System.Drawing.Point(457, 427);
+            this.textBoxRech.Location = new System.Drawing.Point(387, 376);
             this.textBoxRech.Name = "textBoxRech";
             this.textBoxRech.Size = new System.Drawing.Size(100, 20);
             this.textBoxRech.TabIndex = 20;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.nv);
             this.groupBox2.Controls.Add(this.del);
             this.groupBox2.Controls.Add(this.edit);
             this.groupBox2.Controls.Add(this.add);
             this.groupBox2.Location = new System.Drawing.Point(9, 397);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(387, 69);
+            this.groupBox2.Size = new System.Drawing.Size(303, 69);
             this.groupBox2.TabIndex = 19;
             this.groupBox2.TabStop = false;
             // 
             // del
             // 
-            this.del.Location = new System.Drawing.Point(304, 18);
+            this.del.Location = new System.Drawing.Point(212, 19);
             this.del.Name = "del";
             this.del.Size = new System.Drawing.Size(75, 37);
             this.del.TabIndex = 4;
             this.del.Text = "Supprimer";
             this.del.UseVisualStyleBackColor = true;
+            this.del.Click += new System.EventHandler(this.del_Click);
             // 
             // edit
             // 
-            this.edit.Location = new System.Drawing.Point(205, 18);
+            this.edit.Location = new System.Drawing.Point(113, 19);
             this.edit.Name = "edit";
             this.edit.Size = new System.Drawing.Size(75, 37);
             this.edit.TabIndex = 5;
             this.edit.Text = "Modifier";
             this.edit.UseVisualStyleBackColor = true;
+            this.edit.Click += new System.EventHandler(this.edit_Click);
             // 
             // add
             // 
-            this.add.Location = new System.Drawing.Point(106, 18);
+            this.add.Location = new System.Drawing.Point(14, 19);
             this.add.Name = "add";
             this.add.Size = new System.Drawing.Size(75, 37);
             this.add.TabIndex = 6;
             this.add.Text = "Ajouter";
             this.add.UseVisualStyleBackColor = true;
+            this.add.Click += new System.EventHandler(this.add_Click);
             // 
             // dataGridViewEau
             // 
@@ -127,10 +129,10 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.comboBoxEtat);
             this.groupBox1.Controls.Add(this.dateTimePickerEau);
             this.groupBox1.Controls.Add(this.comboBoxType);
             this.groupBox1.Controls.Add(this.textBoxTel);
-            this.groupBox1.Controls.Add(this.textBoxEtat);
             this.groupBox1.Controls.Add(this.textBoxNCompt);
             this.groupBox1.Controls.Add(this.textBoxAdresse);
             this.groupBox1.Controls.Add(this.textBoxAnnee);
@@ -153,6 +155,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Eau";
             // 
+            // dateTimePickerEau
+            // 
+            this.dateTimePickerEau.Location = new System.Drawing.Point(142, 237);
+            this.dateTimePickerEau.Name = "dateTimePickerEau";
+            this.dateTimePickerEau.Size = new System.Drawing.Size(162, 20);
+            this.dateTimePickerEau.TabIndex = 47;
+            // 
             // comboBoxType
             // 
             this.comboBoxType.FormattingEnabled = true;
@@ -167,13 +176,6 @@
             this.textBoxTel.Name = "textBoxTel";
             this.textBoxTel.Size = new System.Drawing.Size(162, 20);
             this.textBoxTel.TabIndex = 39;
-            // 
-            // textBoxEtat
-            // 
-            this.textBoxEtat.Location = new System.Drawing.Point(142, 206);
-            this.textBoxEtat.Name = "textBoxEtat";
-            this.textBoxEtat.Size = new System.Drawing.Size(162, 20);
-            this.textBoxEtat.TabIndex = 41;
             // 
             // textBoxNCompt
             // 
@@ -300,21 +302,23 @@
             this.label30.TabIndex = 38;
             this.label30.Text = "n° Police :";
             // 
-            // dateTimePickerEau
+            // enregister
             // 
-            this.dateTimePickerEau.Location = new System.Drawing.Point(142, 237);
-            this.dateTimePickerEau.Name = "dateTimePickerEau";
-            this.dateTimePickerEau.Size = new System.Drawing.Size(162, 20);
-            this.dateTimePickerEau.TabIndex = 47;
+            this.enregister.Location = new System.Drawing.Point(768, 451);
+            this.enregister.Name = "enregister";
+            this.enregister.Size = new System.Drawing.Size(75, 37);
+            this.enregister.TabIndex = 7;
+            this.enregister.Text = "Enregistrer";
+            this.enregister.UseVisualStyleBackColor = true;
+            this.enregister.Click += new System.EventHandler(this.enregister_Click);
             // 
-            // nv
+            // comboBoxEtat
             // 
-            this.nv.Location = new System.Drawing.Point(7, 18);
-            this.nv.Name = "nv";
-            this.nv.Size = new System.Drawing.Size(75, 37);
-            this.nv.TabIndex = 7;
-            this.nv.Text = "Nouveau";
-            this.nv.UseVisualStyleBackColor = true;
+            this.comboBoxEtat.FormattingEnabled = true;
+            this.comboBoxEtat.Location = new System.Drawing.Point(142, 205);
+            this.comboBoxEtat.Name = "comboBoxEtat";
+            this.comboBoxEtat.Size = new System.Drawing.Size(162, 21);
+            this.comboBoxEtat.TabIndex = 48;
             // 
             // FormEau
             // 
@@ -322,6 +326,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(863, 500);
+            this.Controls.Add(this.enregister);
             this.Controls.Add(this.Search);
             this.Controls.Add(this.textBoxRech);
             this.Controls.Add(this.groupBox2);
@@ -329,6 +334,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "FormEau";
             this.Text = "L\'Eau";
+            this.Load += new System.EventHandler(this.FormEau_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEau)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -350,7 +356,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox comboBoxType;
         private System.Windows.Forms.TextBox textBoxTel;
-        private System.Windows.Forms.TextBox textBoxEtat;
         private System.Windows.Forms.TextBox textBoxNCompt;
         private System.Windows.Forms.TextBox textBoxAdresse;
         private System.Windows.Forms.TextBox textBoxPolice;
@@ -365,7 +370,8 @@
         private System.Windows.Forms.TextBox textBoxRef;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button nv;
         private System.Windows.Forms.DateTimePicker dateTimePickerEau;
+        private System.Windows.Forms.Button enregister;
+        private System.Windows.Forms.ComboBox comboBoxEtat;
     }
 }
