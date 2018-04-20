@@ -32,10 +32,9 @@
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dateTimePickerEtat = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerElec = new System.Windows.Forms.DateTimePicker();
             this.comboBoxType = new System.Windows.Forms.ComboBox();
             this.textBoxTeli = new System.Windows.Forms.TextBox();
-            this.textBoxDate = new System.Windows.Forms.TextBox();
             this.textBoxNcompteur = new System.Windows.Forms.TextBox();
             this.textBoxAdresse = new System.Windows.Forms.TextBox();
             this.textBoxAnnee = new System.Windows.Forms.TextBox();
@@ -51,10 +50,10 @@
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.New = new System.Windows.Forms.Button();
             this.dellete = new System.Windows.Forms.Button();
             this.edit = new System.Windows.Forms.Button();
             this.add = new System.Windows.Forms.Button();
+            this.comboBoxEtat = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -88,10 +87,10 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.dateTimePickerEtat);
+            this.groupBox1.Controls.Add(this.dateTimePickerElec);
+            this.groupBox1.Controls.Add(this.comboBoxEtat);
             this.groupBox1.Controls.Add(this.comboBoxType);
             this.groupBox1.Controls.Add(this.textBoxTeli);
-            this.groupBox1.Controls.Add(this.textBoxDate);
             this.groupBox1.Controls.Add(this.textBoxNcompteur);
             this.groupBox1.Controls.Add(this.textBoxAdresse);
             this.groupBox1.Controls.Add(this.textBoxAnnee);
@@ -114,12 +113,12 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Eléctricité";
             // 
-            // dateTimePickerEtat
+            // dateTimePickerElec
             // 
-            this.dateTimePickerEtat.Location = new System.Drawing.Point(143, 205);
-            this.dateTimePickerEtat.Name = "dateTimePickerEtat";
-            this.dateTimePickerEtat.Size = new System.Drawing.Size(161, 20);
-            this.dateTimePickerEtat.TabIndex = 47;
+            this.dateTimePickerElec.Location = new System.Drawing.Point(143, 236);
+            this.dateTimePickerElec.Name = "dateTimePickerElec";
+            this.dateTimePickerElec.Size = new System.Drawing.Size(161, 20);
+            this.dateTimePickerElec.TabIndex = 47;
             // 
             // comboBoxType
             // 
@@ -135,13 +134,6 @@
             this.textBoxTeli.Name = "textBoxTeli";
             this.textBoxTeli.Size = new System.Drawing.Size(161, 20);
             this.textBoxTeli.TabIndex = 39;
-            // 
-            // textBoxDate
-            // 
-            this.textBoxDate.Location = new System.Drawing.Point(143, 236);
-            this.textBoxDate.Name = "textBoxDate";
-            this.textBoxDate.Size = new System.Drawing.Size(161, 20);
-            this.textBoxDate.TabIndex = 40;
             // 
             // textBoxNcompteur
             // 
@@ -270,51 +262,52 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.New);
             this.groupBox2.Controls.Add(this.dellete);
             this.groupBox2.Controls.Add(this.edit);
             this.groupBox2.Controls.Add(this.add);
             this.groupBox2.Location = new System.Drawing.Point(12, 410);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(387, 69);
+            this.groupBox2.Size = new System.Drawing.Size(350, 69);
             this.groupBox2.TabIndex = 27;
             this.groupBox2.TabStop = false;
             // 
-            // New
-            // 
-            this.New.Location = new System.Drawing.Point(7, 18);
-            this.New.Name = "New";
-            this.New.Size = new System.Drawing.Size(75, 37);
-            this.New.TabIndex = 7;
-            this.New.Text = "Nouveau";
-            this.New.UseVisualStyleBackColor = true;
-            // 
             // dellete
             // 
-            this.dellete.Location = new System.Drawing.Point(304, 18);
+            this.dellete.Location = new System.Drawing.Point(232, 17);
             this.dellete.Name = "dellete";
             this.dellete.Size = new System.Drawing.Size(75, 37);
             this.dellete.TabIndex = 4;
             this.dellete.Text = "Supprimer";
             this.dellete.UseVisualStyleBackColor = true;
+            this.dellete.Click += new System.EventHandler(this.dellete_Click);
             // 
             // edit
             // 
-            this.edit.Location = new System.Drawing.Point(205, 18);
+            this.edit.Location = new System.Drawing.Point(133, 17);
             this.edit.Name = "edit";
             this.edit.Size = new System.Drawing.Size(75, 37);
             this.edit.TabIndex = 5;
             this.edit.Text = "Modifier";
             this.edit.UseVisualStyleBackColor = true;
+            this.edit.Click += new System.EventHandler(this.edit_Click);
             // 
             // add
             // 
-            this.add.Location = new System.Drawing.Point(106, 18);
+            this.add.Location = new System.Drawing.Point(34, 17);
             this.add.Name = "add";
             this.add.Size = new System.Drawing.Size(75, 37);
             this.add.TabIndex = 6;
             this.add.Text = "Ajouter";
             this.add.UseVisualStyleBackColor = true;
+            this.add.Click += new System.EventHandler(this.add_Click);
+            // 
+            // comboBoxEtat
+            // 
+            this.comboBoxEtat.FormattingEnabled = true;
+            this.comboBoxEtat.Location = new System.Drawing.Point(143, 204);
+            this.comboBoxEtat.Name = "comboBoxEtat";
+            this.comboBoxEtat.Size = new System.Drawing.Size(161, 21);
+            this.comboBoxEtat.TabIndex = 46;
             // 
             // FormElec
             // 
@@ -329,6 +322,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "FormElec";
             this.Text = "FormElec";
+            this.Load += new System.EventHandler(this.FormElec_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -346,7 +340,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox comboBoxType;
         private System.Windows.Forms.TextBox textBoxTeli;
-        private System.Windows.Forms.TextBox textBoxDate;
         private System.Windows.Forms.TextBox textBoxNcompteur;
         private System.Windows.Forms.TextBox textBoxAdresse;
         private System.Windows.Forms.TextBox textBoxAnnee;
@@ -361,11 +354,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.DateTimePicker dateTimePickerEtat;
+        private System.Windows.Forms.DateTimePicker dateTimePickerElec;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button New;
         private System.Windows.Forms.Button dellete;
         private System.Windows.Forms.Button edit;
         private System.Windows.Forms.Button add;
+        private System.Windows.Forms.ComboBox comboBoxEtat;
     }
 }

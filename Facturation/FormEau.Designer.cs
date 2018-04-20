@@ -36,6 +36,7 @@
             this.add = new System.Windows.Forms.Button();
             this.dataGridViewEau = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBoxEtat = new System.Windows.Forms.ComboBox();
             this.dateTimePickerEau = new System.Windows.Forms.DateTimePicker();
             this.comboBoxType = new System.Windows.Forms.ComboBox();
             this.textBoxTel = new System.Windows.Forms.TextBox();
@@ -54,7 +55,6 @@
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.enregister = new System.Windows.Forms.Button();
-            this.comboBoxEtat = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEau)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -68,6 +68,7 @@
             this.Search.TabIndex = 21;
             this.Search.Text = "Rechercher";
             this.Search.UseVisualStyleBackColor = true;
+            this.Search.Click += new System.EventHandler(this.Search_Click);
             // 
             // textBoxRech
             // 
@@ -154,6 +155,14 @@
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Eau";
+            // 
+            // comboBoxEtat
+            // 
+            this.comboBoxEtat.FormattingEnabled = true;
+            this.comboBoxEtat.Location = new System.Drawing.Point(142, 205);
+            this.comboBoxEtat.Name = "comboBoxEtat";
+            this.comboBoxEtat.Size = new System.Drawing.Size(162, 21);
+            this.comboBoxEtat.TabIndex = 48;
             // 
             // dateTimePickerEau
             // 
@@ -311,14 +320,6 @@
             this.enregister.Text = "Enregistrer";
             this.enregister.UseVisualStyleBackColor = true;
             this.enregister.Click += new System.EventHandler(this.enregister_Click);
-            // 
-            // comboBoxEtat
-            // 
-            this.comboBoxEtat.FormattingEnabled = true;
-            this.comboBoxEtat.Location = new System.Drawing.Point(142, 205);
-            this.comboBoxEtat.Name = "comboBoxEtat";
-            this.comboBoxEtat.Size = new System.Drawing.Size(162, 21);
-            this.comboBoxEtat.TabIndex = 48;
             // 
             // FormEau
             // 
