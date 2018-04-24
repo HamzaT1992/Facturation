@@ -10,8 +10,12 @@ namespace Facturation
 {
     class RelveeEau
     {
-         [Key, Column(Order = 1)]
+        [Key, Column(Order = 1)]
         public Eau eau { get; set; }
+        [Key, Column(Order = 2)]
+        public DateTime Annee { get; set; }
+        [Key, Column(Order = 3)]
+        public int trimestre { get; set; }
         public int nIndex { get; set; }
         public int pIndex { get; set; }
         public double nPayer { get; set; }
