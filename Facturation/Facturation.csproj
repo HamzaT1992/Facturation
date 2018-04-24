@@ -114,6 +114,8 @@
     <Compile Include="FormRelveeTele.Designer.cs">
       <DependentUpon>FormRelveeTele.cs</DependentUpon>
     </Compile>
+    <Compile Include="RelveeEau.cs" />
+    <Compile Include="RelveeElec.cs" />
     <Compile Include="Telecommunication.cs" />
     <Compile Include="TypeEau.cs" />
     <Compile Include="TypeElectricite.cs" />

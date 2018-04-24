@@ -33,22 +33,28 @@ namespace Facturation
         // Ajouter Nouvel Eau
         private void add_Click(object sender, EventArgs e)
         {
-            using (var db = new FacturationEntities())
-            {
-                db.Eaus.Add(new Eau
+
+            
+                using (var db = new FacturationEntities())
                 {
-                    NPolice = int.Parse(textBoxPolice.Text),
-                    Etat = db.Etats.Single(et => et.id == (int)comboBoxEtat.SelectedValue),
-                    TypeEau = db.TypeEaus.Single(te => te.id == (int)comboBoxType.SelectedValue),
-                    NCompteur = int.Parse(textBoxNCompt.Text),
-                    Tel = textBoxTel.Text,
-                    Date = dateTimePickerEau.Value,
-                    Reference = textBoxRef.Text,
-                    Adresse = textBoxAdresse.Text,
-                    Annee = short.Parse(textBoxAnnee.Text)
-                });
-                db.SaveChanges();
+                    db.Eaus.Add(new Eau
+                    {
+                        NPolice = int.Parse(textBoxPolice.Text),
+                        Etat = db.Etats.Single(et => et.id == (int)comboBoxEtat.SelectedValue),
+                        TypeEau = db.TypeEaus.Single(te => te.id == (int)comboBoxType.SelectedValue),
+                        NCompteur = int.Parse(textBoxNCompt.Text),
+                        Tel = textBoxTel.Text,
+                        Date = dateTimePickerEau.Value,
+                        Reference = textBoxRef.Text,
+                        Adresse = textBoxAdresse.Text,
+                        Annee = short.Parse(textBoxAnnee.Text)
+                    });
+                    db.SaveChanges();
+                  
+                
             }
+       
+           
         }
 
         // Modifier un Eau
