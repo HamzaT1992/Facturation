@@ -42,5 +42,18 @@ namespace Facturation
         {
 
         }
+
+        private void textBoxPrevIndex_TextChanged(object sender, EventArgs e)
+        {
+            textBoxConsommation.Text = (Convert.ToInt32(textBoxNewIndex.Text) - Convert.ToInt32(textBoxPrevIndex.Text)).ToString();
+        }
+
+        private void textBoxConsommation_TextChanged(object sender, EventArgs e)
+        {
+            const double tvaelec = 0.07, firstconst = 1.18930, redevencefix = 401.13;
+            var consom = Convert.ToInt32(textBoxNewIndex.Text) - Convert.ToInt32(textBoxPrevIndex.Text);
+            var np = consom * firstconst + consom * firstconst * tvaelec + redevencefix + redevencefix * tvaelec;
+            textBoxNetPayer.Text = np.ToString();
+        }
     }
 }

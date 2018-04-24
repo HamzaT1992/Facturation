@@ -242,6 +242,7 @@
             this.textBoxPrevIndex.Name = "textBoxPrevIndex";
             this.textBoxPrevIndex.Size = new System.Drawing.Size(164, 20);
             this.textBoxPrevIndex.TabIndex = 50;
+            this.textBoxPrevIndex.TextChanged += new System.EventHandler(this.textBoxPrevIndex_TextChanged);
             // 
             // textBoxConsommation
             // 
@@ -249,6 +250,7 @@
             this.textBoxConsommation.Name = "textBoxConsommation";
             this.textBoxConsommation.Size = new System.Drawing.Size(164, 20);
             this.textBoxConsommation.TabIndex = 49;
+            this.textBoxConsommation.TextChanged += new System.EventHandler(this.textBoxConsommation_TextChanged);
             // 
             // textBoxMotif
             // 
@@ -368,7 +370,7 @@
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
-            // ReleveElec
+            // FormReleveElec
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -397,7 +399,7 @@
             this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.label30);
             this.Controls.Add(this.groupBox1);
-            this.Name = "ReleveElec";
+            this.Name = "FormReleveElec";
             this.Text = "ReleveEauOuElec";
             this.Load += new System.EventHandler(this.ReleveElec_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
