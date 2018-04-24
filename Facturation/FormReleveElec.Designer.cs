@@ -1,6 +1,6 @@
 ﻿namespace Facturation
 {
-    partial class ReleveEauOuElec
+    partial class FormReleveElec
     {
         /// <summary>
         /// Required designer variable.
@@ -52,16 +52,19 @@
             this.textBoxMotif = new System.Windows.Forms.TextBox();
             this.annuler = new System.Windows.Forms.Button();
             this.confirm = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Npolice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adresse = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rapport = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelTitle = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IndexNew = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IndexPrec = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxNCompt
@@ -191,7 +194,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(26, 325);
+            this.label6.Location = new System.Drawing.Point(14, 266);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(82, 13);
             this.label6.TabIndex = 47;
@@ -201,7 +204,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(26, 354);
+            this.label7.Location = new System.Drawing.Point(14, 295);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(69, 13);
             this.label7.TabIndex = 47;
@@ -212,7 +215,7 @@
             this.label8.AutoSize = true;
             this.label8.Enabled = false;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(81, 439);
+            this.label8.Location = new System.Drawing.Point(81, 460);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(36, 13);
             this.label8.TabIndex = 47;
@@ -228,7 +231,7 @@
             // 
             // textBoxNetPayer
             // 
-            this.textBoxNetPayer.Location = new System.Drawing.Point(147, 347);
+            this.textBoxNetPayer.Location = new System.Drawing.Point(135, 291);
             this.textBoxNetPayer.Name = "textBoxNetPayer";
             this.textBoxNetPayer.Size = new System.Drawing.Size(164, 20);
             this.textBoxNetPayer.TabIndex = 51;
@@ -242,7 +245,7 @@
             // 
             // textBoxConsommation
             // 
-            this.textBoxConsommation.Location = new System.Drawing.Point(147, 319);
+            this.textBoxConsommation.Location = new System.Drawing.Point(135, 263);
             this.textBoxConsommation.Name = "textBoxConsommation";
             this.textBoxConsommation.Size = new System.Drawing.Size(164, 20);
             this.textBoxConsommation.TabIndex = 49;
@@ -250,7 +253,7 @@
             // textBoxMotif
             // 
             this.textBoxMotif.Enabled = false;
-            this.textBoxMotif.Location = new System.Drawing.Point(147, 436);
+            this.textBoxMotif.Location = new System.Drawing.Point(147, 457);
             this.textBoxMotif.Name = "textBoxMotif";
             this.textBoxMotif.Size = new System.Drawing.Size(164, 20);
             this.textBoxMotif.TabIndex = 51;
@@ -258,7 +261,7 @@
             // 
             // annuler
             // 
-            this.annuler.Location = new System.Drawing.Point(236, 488);
+            this.annuler.Location = new System.Drawing.Point(236, 509);
             this.annuler.Name = "annuler";
             this.annuler.Size = new System.Drawing.Size(75, 25);
             this.annuler.TabIndex = 56;
@@ -267,53 +270,12 @@
             // 
             // confirm
             // 
-            this.confirm.Location = new System.Drawing.Point(147, 488);
+            this.confirm.Location = new System.Drawing.Point(147, 509);
             this.confirm.Name = "confirm";
             this.confirm.Size = new System.Drawing.Size(75, 25);
             this.confirm.TabIndex = 56;
             this.confirm.Text = "Confirmer";
             this.confirm.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Npolice,
-            this.adresse,
-            this.Column1,
-            this.rapport});
-            this.dataGridView1.Location = new System.Drawing.Point(365, 83);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(442, 428);
-            this.dataGridView1.TabIndex = 58;
-            // 
-            // Npolice
-            // 
-            this.Npolice.HeaderText = "N° Police";
-            this.Npolice.Name = "Npolice";
-            this.Npolice.ReadOnly = true;
-            // 
-            // adresse
-            // 
-            this.adresse.HeaderText = "Adresse";
-            this.adresse.Name = "adresse";
-            this.adresse.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "netPayer";
-            this.Column1.HeaderText = "Net à Payer";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // rapport
-            // 
-            this.rapport.HeaderText = "Rapport";
-            this.rapport.Name = "rapport";
-            this.rapport.ReadOnly = true;
             // 
             // labelTitle
             // 
@@ -321,15 +283,15 @@
             this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitle.Location = new System.Drawing.Point(308, 25);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(109, 24);
+            this.labelTitle.Size = new System.Drawing.Size(188, 24);
             this.labelTitle.TabIndex = 48;
-            this.labelTitle.Text = "Relevé de l\'";
+            this.labelTitle.Text = "Relevé de l\'éléctricité";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::Facturation.Properties.Resources.go;
-            this.pictureBox1.Location = new System.Drawing.Point(281, 400);
+            this.pictureBox1.Location = new System.Drawing.Point(281, 421);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(30, 30);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -339,34 +301,90 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.textBoxNetPayer);
+            this.groupBox1.Controls.Add(this.textBoxConsommation);
             this.groupBox1.Location = new System.Drawing.Point(12, 65);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(312, 329);
+            this.groupBox1.Size = new System.Drawing.Size(312, 350);
             this.groupBox1.TabIndex = 60;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Les Données";
             // 
-            // ReleveEauOuElec
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.IndexNew,
+            this.IndexPrec,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            this.dataGridView2.Location = new System.Drawing.Point(411, 65);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.Size = new System.Drawing.Size(631, 428);
+            this.dataGridView2.TabIndex = 61;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "N° Police";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Adresse";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // IndexNew
+            // 
+            this.IndexNew.HeaderText = "Nouveau Index";
+            this.IndexNew.Name = "IndexNew";
+            this.IndexNew.ReadOnly = true;
+            // 
+            // IndexPrec
+            // 
+            this.IndexPrec.HeaderText = "Index Précédent";
+            this.IndexPrec.Name = "IndexPrec";
+            this.IndexPrec.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "netPayer";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Net à Payer";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Rapport";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // ReleveElec
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(843, 570);
+            this.ClientSize = new System.Drawing.Size(1054, 611);
+            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.confirm);
             this.Controls.Add(this.annuler);
             this.Controls.Add(this.dateTimePickerDate);
             this.Controls.Add(this.comboBoxTrimestre);
-            this.Controls.Add(this.textBoxConsommation);
             this.Controls.Add(this.textBoxNCompt);
             this.Controls.Add(this.textBoxPrevIndex);
             this.Controls.Add(this.textBoxAdress);
             this.Controls.Add(this.textBoxMotif);
-            this.Controls.Add(this.textBoxNetPayer);
             this.Controls.Add(this.textBoxAnnee);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -379,11 +397,13 @@
             this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.label30);
             this.Controls.Add(this.groupBox1);
-            this.Name = "ReleveEauOuElec";
+            this.Name = "ReleveElec";
             this.Text = "ReleveEauOuElec";
-            this.Load += new System.EventHandler(this.ReleveEauOuElec_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.ReleveElec_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -415,13 +435,15 @@
         private System.Windows.Forms.TextBox textBoxMotif;
         private System.Windows.Forms.Button annuler;
         private System.Windows.Forms.Button confirm;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Npolice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn adresse;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rapport;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IndexNew;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IndexPrec;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     }
 }

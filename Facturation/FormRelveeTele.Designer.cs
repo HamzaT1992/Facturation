@@ -1,6 +1,6 @@
 ﻿namespace Facturation
 {
-    partial class RelveeTele
+    partial class FormRelveeTele
     {
         /// <summary>
         /// Required designer variable.

@@ -16,5 +16,6 @@ namespace Facturation
         [MaxLength (20)]
         public string MD { get; set; }
         public int Forfait { get; set; }
+        public double Montant { get; set; }
     }
 }

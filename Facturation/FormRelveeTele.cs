@@ -1,35 +1,38 @@
-﻿using System;
+﻿using Facturation.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Facturation.Properties;
 
 namespace Facturation
 {
-    public partial class ReleveEauOuElec : Form
+    public partial class FormRelveeTele : Form
     {
-        public Label LabelTitle {
+        public Label LabelTitle
+        {
             get { return labelTitle; }
             set { labelTitle = value; }
         }
-        private bool imageCheck = true;
-        public ReleveEauOuElec()
+        public bool imageCheck { get; set; }
+        public FormRelveeTele()
         {
             InitializeComponent();
         }
-        private void ReleveEauOuElec_Load(object sender, EventArgs e)
-        {
 
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void RelveeTele_Load(object sender, EventArgs e)
         {
-            
+            var frCult = new CultureInfo("fr");
+            foreach (var m in frCult.DateTimeFormat.MonthNames.Take(12))
+            {
+                string month = m.ToString();
+                comboBoxMois.Items.Add(month.First().ToString().ToUpper() + month.Substring(1));
+            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -45,5 +48,7 @@ namespace Facturation
                 label8.Enabled = label8.Visible = textBoxMotif.Enabled = textBoxMotif.Visible = imageCheck = true;
             }
         }
+
+     
     }
 }

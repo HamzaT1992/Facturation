@@ -53,33 +53,19 @@ namespace Facturation
         {
             lancerForm(new FormElec());
         }
-        private void lancerReleve(string titre,ReleveEauOuElec rel)
-        {
-            if (ActiveForm != null)
-            {
-                if (ActiveForm.GetType() == typeof(ReleveEauOuElec) && rel.LabelTitle.Text == titre)
-                    return;
-                ActiveForm = null;
-                rel.LabelTitle.Text = titre;
-                createNewForm(rel);
-            }
-            else
-            {
-                rel.LabelTitle.Text = titre;
-                createNewForm(rel);
-            }         
-        }
         private void relevéToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            lancerReleve("Relevé de l'Eau", new ReleveEauOuElec());
+            // lancerReleve("Relevé de l'Eau", new ReleveEau());
+            lancerForm(new FormReleveEau());
         }
         private void releveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            lancerReleve("Relevé de l'Electricité", new ReleveEauOuElec());
+            //  lancerReleve("Relevé de l'Electricité", new ReleveEau());
+            lancerForm(new FormReleveElec());
         }
         private void relevéToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            lancerForm(new RelveeTele());
+            lancerForm(new FormRelveeTele());
         }
         private void paiementToolStripMenuItem1_Click(object sender, EventArgs e)
         {
