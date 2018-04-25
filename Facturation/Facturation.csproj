@@ -94,17 +94,9 @@
     <Compile Include="MDIParent.Designer.cs">
       <DependentUpon>MDIParent.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201804200937263_InitialCreate.cs" />
-    <Compile Include="Migrations\201804200937263_InitialCreate.Designer.cs">
-      <DependentUpon>201804200937263_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804251037413_addtablesRel.cs" />
-    <Compile Include="Migrations\201804251037413_addtablesRel.Designer.cs">
-      <DependentUpon>201804251037413_addtablesRel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804251050052_addtablesRel1.cs" />
-    <Compile Include="Migrations\201804251050052_addtablesRel1.Designer.cs">
-      <DependentUpon>201804251050052_addtablesRel1.cs</DependentUpon>
+    <Compile Include="Migrations\201804251114501_init.cs" />
+    <Compile Include="Migrations\201804251114501_init.Designer.cs">
+      <DependentUpon>201804251114501_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -151,14 +143,8 @@
     <EmbeddedResource Include="MDIParent.resx">
       <DependentUpon>MDIParent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804200937263_InitialCreate.resx">
-      <DependentUpon>201804200937263_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804251037413_addtablesRel.resx">
-      <DependentUpon>201804251037413_addtablesRel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804251050052_addtablesRel1.resx">
-      <DependentUpon>201804251050052_addtablesRel1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201804251114501_init.resx">
+      <DependentUpon>201804251114501_init.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -24,7 +24,14 @@ namespace Facturation
         }
         private void ReleveEauOuElec_Load(object sender, EventArgs e)
         {
-
+            using (var db = new FacturationEntities())
+            {
+                comboBoxNpolice.DataSource = db.Eaus.ToList();
+                comboBoxNpolice.DisplayMember = "NPolice";
+                comboBoxNpolice.ValueMember = "NPolice";
+            }
+            for (int i = 1; i <= 4; i++)
+                comboBoxTrimestre.Items.Add(i);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -39,11 +46,6 @@ namespace Facturation
                 pictureBox1.Image = Resources.stop;
                 label8.Enabled = label8.Visible = textBoxMotif.Enabled = textBoxMotif.Visible = imageCheck = true;
             }
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void textBoxPrevIndex_TextChanged(object sender, EventArgs e)
@@ -61,10 +63,14 @@ namespace Facturation
             {
                 if (MessageBox.Show("Voulez vous vraiment confirmer!", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                 {
-                    dataGridView1.Rows.Add(textBoxPolice.Text, textBoxAdress.Text, textBoxNewIndex.Text, textBoxPrevIndex.Text, textBoxConsommation.Text, textBoxNetPayer.Text);
+                    foreach (var controle in Controls)
+                    {
+                        //controle.GetType() == 
+                    }
+                    dataGridView1.Rows.Add(comboBoxNpolice.Text, textBoxAdress.Text, textBoxNewIndex.Text, textBoxPrevIndex.Text, textBoxConsommation.Text, textBoxNetPayer.Text);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Veuillez remplir tous les champs!", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
@@ -73,13 +79,13 @@ namespace Facturation
 
         private void textBoxConsommation_TextChanged(object sender, EventArgs e)
         {
-            if (textBoxTC.Text != "")
+            if (textBoxNewIndex.Text != "")
             {
                 const double tvae = 0.07, firstconst = 7.58, secondconst = 30, redevencefix = 19.98;
                 var consom = Convert.ToInt32(textBoxNewIndex.Text) - Convert.ToInt32(textBoxPrevIndex.Text);
-                var np = consom * firstconst + consom * firstconst * tvae + secondconst + secondconst * tvae + consom * 4 + consom * 4 * tvae + redevencefix + redevencefix * tvae;
+                //var np = consom * firstconst + consom * firstconst * tvae + secondconst + secondconst * tvae + consom * 4 + consom * 4 * tvae + redevencefix + redevencefix * tvae;
+                var np = consom == 0 ? 53.48 : consom * ((firstconst + 4) * (1 + tvae)) + (secondconst + redevencefix) * (1 + tvae);
                 textBoxNetPayer.Text = np.ToString();
-
             }
         }
 

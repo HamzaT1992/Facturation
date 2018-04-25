@@ -31,7 +31,6 @@
             this.textBoxNCompt = new System.Windows.Forms.TextBox();
             this.textBoxAdress = new System.Windows.Forms.TextBox();
             this.textBoxAnnee = new System.Windows.Forms.TextBox();
-            this.textBoxPolice = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
@@ -62,9 +61,8 @@
             this.rapport = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelTitle = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBoxTC = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.comboBoxNpolice = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -90,14 +88,6 @@
             this.textBoxAnnee.Name = "textBoxAnnee";
             this.textBoxAnnee.Size = new System.Drawing.Size(164, 20);
             this.textBoxAnnee.TabIndex = 51;
-            // 
-            // textBoxPolice
-            // 
-            this.textBoxPolice.Location = new System.Drawing.Point(147, 94);
-            this.textBoxPolice.Name = "textBoxPolice";
-            this.textBoxPolice.Size = new System.Drawing.Size(164, 20);
-            this.textBoxPolice.TabIndex = 52;
-            this.textBoxPolice.TextChanged += new System.EventHandler(this.textBoxPolice_TextChanged);
             // 
             // label2
             // 
@@ -198,7 +188,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(26, 356);
+            this.label6.Location = new System.Drawing.Point(27, 327);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(82, 13);
             this.label6.TabIndex = 47;
@@ -208,7 +198,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(26, 385);
+            this.label7.Location = new System.Drawing.Point(27, 356);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(69, 13);
             this.label7.TabIndex = 47;
@@ -235,7 +225,7 @@
             // 
             // textBoxNetPayer
             // 
-            this.textBoxNetPayer.Location = new System.Drawing.Point(147, 378);
+            this.textBoxNetPayer.Location = new System.Drawing.Point(147, 352);
             this.textBoxNetPayer.Name = "textBoxNetPayer";
             this.textBoxNetPayer.Size = new System.Drawing.Size(164, 20);
             this.textBoxNetPayer.TabIndex = 51;
@@ -250,7 +240,7 @@
             // 
             // textBoxConsommation
             // 
-            this.textBoxConsommation.Location = new System.Drawing.Point(147, 350);
+            this.textBoxConsommation.Location = new System.Drawing.Point(147, 324);
             this.textBoxConsommation.Name = "textBoxConsommation";
             this.textBoxConsommation.Size = new System.Drawing.Size(164, 20);
             this.textBoxConsommation.TabIndex = 49;
@@ -358,33 +348,13 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.textBoxTC);
-            this.groupBox1.Location = new System.Drawing.Point(12, 65);
+            this.groupBox1.Controls.Add(this.comboBoxNpolice);
+            this.groupBox1.Location = new System.Drawing.Point(13, 62);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(312, 351);
             this.groupBox1.TabIndex = 60;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Les Données";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(14, 259);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(27, 13);
-            this.label9.TabIndex = 64;
-            this.label9.Text = "TC :";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
-            // 
-            // textBoxTC
-            // 
-            this.textBoxTC.Location = new System.Drawing.Point(135, 256);
-            this.textBoxTC.Name = "textBoxTC";
-            this.textBoxTC.Size = new System.Drawing.Size(164, 20);
-            this.textBoxTC.TabIndex = 65;
-            this.textBoxTC.Text = "1";
             // 
             // pictureBox1
             // 
@@ -397,6 +367,14 @@
             this.pictureBox1.TabIndex = 59;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // comboBoxNpolice
+            // 
+            this.comboBoxNpolice.FormattingEnabled = true;
+            this.comboBoxNpolice.Location = new System.Drawing.Point(135, 28);
+            this.comboBoxNpolice.Name = "comboBoxNpolice";
+            this.comboBoxNpolice.Size = new System.Drawing.Size(164, 21);
+            this.comboBoxNpolice.TabIndex = 53;
             // 
             // FormReleveEau
             // 
@@ -424,7 +402,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBoxNewIndex);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBoxPolice);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label29);
@@ -436,7 +413,6 @@
             this.Load += new System.EventHandler(this.ReleveEauOuElec_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -448,7 +424,6 @@
         private System.Windows.Forms.TextBox textBoxNCompt;
         private System.Windows.Forms.TextBox textBoxAdress;
         private System.Windows.Forms.TextBox textBoxAnnee;
-        private System.Windows.Forms.TextBox textBoxPolice;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label29;
@@ -473,8 +448,6 @@
         private System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBoxTC;
         private System.Windows.Forms.DataGridViewTextBoxColumn Npolice;
         private System.Windows.Forms.DataGridViewTextBoxColumn adresse;
         private System.Windows.Forms.DataGridViewTextBoxColumn IndexNew;
@@ -482,5 +455,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn consommation;
         private System.Windows.Forms.DataGridViewTextBoxColumn netpay;
         private System.Windows.Forms.DataGridViewTextBoxColumn rapport;
+        private System.Windows.Forms.ComboBox comboBoxNpolice;
     }
 }

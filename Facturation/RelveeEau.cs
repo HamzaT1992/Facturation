@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Facturation
 {
-    class RelveeEau
+    public class RelveeEau
     {
         [Key, Column(Order = 1)]
         public Eau eau { get; set; }
