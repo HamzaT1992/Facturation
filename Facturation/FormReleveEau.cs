@@ -26,9 +26,9 @@ namespace Facturation
         {
             using (var db = new FacturationEntities())
             {
-                comboBoxNpolice.DataSource = db.Eaus.ToList();
-                comboBoxNpolice.DisplayMember = "NPolice";
-                comboBoxNpolice.ValueMember = "NPolice";
+                comboBoxNpolice.DataSource = db.Eaus.Select(ea => ea.NPolice).ToList();
+                //comboBoxNpolice.DisplayMember = "NPolice";
+                //comboBoxNpolice.ValueMember = "NPolice";
             }
             for (int i = 1; i <= 4; i++)
                 comboBoxTrimestre.Items.Add(i);
@@ -92,6 +92,19 @@ namespace Facturation
         private void textBoxPolice_TextChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void comboBoxNpolice_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            using (var db = new FacturationEntities())
+            {
+                int npolice = (int)comboBoxNpolice.SelectedValue;
+
+                var eau = db.Eaus.Single(ea => ea.NPolice == npolice);
+                textBoxAdress.Text = eau.Adresse;
+                textBoxNCompt.Text = eau.NCompteur.ToString();
+
+            }
         }
     }
 }
