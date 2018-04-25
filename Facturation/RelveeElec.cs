@@ -11,10 +11,10 @@ namespace Facturation
     class RelveeElec
     {
         [Key, Column(Order = 1)]
-        public Electricite  elec { get; set; }
-         [Key, Column(Order = 2)]
+        public Electricite elec { get; set; }
+        [Key, Column(Order = 2)]
         public DateTime Annee { get; set; }
-         [Key, Column(Order = 3)]
+        [Key, Column(Order = 3)]
         public int trimestre { get; set; }
         public int nIndex { get; set; }
         public int pIndex { get; set; }

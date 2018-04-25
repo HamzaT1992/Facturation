@@ -82,5 +82,10 @@ namespace Facturation
 
             }
         }
+
+        private void textBoxPolice_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

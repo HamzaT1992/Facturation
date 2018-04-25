@@ -42,7 +42,6 @@ namespace Facturation
         {
 
         }
-
         private void textBoxPrevIndex_TextChanged(object sender, EventArgs e)
         {
             textBoxConsommation.Text = (Convert.ToInt32(textBoxNewIndex.Text) - Convert.ToInt32(textBoxPrevIndex.Text)).ToString();

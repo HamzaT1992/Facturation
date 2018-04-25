@@ -53,11 +53,6 @@
             this.annuler = new System.Windows.Forms.Button();
             this.confirm = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.labelTitle = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBoxTC = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Npolice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.adresse = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IndexNew = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,6 +60,11 @@
             this.consommation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.netpay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rapport = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labelTitle = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBoxTC = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -97,6 +97,7 @@
             this.textBoxPolice.Name = "textBoxPolice";
             this.textBoxPolice.Size = new System.Drawing.Size(164, 20);
             this.textBoxPolice.TabIndex = 52;
+            this.textBoxPolice.TextChanged += new System.EventHandler(this.textBoxPolice_TextChanged);
             // 
             // label2
             // 
@@ -302,6 +303,49 @@
             this.dataGridView1.Size = new System.Drawing.Size(631, 428);
             this.dataGridView1.TabIndex = 58;
             // 
+            // Npolice
+            // 
+            this.Npolice.HeaderText = "N° Police";
+            this.Npolice.Name = "Npolice";
+            this.Npolice.ReadOnly = true;
+            // 
+            // adresse
+            // 
+            this.adresse.HeaderText = "Adresse";
+            this.adresse.Name = "adresse";
+            this.adresse.ReadOnly = true;
+            // 
+            // IndexNew
+            // 
+            this.IndexNew.HeaderText = "Nouveau Index";
+            this.IndexNew.Name = "IndexNew";
+            this.IndexNew.ReadOnly = true;
+            // 
+            // IndexPrev
+            // 
+            this.IndexPrev.HeaderText = "Index Précédent";
+            this.IndexPrev.Name = "IndexPrev";
+            this.IndexPrev.ReadOnly = true;
+            // 
+            // consommation
+            // 
+            this.consommation.HeaderText = "Consommation";
+            this.consommation.Name = "consommation";
+            this.consommation.ReadOnly = true;
+            // 
+            // netpay
+            // 
+            this.netpay.DataPropertyName = "netPayer";
+            this.netpay.HeaderText = "Net à Payer";
+            this.netpay.Name = "netpay";
+            this.netpay.ReadOnly = true;
+            // 
+            // rapport
+            // 
+            this.rapport.HeaderText = "Rapport";
+            this.rapport.Name = "rapport";
+            this.rapport.ReadOnly = true;
+            // 
             // labelTitle
             // 
             this.labelTitle.AutoSize = true;
@@ -354,50 +398,7 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // Npolice
-            // 
-            this.Npolice.HeaderText = "N° Police";
-            this.Npolice.Name = "Npolice";
-            this.Npolice.ReadOnly = true;
-            // 
-            // adresse
-            // 
-            this.adresse.HeaderText = "Adresse";
-            this.adresse.Name = "adresse";
-            this.adresse.ReadOnly = true;
-            // 
-            // IndexNew
-            // 
-            this.IndexNew.HeaderText = "Nouveau Index";
-            this.IndexNew.Name = "IndexNew";
-            this.IndexNew.ReadOnly = true;
-            // 
-            // IndexPrev
-            // 
-            this.IndexPrev.HeaderText = "Index Précédent";
-            this.IndexPrev.Name = "IndexPrev";
-            this.IndexPrev.ReadOnly = true;
-            // 
-            // consommation
-            // 
-            this.consommation.HeaderText = "Consommation";
-            this.consommation.Name = "consommation";
-            this.consommation.ReadOnly = true;
-            // 
-            // netpay
-            // 
-            this.netpay.DataPropertyName = "netPayer";
-            this.netpay.HeaderText = "Net à Payer";
-            this.netpay.Name = "netpay";
-            this.netpay.ReadOnly = true;
-            // 
-            // rapport
-            // 
-            this.rapport.HeaderText = "Rapport";
-            this.rapport.Name = "rapport";
-            this.rapport.ReadOnly = true;
-            // 
-            // ReleveEau
+            // FormReleveEau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -430,7 +431,7 @@
             this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.label30);
             this.Controls.Add(this.groupBox1);
-            this.Name = "ReleveEau";
+            this.Name = "FormReleveEau";
             this.Text = "ReleveEauOuElec";
             this.Load += new System.EventHandler(this.ReleveEauOuElec_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
