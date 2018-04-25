@@ -12,12 +12,12 @@ namespace Facturation
         public virtual DbSet<TypeElectricite> TypeElectricites { get; set; }
         public virtual DbSet<TeleCommunication> TeleCommunications { get; set; }
         public virtual DbSet<TypeTelecommunication> TypeTelecommunications { get; set; }
+        public virtual DbSet<RelveeEau> RelveeEaus { get; set; }
+        public virtual DbSet<RelveeElec> RelveeElecs { get; set; }
 
         public virtual DbSet<Etat> Etats { get; set; }
         public FacturationEntities()
-
-        {
-        }
+        {}
     }
 
 }
