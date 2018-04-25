@@ -58,12 +58,6 @@
     <Compile Include="Etat.cs" />
     <Compile Include="FacturationEntities.cs" />
     <Compile Include="Facture.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormEau.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,9 +88,9 @@
     <Compile Include="MDIParent.Designer.cs">
       <DependentUpon>MDIParent.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201804251114501_init.cs" />
-    <Compile Include="Migrations\201804251114501_init.Designer.cs">
-      <DependentUpon>201804251114501_init.cs</DependentUpon>
+    <Compile Include="Migrations\201804251412551_init.cs" />
+    <Compile Include="Migrations\201804251412551_init.Designer.cs">
+      <DependentUpon>201804251412551_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -125,9 +119,6 @@
     <Compile Include="TypeEau.cs" />
     <Compile Include="TypeElectricite.cs" />
     <Compile Include="TypeTelecommunication.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormEau.resx">
       <DependentUpon>FormEau.cs</DependentUpon>
     </EmbeddedResource>
@@ -143,8 +134,8 @@
     <EmbeddedResource Include="MDIParent.resx">
       <DependentUpon>MDIParent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804251114501_init.resx">
-      <DependentUpon>201804251114501_init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201804251412551_init.resx">
+      <DependentUpon>201804251412551_init.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -165,6 +156,10 @@
     <EmbeddedResource Include="FormRelveeTele.resx">
       <DependentUpon>FormRelveeTele.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -175,11 +170,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Img\stop.png" />

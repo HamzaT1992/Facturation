@@ -9,7 +9,7 @@ namespace Facturation.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(Facturation.FacturationEntities context)

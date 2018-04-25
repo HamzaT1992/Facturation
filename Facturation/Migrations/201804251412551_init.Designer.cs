@@ -13,7 +13,7 @@ namespace Facturation.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201804251114501_init"; }
+            get { return "201804251412551_init"; }
         }
         
         string IMigrationMetadata.Source

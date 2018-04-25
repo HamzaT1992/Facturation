@@ -11,14 +11,14 @@ namespace Facturation
     public class RelveeElec
     {
         [Key, Column(Order = 1)]
-        public Electricite elec { get; set; }
+        public int Id { get; set; }
         [Key, Column(Order = 2)]
         public DateTime Annee { get; set; }
         [Key, Column(Order = 3)]
-        public int trimestre { get; set; }
-        public int nIndex { get; set; }
-        public int pIndex { get; set; }
-        public double nPayer { get; set; }
-
+        public int Trimestre { get; set; }
+        public int NIndex { get; set; }
+        public int PIndex { get; set; }
+        public double NPayer { get; set; }
+        public Electricite Elec { get; set; }
     }
 }
