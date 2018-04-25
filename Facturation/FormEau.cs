@@ -33,8 +33,6 @@ namespace Facturation
         // Ajouter Nouvel Eau
         private void add_Click(object sender, EventArgs e)
         {
-
-            
                 using (var db = new FacturationEntities())
                 {
                     db.Eaus.Add(new Eau
@@ -49,12 +47,8 @@ namespace Facturation
                         Adresse = textBoxAdresse.Text,
                         Annee = short.Parse(textBoxAnnee.Text)
                     });
-                    db.SaveChanges();
-                  
-                
-            }
-       
-           
+                    db.SaveChanges();   
+            } 
         }
 
         // Modifier un Eau
