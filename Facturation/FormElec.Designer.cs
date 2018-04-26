@@ -54,18 +54,26 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxRechNpo = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxRechRef = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.textBoxRechNcomp = new System.Windows.Forms.TextBox();
+            this.textBoxRechAdress = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.Search = new System.Windows.Forms.Button();
-            this.dataGridViewEau = new System.Windows.Forms.DataGridView();
+            this.dataGridViewElec = new System.Windows.Forms.DataGridView();
+            this.npolice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Reference = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Annee = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adrsse = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nCompteur = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.etat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEau)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewElec)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -297,12 +305,12 @@
             // 
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.textBoxRechNpo);
-            this.groupBox3.Controls.Add(this.textBox1);
+            this.groupBox3.Controls.Add(this.textBoxRechRef);
             this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Controls.Add(this.textBox3);
-            this.groupBox3.Controls.Add(this.textBox2);
-            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Controls.Add(this.textBoxRechNcomp);
+            this.groupBox3.Controls.Add(this.textBoxRechAdress);
             this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Location = new System.Drawing.Point(368, 20);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(502, 100);
@@ -327,12 +335,12 @@
             this.textBoxRechNpo.Size = new System.Drawing.Size(143, 20);
             this.textBoxRechNpo.TabIndex = 20;
             // 
-            // textBox1
+            // textBoxRechRef
             // 
-            this.textBox1.Location = new System.Drawing.Point(71, 55);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(145, 20);
-            this.textBox1.TabIndex = 44;
+            this.textBoxRechRef.Location = new System.Drawing.Point(71, 55);
+            this.textBoxRechRef.Name = "textBoxRechRef";
+            this.textBoxRechRef.Size = new System.Drawing.Size(145, 20);
+            this.textBoxRechRef.TabIndex = 44;
             // 
             // label4
             // 
@@ -344,39 +352,39 @@
             this.label4.TabIndex = 38;
             this.label4.Text = "Reference :";
             // 
-            // textBox3
+            // textBoxRechNcomp
             // 
-            this.textBox3.Location = new System.Drawing.Point(299, 54);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(163, 20);
-            this.textBox3.TabIndex = 42;
+            this.textBoxRechNcomp.Location = new System.Drawing.Point(303, 19);
+            this.textBoxRechNcomp.Name = "textBoxRechNcomp";
+            this.textBoxRechNcomp.Size = new System.Drawing.Size(163, 20);
+            this.textBoxRechNcomp.TabIndex = 42;
             // 
-            // textBox2
+            // textBoxRechAdress
             // 
-            this.textBox2.Location = new System.Drawing.Point(299, 19);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(163, 20);
-            this.textBox2.TabIndex = 43;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(228, 23);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 13);
-            this.label5.TabIndex = 37;
-            this.label5.Text = "Adresse :";
+            this.textBoxRechAdress.Location = new System.Drawing.Point(303, 52);
+            this.textBoxRechAdress.Name = "textBoxRechAdress";
+            this.textBoxRechAdress.Size = new System.Drawing.Size(163, 20);
+            this.textBoxRechAdress.TabIndex = 43;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(228, 55);
+            this.label6.Location = new System.Drawing.Point(232, 20);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(71, 13);
             this.label6.TabIndex = 36;
             this.label6.Text = "n° Compteur :";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(232, 56);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(51, 13);
+            this.label5.TabIndex = 37;
+            this.label5.Text = "Adresse :";
             // 
             // Search
             // 
@@ -386,15 +394,66 @@
             this.Search.TabIndex = 29;
             this.Search.Text = "Rechercher";
             this.Search.UseVisualStyleBackColor = true;
+            this.Search.Click += new System.EventHandler(this.Search_Click);
             // 
-            // dataGridViewEau
+            // dataGridViewElec
             // 
-            this.dataGridViewEau.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridViewEau.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewEau.Location = new System.Drawing.Point(368, 138);
-            this.dataGridViewEau.Name = "dataGridViewEau";
-            this.dataGridViewEau.Size = new System.Drawing.Size(606, 341);
-            this.dataGridViewEau.TabIndex = 28;
+            this.dataGridViewElec.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewElec.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewElec.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.npolice,
+            this.Reference,
+            this.Annee,
+            this.adrsse,
+            this.nCompteur,
+            this.etat,
+            this.date,
+            this.Tel});
+            this.dataGridViewElec.Location = new System.Drawing.Point(368, 138);
+            this.dataGridViewElec.Name = "dataGridViewElec";
+            this.dataGridViewElec.Size = new System.Drawing.Size(606, 341);
+            this.dataGridViewElec.TabIndex = 28;
+            this.dataGridViewElec.SelectionChanged += new System.EventHandler(this.dataGridViewElec_SelectionChanged);
+            // 
+            // npolice
+            // 
+            this.npolice.HeaderText = "n° Police";
+            this.npolice.Name = "npolice";
+            // 
+            // Reference
+            // 
+            this.Reference.HeaderText = "Reference";
+            this.Reference.Name = "Reference";
+            // 
+            // Annee
+            // 
+            this.Annee.HeaderText = "Année";
+            this.Annee.Name = "Annee";
+            // 
+            // adrsse
+            // 
+            this.adrsse.HeaderText = "Adresse";
+            this.adrsse.Name = "adrsse";
+            // 
+            // nCompteur
+            // 
+            this.nCompteur.HeaderText = "n°Compteur";
+            this.nCompteur.Name = "nCompteur";
+            // 
+            // etat
+            // 
+            this.etat.HeaderText = "Etat";
+            this.etat.Name = "etat";
+            // 
+            // date
+            // 
+            this.date.HeaderText = "Date";
+            this.date.Name = "date";
+            // 
+            // Tel
+            // 
+            this.Tel.HeaderText = "Type";
+            this.Tel.Name = "Tel";
             // 
             // FormElec
             // 
@@ -404,7 +463,7 @@
             this.ClientSize = new System.Drawing.Size(989, 502);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.Search);
-            this.Controls.Add(this.dataGridViewEau);
+            this.Controls.Add(this.dataGridViewElec);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormElec";
@@ -415,7 +474,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEau)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewElec)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -447,13 +506,21 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxRechNpo;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxRechRef;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxRechNcomp;
+        private System.Windows.Forms.TextBox textBoxRechAdress;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button Search;
-        private System.Windows.Forms.DataGridView dataGridViewEau;
+        private System.Windows.Forms.DataGridView dataGridViewElec;
+        private System.Windows.Forms.DataGridViewTextBoxColumn npolice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Reference;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Annee;
+        private System.Windows.Forms.DataGridViewTextBoxColumn adrsse;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nCompteur;
+        private System.Windows.Forms.DataGridViewTextBoxColumn etat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tel;
     }
 }

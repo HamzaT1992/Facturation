@@ -80,5 +80,10 @@ namespace Facturation
                 db.SaveChanges();
             }
         }
+
+        private void Search_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

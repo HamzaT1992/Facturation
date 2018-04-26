@@ -58,17 +58,15 @@ namespace Facturation
             using (var db = new FacturationEntities())
             {
                 var npolice = int.Parse(textBoxPolice.Text);
-                var eau = db.Eaus.SingleOrDefault(ea => ea.NPolice == npolice);
-
-                eau.Etat = db.Etats.Single(et => et.id == (int)comboBoxEtat.SelectedValue);
-                eau.TypeEau = db.TypeEaus.Single(te => te.id == (int)comboBoxType.SelectedValue);
-                eau.NCompteur = int.Parse(textBoxNcompteur.Text);
-                eau.Tel = textBoxTeli.Text;
-                eau.Date = dateTimePickerElec.Value;
-                eau.Reference = textBoxReference.Text;
-                eau.Adresse = textBoxAdresse.Text;
-                eau.Annee = short.Parse(textBoxAnnee.Text);
-
+                var elec = db.Electricites.SingleOrDefault(ea => ea.NPolice == npolice);
+                elec.Etat = db.Etats.Single(et => et.id == (int)comboBoxEtat.SelectedValue);
+                elec.TypeElec = db.TypeElectricites.Single(te => te.id == (int)comboBoxType.SelectedValue);
+                elec.NCompteur = int.Parse(textBoxNcompteur.Text);
+                elec.Tel = textBoxTeli.Text;
+                elec.Date = dateTimePickerElec.Value;
+                elec.Reference = textBoxReference.Text;
+                elec.Adresse = textBoxAdresse.Text;
+                elec.Annee = short.Parse(textBoxAnnee.Text);
                 db.SaveChanges();
             }
         }
@@ -83,6 +81,90 @@ namespace Facturation
                 db.Eaus.Remove(eau);
                 db.SaveChanges();
             }
+        }
+
+        private void Search_Click(object sender, EventArgs e)
+        {
+
+            using (var db = new FacturationEntities())
+            {
+                IQueryable<Electricite> elecs = db.Electricites;
+                if (textBoxRechNpo.Text != "")
+                {
+                    var npolice = int.Parse( textBoxRechNpo.Text);
+                    elecs = elecs.Where(ele => ele.NPolice == npolice);
+                    if (elecs.Count() == 0)
+                    {
+                        MessageBox.Show("Elément introuvable");
+                        return;
+                    }
+                    addrows(elecs);
+                }
+                else if (textBoxRechNcomp.Text != "")
+                {
+                    var ncompt = int.Parse(textBoxRechNcomp.Text);
+                    if (elecs == null)
+                    {
+                        MessageBox.Show("Elément introuvable");
+                        return;
+                    }
+                    elecs = elecs.Where(ele => ele.NCompteur == ncompt);
+                    addrows(elecs);
+
+                }
+                else
+                {
+                    if (textBoxRechAdress.Text != "")
+                    {
+                        var adresse = textBoxRechAdress.Text;
+                        elecs = elecs.Where(ele => ele.Adresse == adresse);
+                        if (elecs.Count() == 0)
+                        {
+                            MessageBox.Show("Elément introuvable");
+                            return;
+                        }
+                        addrows(elecs);
+                    }
+                    if (textBoxRechRef.Text != "")
+                    {
+                        var refr = textBoxRechRef.Text;
+                        var elec = elecs.SingleOrDefault(ele => ele.Reference == refr);
+                        if (elec == null)
+                        {
+                            MessageBox.Show("Elément introuvable");
+                            return;
+                        }
+                        elecs = elecs.Where(ele => ele.Reference == refr);
+                        addrows(elecs);
+                    }
+                }
+
+            }
+        }
+
+        private void addrows(IQueryable<Electricite> elecs)
+        {
+            dataGridViewElec.Rows.Clear();
+            foreach (var el in elecs)
+            {
+                dataGridViewElec.Rows.Add(el.NPolice, el.Reference, el.Annee, el.Adresse, el.NCompteur, el.Etat.NomEtat, el.Date, el.Tel, el.TypeElec.NomTypeElec);
+            }
+        }
+
+        private void dataGridViewElec_SelectionChanged(object sender, EventArgs e)
+        {
+            textBoxPolice.Text = dataGridViewElec.CurrentRow.Cells[0].Value.ToString();
+            textBoxReference.Text = dataGridViewElec.CurrentRow.Cells[1].Value.ToString();
+            textBoxAnnee.Text = dataGridViewElec.CurrentRow.Cells[2].Value.ToString();
+            textBoxAdresse.Text = dataGridViewElec.CurrentRow.Cells[3].Value.ToString();
+            textBoxNcompteur.Text = dataGridViewElec.CurrentRow.Cells[4].Value.ToString();
+            comboBoxEtat.Text = dataGridViewElec.CurrentRow.Cells[5].Value.ToString();
+            dateTimePickerElec.Text = dataGridViewElec.CurrentRow.Cells[6].Value.ToString();
+            textBoxTeli.Text = dataGridViewElec.CurrentRow.Cells[7].Value.ToString();
+            comboBoxType.Text = dataGridViewElec.CurrentRow.Cells[8].Value.ToString();
+
+
+
         }
     }
 }

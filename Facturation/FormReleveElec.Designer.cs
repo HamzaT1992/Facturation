@@ -271,9 +271,7 @@
             this.confirm.Size = new System.Drawing.Size(75, 25);
             this.confirm.TabIndex = 56;
             this.confirm.Text = "Confirmer";
-            this.confirm.UseVisualStyleBackColor = true;
-            this.confirm.Click += new System.EventHandler(this.confirm_Click);
-            // 
+            this.confirm.UseVisualStyleBackColor = true;            // 
             // labelTitle
             // 
             this.labelTitle.AutoSize = true;
