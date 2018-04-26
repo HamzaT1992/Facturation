@@ -54,6 +54,7 @@
             this.labelTitle = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBoxNpolice = new System.Windows.Forms.ComboBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,7 +63,6 @@
             this.Consom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comboBoxNpolice = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -308,6 +308,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Les Données";
             // 
+            // comboBoxNpolice
+            // 
+            this.comboBoxNpolice.FormattingEnabled = true;
+            this.comboBoxNpolice.Location = new System.Drawing.Point(135, 26);
+            this.comboBoxNpolice.Name = "comboBoxNpolice";
+            this.comboBoxNpolice.Size = new System.Drawing.Size(164, 21);
+            this.comboBoxNpolice.TabIndex = 52;
+            this.comboBoxNpolice.SelectedIndexChanged += new System.EventHandler(this.comboBoxNpolice_SelectedIndexChanged);
+            // 
             // dataGridView2
             // 
             this.dataGridView2.AllowUserToAddRows = false;
@@ -326,7 +335,6 @@
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.Size = new System.Drawing.Size(666, 428);
             this.dataGridView2.TabIndex = 61;
-            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -370,15 +378,6 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "Rapport";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // comboBoxNpolice
-            // 
-            this.comboBoxNpolice.FormattingEnabled = true;
-            this.comboBoxNpolice.Location = new System.Drawing.Point(135, 26);
-            this.comboBoxNpolice.Name = "comboBoxNpolice";
-            this.comboBoxNpolice.Size = new System.Drawing.Size(164, 21);
-            this.comboBoxNpolice.TabIndex = 52;
-            this.comboBoxNpolice.SelectedIndexChanged += new System.EventHandler(this.comboBoxNpolice_SelectedIndexChanged);
             // 
             // FormReleveElec
             // 

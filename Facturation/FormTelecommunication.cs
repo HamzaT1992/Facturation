@@ -40,7 +40,7 @@ namespace Facturation
                 {
                     NPolice = int.Parse(textBoxPolice.Text),
                     Etat = db.Etats.Single(et => et.id == (int)comboBoxEtat.SelectedValue),
-                    TypeTelecom = db.TypeTelecommunications.Single(te => te.id == (int)comboBoxType.SelectedValue),
+                    TypeTelecommunication = db.TypeTelecommunications.Single(te => te.id == (int)comboBoxType.SelectedValue),
                     Tel = textBoxTel.Text,
                     Date = dateTimePickerTelecom.Value,
                     MD = textBoxMD.Text,
@@ -59,7 +59,7 @@ namespace Facturation
                 var Telecommunication = db.TeleCommunications.SingleOrDefault(ea => ea.NPolice == npolice);
 
                 Telecommunication.Etat = db.Etats.Single(et => et.id == (int)comboBoxEtat.SelectedValue);
-                Telecommunication.TypeTelecom = db.TypeTelecommunications.Single(te => te.id == (int)comboBoxType.SelectedValue);
+                Telecommunication.TypeTelecommunication = db.TypeTelecommunications.Single(te => te.id == (int)comboBoxType.SelectedValue);
                 Telecommunication.Tel = textBoxTel.Text;
                 Telecommunication.Date = dateTimePickerTelecom.Value;
                 Telecommunication.MD = textBoxMD.Text;

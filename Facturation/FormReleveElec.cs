@@ -45,10 +45,7 @@ namespace Facturation
             }
         }
 
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
-        }
         private void textBoxPrevIndex_TextChanged(object sender, EventArgs e)
         {
             textBoxConsommation.Text = (Convert.ToInt32(textBoxNewIndex.Text) - Convert.ToInt32(textBoxPrevIndex.Text)).ToString();
@@ -68,10 +65,28 @@ namespace Facturation
             {
                 int npolice = (int)comboBoxNpolice.SelectedValue;
 
-                var eau = db.Electricites.Single(ea => ea.NPolice == npolice);
-                textBoxAdress.Text = eau.Adresse;
-                textBoxNCompt.Text = eau.NCompteur.ToString();
+                var elec = db.Electricites.Single(el => el.NPolice == npolice);
+                textBoxAdress.Text = elec.Adresse;
+                textBoxNCompt.Text = elec.NCompteur.ToString();
+                foreach (var rel in elec.RelveeElecs)
+                {
+                    dataGridView2.Rows.Add(elec.NPolice , elec.Adresse, rel.NIndex, rel.PIndex, rel.NIndex - rel.PIndex, rel.NPayer, rel.Rapport);
+                }
+            }
+        }
 
+        private void confirm_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("Voulez vous vraiment confirmer!", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                {
+                    dataGridView2.Rows.Add(comboBoxNpolice.Text, textBoxAdress.Text, textBoxNewIndex.Text, textBoxPrevIndex.Text, textBoxConsommation.Text, textBoxNetPayer.Text);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Veuillez remplir tous les champs!", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
