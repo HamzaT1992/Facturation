@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.rech = new System.Windows.Forms.Button();
-            this.textBoxRech = new System.Windows.Forms.TextBox();
             this.dataGridViewTelec = new System.Windows.Forms.DataGridView();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dateTimePickerTelecom = new System.Windows.Forms.DateTimePicker();
@@ -55,34 +53,29 @@
             this.del = new System.Windows.Forms.Button();
             this.edit = new System.Windows.Forms.Button();
             this.add = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBoxRechNpo = new System.Windows.Forms.TextBox();
+            this.textBoxRechRef = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBoxNcomp = new System.Windows.Forms.TextBox();
+            this.textBoxRechAdre = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.Search = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTelec)).BeginInit();
             this.groupBox5.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // rech
-            // 
-            this.rech.Location = new System.Drawing.Point(598, 437);
-            this.rech.Name = "rech";
-            this.rech.Size = new System.Drawing.Size(75, 32);
-            this.rech.TabIndex = 19;
-            this.rech.Text = "Rechercher";
-            this.rech.UseVisualStyleBackColor = true;
-            // 
-            // textBoxRech
-            // 
-            this.textBoxRech.Location = new System.Drawing.Point(474, 444);
-            this.textBoxRech.Name = "textBoxRech";
-            this.textBoxRech.Size = new System.Drawing.Size(100, 20);
-            this.textBoxRech.TabIndex = 18;
             // 
             // dataGridViewTelec
             // 
             this.dataGridViewTelec.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewTelec.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewTelec.Location = new System.Drawing.Point(397, 29);
+            this.dataGridViewTelec.Location = new System.Drawing.Point(382, 142);
             this.dataGridViewTelec.Name = "dataGridViewTelec";
-            this.dataGridViewTelec.Size = new System.Drawing.Size(456, 341);
+            this.dataGridViewTelec.Size = new System.Drawing.Size(592, 341);
             this.dataGridViewTelec.TabIndex = 17;
             // 
             // groupBox5
@@ -319,15 +312,110 @@
             this.add.UseVisualStyleBackColor = true;
             this.add.Click += new System.EventHandler(this.add_Click);
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Controls.Add(this.textBoxRechNpo);
+            this.groupBox3.Controls.Add(this.textBoxRechRef);
+            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Controls.Add(this.textBoxNcomp);
+            this.groupBox3.Controls.Add(this.textBoxRechAdre);
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Location = new System.Drawing.Point(375, 22);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(502, 100);
+            this.groupBox3.TabIndex = 32;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Recherche";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(4, 22);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(55, 13);
+            this.label3.TabIndex = 39;
+            this.label3.Text = "n° Police :";
+            // 
+            // textBoxRechNpo
+            // 
+            this.textBoxRechNpo.Location = new System.Drawing.Point(73, 19);
+            this.textBoxRechNpo.Name = "textBoxRechNpo";
+            this.textBoxRechNpo.Size = new System.Drawing.Size(143, 20);
+            this.textBoxRechNpo.TabIndex = 20;
+            // 
+            // textBoxRechRef
+            // 
+            this.textBoxRechRef.Location = new System.Drawing.Point(71, 55);
+            this.textBoxRechRef.Name = "textBoxRechRef";
+            this.textBoxRechRef.Size = new System.Drawing.Size(145, 20);
+            this.textBoxRechRef.TabIndex = 44;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(2, 58);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(63, 13);
+            this.label4.TabIndex = 38;
+            this.label4.Text = "Reference :";
+            // 
+            // textBoxNcomp
+            // 
+            this.textBoxNcomp.Location = new System.Drawing.Point(299, 54);
+            this.textBoxNcomp.Name = "textBoxNcomp";
+            this.textBoxNcomp.Size = new System.Drawing.Size(163, 20);
+            this.textBoxNcomp.TabIndex = 42;
+            // 
+            // textBoxRechAdre
+            // 
+            this.textBoxRechAdre.Location = new System.Drawing.Point(299, 19);
+            this.textBoxRechAdre.Name = "textBoxRechAdre";
+            this.textBoxRechAdre.Size = new System.Drawing.Size(163, 20);
+            this.textBoxRechAdre.TabIndex = 43;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(228, 23);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(51, 13);
+            this.label5.TabIndex = 37;
+            this.label5.Text = "Adresse :";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(228, 55);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(71, 13);
+            this.label6.TabIndex = 36;
+            this.label6.Text = "n° Compteur :";
+            // 
+            // Search
+            // 
+            this.Search.Location = new System.Drawing.Point(883, 35);
+            this.Search.Name = "Search";
+            this.Search.Size = new System.Drawing.Size(75, 32);
+            this.Search.TabIndex = 31;
+            this.Search.Text = "Rechercher";
+            this.Search.UseVisualStyleBackColor = true;
+            this.Search.Click += new System.EventHandler(this.Search_Click);
+            // 
             // FormTelecommunication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(879, 516);
+            this.ClientSize = new System.Drawing.Size(978, 516);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.Search);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.rech);
-            this.Controls.Add(this.textBoxRech);
             this.Controls.Add(this.dataGridViewTelec);
             this.Controls.Add(this.groupBox5);
             this.Name = "FormTelecommunication";
@@ -337,14 +425,13 @@
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Button rech;
-        private System.Windows.Forms.TextBox textBoxRech;
         private System.Windows.Forms.DataGridView dataGridViewTelec;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.TextBox textBoxForfait;
@@ -370,5 +457,15 @@
         private System.Windows.Forms.Button edit;
         private System.Windows.Forms.Button add;
         private System.Windows.Forms.DateTimePicker dateTimePickerTelecom;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBoxRechNpo;
+        private System.Windows.Forms.TextBox textBoxRechRef;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBoxNcomp;
+        private System.Windows.Forms.TextBox textBoxRechAdre;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button Search;
     }
 }
