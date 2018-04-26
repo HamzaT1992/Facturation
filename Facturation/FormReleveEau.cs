@@ -89,7 +89,7 @@ namespace Facturation
         {
             using (var db = new FacturationEntities())
             {
-                int npolice = (int)comboBoxNpolice.SelectedValue;
+                var npolice = comboBoxNpolice.SelectedValue.ToString();
 
                 var eau = db.Eaux.Single(ea => ea.NPolice == npolice);
                 textBoxAdress.Text = eau.Adresse;

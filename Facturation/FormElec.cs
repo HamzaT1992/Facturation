@@ -16,9 +16,27 @@ namespace Facturation
         {
             InitializeComponent();
         }
+        private void FillDataGridView(IQueryable<Electricite> elecs)
+        {
+            dataGridViewElec.Rows.Clear();
+            foreach (var elec in elecs)
+            {
+                dataGridViewElec.Rows.Add(
+                    elec.NPolice,
+                    elec.Reference,
+                    elec.NCompteur,
+                    elec.TypeElectricite.NomTypeElec,
+                    elec.Etat.NomEtat,
+                    elec.Annee,
+                    elec.Date,
+                    elec.Tel,
+                    elec.Adresse
+                );
+            }
+        }
 
         private void FormElec_Load(object sender, EventArgs e)
-        {//Remplisage les Combobox
+        {//Remplissage des Comboboxs
             using (var db = new FacturationEntities())
             {
                 comboBoxEtat.DataSource = db.Etats.ToList();
@@ -27,6 +45,9 @@ namespace Facturation
                 comboBoxType.DataSource = db.TypeElectricites.ToList();
                 comboBoxType.DisplayMember = "NomTypeElec";
                 comboBoxType.ValueMember = "id";
+
+                //Remplissage de dataGridView
+                FillDataGridView(db.Electricites);
             }
 
         }
@@ -37,10 +58,10 @@ namespace Facturation
             {
                 db.Eaux.Add(new Eau
                 {
-                    NPolice = int.Parse(textBoxPolice.Text),
+                    NPolice = textBoxPolice.Text,
                     Etat = db.Etats.Single(et => et.id == (int)comboBoxEtat.SelectedValue),
                     TypeEau = db.TypeEaux.Single(te => te.id == (int)comboBoxType.SelectedValue),
-                    NCompteur = int.Parse(textBoxNcompteur.Text),
+                    NCompteur = textBoxNcompteur.Text,
                     Tel = textBoxTeli.Text,
                     Date = dateTimePickerElec.Value,
                     Reference = textBoxReference.Text,
@@ -57,12 +78,11 @@ namespace Facturation
 
             using (var db = new FacturationEntities())
             {
-                var npolice = int.Parse(textBoxPolice.Text);
-                var eau = db.Eaux.SingleOrDefault(ea => ea.NPolice == npolice);
+                var eau = db.Eaux.SingleOrDefault(ea => ea.NPolice == textBoxPolice.Text);
 
                 eau.Etat = db.Etats.Single(et => et.id == (int)comboBoxEtat.SelectedValue);
                 eau.TypeEau = db.TypeEaux.Single(te => te.id == (int)comboBoxType.SelectedValue);
-                eau.NCompteur = int.Parse(textBoxNcompteur.Text);
+                eau.NCompteur = textBoxNcompteur.Text;
                 eau.Tel = textBoxTeli.Text;
                 eau.Date = dateTimePickerElec.Value;
                 eau.Reference = textBoxReference.Text;
@@ -77,8 +97,7 @@ namespace Facturation
         {
             using (var db = new FacturationEntities())
             {
-                var npolice = int.Parse(textBoxPolice.Text);
-                var eau = db.Eaux.SingleOrDefault(ea => ea.NPolice == npolice);
+                var eau = db.Eaux.SingleOrDefault(ea => ea.NPolice == textBoxPolice.Text);
                 if (eau == null) return;
                 db.Eaux.Remove(eau);
                 db.SaveChanges();
@@ -86,10 +105,30 @@ namespace Facturation
         }
         private void Search_Click(object sender, EventArgs e)
         {
+            using (var db = new FacturationEntities())
+            {
+                var elecs = db.Electricites;
+                if (textBoxRechNpo.Text != "")
+                {
 
+                }
+            }
         }
         private void dataGridViewElec_SelectionChanged(object sender, EventArgs e)
         {
+            //var tr = true;
+            //foreach (DataGridViewCell cell in dataGridViewElec.CurrentRow.Cells)
+            //    if (cell.Value == null) return;
+
+            textBoxPolice.Text = dataGridViewElec.CurrentRow.Cells["npolice"].Value.ToString();
+            textBoxReference.Text = dataGridViewElec.CurrentRow.Cells["Reference"].Value.ToString();
+            textBoxAnnee.Text = dataGridViewElec.CurrentRow.Cells["Annee"].Value.ToString();
+            textBoxAdresse.Text = dataGridViewElec.CurrentRow.Cells["adrsse"].Value.ToString();
+            textBoxNcompteur.Text = dataGridViewElec.CurrentRow.Cells["nCompteur"].Value.ToString();
+            comboBoxEtat.Text = dataGridViewElec.CurrentRow.Cells["etat"].Value.ToString();
+            dateTimePickerElec.Value = (DateTime)dataGridViewElec.CurrentRow.Cells["date"].Value;
+            textBoxTeli.Text = dataGridViewElec.CurrentRow.Cells["Tele"].Value.ToString();
+            comboBoxType.Text = dataGridViewElec.CurrentRow.Cells["Type"].Value.ToString();
 
         }
     }

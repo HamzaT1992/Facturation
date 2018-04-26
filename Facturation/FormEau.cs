@@ -37,10 +37,10 @@ namespace Facturation
                 {
                     db.Eaux.Add(new Eau
                     {
-                        NPolice = int.Parse(textBoxPolice.Text),
+                        NPolice = textBoxPolice.Text,
                         Etat = db.Etats.Single(et => et.id == (int)comboBoxEtat.SelectedValue),
                         TypeEau = db.TypeEaux.Single(te => te.id == (int)comboBoxType.SelectedValue),
-                        NCompteur = int.Parse(textBoxNCompt.Text),
+                        NCompteur = textBoxNCompt.Text,
                         Tel = textBoxTel.Text,
                         Date = dateTimePickerEau.Value,
                         Reference = textBoxRef.Text,
@@ -57,12 +57,11 @@ namespace Facturation
             
             using (var db = new FacturationEntities())
             {
-                var npolice = int.Parse(textBoxPolice.Text);
-                var eau = db.Eaux.SingleOrDefault(ea => ea.NPolice == npolice);
+                var eau = db.Eaux.SingleOrDefault(ea => ea.NPolice == textBoxPolice.Text);
                 
                 eau.Etat = db.Etats.Single(et => et.id == (int)comboBoxEtat.SelectedValue);
                 eau.TypeEau = db.TypeEaux.Single(te => te.id == (int)comboBoxType.SelectedValue);
-                eau.NCompteur = int.Parse(textBoxNCompt.Text);
+                eau.NCompteur = textBoxNCompt.Text;
                 eau.Tel = textBoxTel.Text;
                 eau.Date = dateTimePickerEau.Value;
                 eau.Reference = textBoxRef.Text;
@@ -77,8 +76,7 @@ namespace Facturation
         {
             using (var db = new FacturationEntities())
             {
-                var npolice = int.Parse(textBoxPolice.Text);
-                var eau = db.Eaux.SingleOrDefault(ea => ea.NPolice == npolice);
+                var eau = db.Eaux.SingleOrDefault(ea => ea.NPolice == textBoxPolice.Text);
                 if (eau == null) return;
                 db.Eaux.Remove(eau);
                 db.SaveChanges();

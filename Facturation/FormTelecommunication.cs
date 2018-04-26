@@ -38,7 +38,7 @@ namespace Facturation
             {
                 db.TeleCommunications.Add(new TeleCommunication
                 {
-                    NPolice = int.Parse(textBoxPolice.Text),
+                    NPolice = textBoxPolice.Text,
                     Etat = db.Etats.Single(et => et.id == (int)comboBoxEtat.SelectedValue),
                     TypeTelecommunication = db.TypeTelecommunications.Single(te => te.id == (int)comboBoxType.SelectedValue),
                     Tel = textBoxTel.Text,
@@ -55,8 +55,7 @@ namespace Facturation
         {
             using (var db = new FacturationEntities())
             {
-                var npolice = int.Parse(textBoxPolice.Text);
-                var Telecommunication = db.TeleCommunications.SingleOrDefault(ea => ea.NPolice == npolice);
+                var Telecommunication = db.TeleCommunications.SingleOrDefault(ea => ea.NPolice == textBoxPolice.Text);
 
                 Telecommunication.Etat = db.Etats.Single(et => et.id == (int)comboBoxEtat.SelectedValue);
                 Telecommunication.TypeTelecommunication = db.TypeTelecommunications.Single(te => te.id == (int)comboBoxType.SelectedValue);
@@ -73,8 +72,7 @@ namespace Facturation
         {
             using (var db = new FacturationEntities())
             {
-                var npolice = int.Parse(textBoxPolice.Text);
-                var Telecommunication = db.TeleCommunications.SingleOrDefault(ea => ea.NPolice == npolice);
+                var Telecommunication = db.TeleCommunications.SingleOrDefault(ea => ea.NPolice == textBoxPolice.Text);
                 if (Telecommunication == null) return;
                 db.TeleCommunications.Remove(Telecommunication);
                 db.SaveChanges();

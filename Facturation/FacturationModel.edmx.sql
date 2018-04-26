@@ -80,12 +80,12 @@ GO
 
 -- Creating table 'Eaux'
 CREATE TABLE [dbo].[Eaux] (
-    [NPolice] int  NOT NULL,
+    [NPolice] nvarchar(50)  NOT NULL,
     [Adresse] nvarchar(100)  NOT NULL,
     [Date] datetime  NOT NULL,
     [Tel] nvarchar(20)  NOT NULL,
-    [NCompteur] int  NOT NULL,
-    [Reference] nvarchar(15)  NOT NULL,
+    [NCompteur] nvarchar(50)  NOT NULL,
+    [Reference] nvarchar(50)  NOT NULL,
     [Annee] smallint  NOT NULL,
     [Etat_id] int  NULL,
     [TypeEau_id] int  NULL
@@ -94,12 +94,12 @@ GO
 
 -- Creating table 'Electricites'
 CREATE TABLE [dbo].[Electricites] (
-    [NPolice] int  NOT NULL,
+    [NPolice] nvarchar(50)  NOT NULL,
     [Adresse] nvarchar(100)  NOT NULL,
     [Date] datetime  NOT NULL,
     [Tel] nvarchar(20)  NOT NULL,
-    [NCompteur] int  NOT NULL,
-    [Reference] nvarchar(15)  NOT NULL,
+    [NCompteur] nvarchar(50)  NOT NULL,
+    [Reference] nvarchar(50)  NOT NULL,
     [Annee] smallint  NOT NULL,
     [Etat_id] int  NULL,
     [TypeElec_id] int  NULL
@@ -121,12 +121,12 @@ CREATE TABLE [dbo].[RelveeEaux] (
     [NIndex] int  NOT NULL,
     [PIndex] int  NOT NULL,
     [NPayer] float  NOT NULL,
-    [Eau_NPolice] int  NULL,
+    [Eau_NPolice] nvarchar(50)  NULL,
     [Eau_Adresse] nvarchar(100)  NULL,
     [Eau_Date] datetime  NULL,
     [Eau_Tel] nvarchar(20)  NULL,
-    [Eau_NCompteur] int  NULL,
-    [Eau_Reference] nvarchar(15)  NULL,
+    [Eau_NCompteur] nvarchar(50)  NULL,
+    [Eau_Reference] nvarchar(50)  NULL,
     [Rapport] nchar(255)  NULL
 );
 GO
@@ -139,19 +139,19 @@ CREATE TABLE [dbo].[RelveeElecs] (
     [NIndex] int  NOT NULL,
     [PIndex] int  NOT NULL,
     [NPayer] float  NOT NULL,
-    [Elec_NPolice] int  NULL,
+    [Elec_NPolice] nvarchar(50)  NULL,
     [Elec_Adresse] nvarchar(100)  NULL,
     [Elec_Date] datetime  NULL,
     [Elec_Tel] nvarchar(20)  NULL,
-    [Elec_NCompteur] int  NULL,
-    [Elec_Reference] nvarchar(15)  NULL,
+    [Elec_NCompteur] nvarchar(50)  NULL,
+    [Elec_Reference] nvarchar(50)  NULL,
     [Rapport] nchar(255)  NULL
 );
 GO
 
 -- Creating table 'TeleCommunications'
 CREATE TABLE [dbo].[TeleCommunications] (
-    [NPolice] int  NOT NULL,
+    [NPolice] nvarchar(50)  NOT NULL,
     [Adresse] nvarchar(100)  NOT NULL,
     [Date] datetime  NOT NULL,
     [Tel] nvarchar(20)  NOT NULL,

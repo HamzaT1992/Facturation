@@ -64,12 +64,13 @@
             this.dataGridViewElec = new System.Windows.Forms.DataGridView();
             this.npolice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Reference = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Annee = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adrsse = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nCompteur = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.etat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Annee = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tele = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adrsse = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -398,19 +399,23 @@
             // 
             // dataGridViewElec
             // 
+            this.dataGridViewElec.AllowUserToAddRows = false;
+            this.dataGridViewElec.AllowUserToDeleteRows = false;
             this.dataGridViewElec.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewElec.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewElec.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.npolice,
             this.Reference,
-            this.Annee,
-            this.adrsse,
             this.nCompteur,
+            this.Type,
             this.etat,
+            this.Annee,
             this.date,
-            this.Tel});
+            this.Tele,
+            this.adrsse});
             this.dataGridViewElec.Location = new System.Drawing.Point(368, 138);
             this.dataGridViewElec.Name = "dataGridViewElec";
+            this.dataGridViewElec.ReadOnly = true;
             this.dataGridViewElec.Size = new System.Drawing.Size(606, 341);
             this.dataGridViewElec.TabIndex = 28;
             this.dataGridViewElec.SelectionChanged += new System.EventHandler(this.dataGridViewElec_SelectionChanged);
@@ -425,35 +430,40 @@
             this.Reference.HeaderText = "Reference";
             this.Reference.Name = "Reference";
             // 
-            // Annee
-            // 
-            this.Annee.HeaderText = "Année";
-            this.Annee.Name = "Annee";
-            // 
-            // adrsse
-            // 
-            this.adrsse.HeaderText = "Adresse";
-            this.adrsse.Name = "adrsse";
-            // 
             // nCompteur
             // 
             this.nCompteur.HeaderText = "n°Compteur";
             this.nCompteur.Name = "nCompteur";
+            // 
+            // Type
+            // 
+            this.Type.HeaderText = "Type";
+            this.Type.Name = "Type";
             // 
             // etat
             // 
             this.etat.HeaderText = "Etat";
             this.etat.Name = "etat";
             // 
+            // Annee
+            // 
+            this.Annee.HeaderText = "Année";
+            this.Annee.Name = "Annee";
+            // 
             // date
             // 
             this.date.HeaderText = "Date";
             this.date.Name = "date";
             // 
-            // Tel
+            // Tele
             // 
-            this.Tel.HeaderText = "Type";
-            this.Tel.Name = "Tel";
+            this.Tele.HeaderText = "Télèphone";
+            this.Tele.Name = "Tele";
+            // 
+            // adrsse
+            // 
+            this.adrsse.HeaderText = "Adresse";
+            this.adrsse.Name = "adrsse";
             // 
             // FormElec
             // 
@@ -516,11 +526,12 @@
         private System.Windows.Forms.DataGridView dataGridViewElec;
         private System.Windows.Forms.DataGridViewTextBoxColumn npolice;
         private System.Windows.Forms.DataGridViewTextBoxColumn Reference;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Annee;
-        private System.Windows.Forms.DataGridViewTextBoxColumn adrsse;
         private System.Windows.Forms.DataGridViewTextBoxColumn nCompteur;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Type;
         private System.Windows.Forms.DataGridViewTextBoxColumn etat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Annee;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tele;
+        private System.Windows.Forms.DataGridViewTextBoxColumn adrsse;
     }
 }
