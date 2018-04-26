@@ -71,6 +71,7 @@
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tele = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.adrsse = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -389,9 +390,9 @@
             // 
             // Search
             // 
-            this.Search.Location = new System.Drawing.Point(876, 25);
+            this.Search.Location = new System.Drawing.Point(876, 39);
             this.Search.Name = "Search";
-            this.Search.Size = new System.Drawing.Size(75, 32);
+            this.Search.Size = new System.Drawing.Size(101, 23);
             this.Search.TabIndex = 29;
             this.Search.Text = "Rechercher";
             this.Search.UseVisualStyleBackColor = true;
@@ -465,12 +466,23 @@
             this.adrsse.HeaderText = "Adresse";
             this.adrsse.Name = "adrsse";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(876, 72);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(101, 23);
+            this.button1.TabIndex = 31;
+            this.button1.Text = "Afficher Tous";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FormElec
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(989, 502);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.Search);
             this.Controls.Add(this.dataGridViewElec);
@@ -533,5 +545,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tele;
         private System.Windows.Forms.DataGridViewTextBoxColumn adrsse;
+        private System.Windows.Forms.Button button1;
     }
 }

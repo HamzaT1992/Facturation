@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -107,11 +108,21 @@ namespace Facturation
         {
             using (var db = new FacturationEntities())
             {
-                var elecs = db.Electricites;
+                IQueryable<Electricite> elecs = db.Electricites;
+                var countOfAll = elecs.Count();
                 if (textBoxRechNpo.Text != "")
-                {
-
-                }
+                    elecs = elecs.Where(el => el.NPolice == textBoxRechNpo.Text);
+                else if (textBoxRechNcomp.Text != "")
+                    elecs = elecs.Where(el => el.NCompteur == textBoxRechNcomp.Text);
+                else if (textBoxRechRef.Text != "")
+                    elecs = elecs.Where(el => el.Reference == textBoxRechRef.Text);
+                else if (textBoxRechAdress.Text != "")
+                    elecs = elecs.Where(el => el.Adresse.Contains(textBoxRechAdress.Text) || el.Adresse.StartsWith(textBoxRechAdress.Text));
+                
+                if (elecs.Count() > 0 && elecs.Count() < countOfAll)
+                    FillDataGridView(elecs);
+                else
+                    MessageBox.Show("Aucun resultat trouvé!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
         private void dataGridViewElec_SelectionChanged(object sender, EventArgs e)
@@ -130,6 +141,14 @@ namespace Facturation
             textBoxTeli.Text = dataGridViewElec.CurrentRow.Cells["Tele"].Value.ToString();
             comboBoxType.Text = dataGridViewElec.CurrentRow.Cells["Type"].Value.ToString();
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            using (var db = new FacturationEntities())
+            {
+                FillDataGridView(db.Electricites); 
+            }
         }
     }
 }
