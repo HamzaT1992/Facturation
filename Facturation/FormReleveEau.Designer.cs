@@ -61,8 +61,8 @@
             this.rapport = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelTitle = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.comboBoxNpolice = new System.Windows.Forms.ComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -356,6 +356,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Les Données";
             // 
+            // comboBoxNpolice
+            // 
+            this.comboBoxNpolice.FormattingEnabled = true;
+            this.comboBoxNpolice.Location = new System.Drawing.Point(135, 28);
+            this.comboBoxNpolice.Name = "comboBoxNpolice";
+            this.comboBoxNpolice.Size = new System.Drawing.Size(164, 21);
+            this.comboBoxNpolice.TabIndex = 53;
+            this.comboBoxNpolice.SelectedIndexChanged += new System.EventHandler(this.comboBoxNpolice_SelectedIndexChanged);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -367,14 +376,6 @@
             this.pictureBox1.TabIndex = 59;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // comboBoxNpolice
-            // 
-            this.comboBoxNpolice.FormattingEnabled = true;
-            this.comboBoxNpolice.Location = new System.Drawing.Point(135, 28);
-            this.comboBoxNpolice.Name = "comboBoxNpolice";
-            this.comboBoxNpolice.Size = new System.Drawing.Size(164, 21);
-            this.comboBoxNpolice.TabIndex = 53;
             // 
             // FormReleveEau
             // 

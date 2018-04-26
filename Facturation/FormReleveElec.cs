@@ -55,5 +55,10 @@ namespace Facturation
             var np = consom * firstconst + consom * firstconst * tvaelec + redevencefix + redevencefix * tvaelec;
             textBoxNetPayer.Text = np.ToString();
         }
+
+        private void confirm_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -26,9 +26,7 @@ namespace Facturation
         {
             using (var db = new FacturationEntities())
             {
-                comboBoxNpolice.DataSource = db.Eaus.ToList();
-                comboBoxNpolice.DisplayMember = "NPolice";
-                comboBoxNpolice.ValueMember = "NPolice";
+                comboBoxNpolice.DataSource = db.Eaus.Select(ea => ea.NPolice).ToList();
             }
             for (int i = 1; i <= 4; i++)
                 comboBoxTrimestre.Items.Add(i);
@@ -62,13 +60,7 @@ namespace Facturation
             try
             {
                 if (MessageBox.Show("Voulez vous vraiment confirmer!", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
-                {
-                    foreach (var controle in Controls)
-                    {
-                        //controle.GetType() == 
-                    }
                     dataGridView1.Rows.Add(comboBoxNpolice.Text, textBoxAdress.Text, textBoxNewIndex.Text, textBoxPrevIndex.Text, textBoxConsommation.Text, textBoxNetPayer.Text);
-                }
             }
             catch (Exception)
             {
@@ -86,6 +78,19 @@ namespace Facturation
                 //var np = consom * firstconst + consom * firstconst * tvae + secondconst + secondconst * tvae + consom * 4 + consom * 4 * tvae + redevencefix + redevencefix * tvae;
                 var np = consom == 0 ? 53.48 : consom * ((firstconst + 4) * (1 + tvae)) + (secondconst + redevencefix) * (1 + tvae);
                 textBoxNetPayer.Text = np.ToString();
+            }
+        }
+
+        private void comboBoxNpolice_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            using (var db = new FacturationEntities())
+            {
+                int npolice = (int)comboBoxNpolice.SelectedValue;
+
+                var eau = db.Eaus.Single(ea => ea.NPolice == npolice);
+                textBoxAdress.Text = eau.Adresse;
+                textBoxNCompt.Text = eau.NCompteur.ToString();
+                
             }
         }
     }

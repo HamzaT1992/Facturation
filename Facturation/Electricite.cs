@@ -18,5 +18,6 @@ namespace Facturation
         [MaxLength(15)]
         public string Reference { get; set; }
         public short Annee { get; set; }
+        public List<RelveeElec> RelveeElecs { get; set; }
     }
 }

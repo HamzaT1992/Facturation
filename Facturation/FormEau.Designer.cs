@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.Search = new System.Windows.Forms.Button();
-            this.textBoxRech = new System.Windows.Forms.TextBox();
+            this.textBoxRechNpo = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.del = new System.Windows.Forms.Button();
             this.edit = new System.Windows.Forms.Button();
@@ -54,15 +54,23 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
-            this.enregister = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEau)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // Search
             // 
-            this.Search.Location = new System.Drawing.Point(507, 369);
+            this.Search.Location = new System.Drawing.Point(870, 34);
             this.Search.Name = "Search";
             this.Search.Size = new System.Drawing.Size(75, 32);
             this.Search.TabIndex = 21;
@@ -70,12 +78,12 @@
             this.Search.UseVisualStyleBackColor = true;
             this.Search.Click += new System.EventHandler(this.Search_Click);
             // 
-            // textBoxRech
+            // textBoxRechNpo
             // 
-            this.textBoxRech.Location = new System.Drawing.Point(387, 376);
-            this.textBoxRech.Name = "textBoxRech";
-            this.textBoxRech.Size = new System.Drawing.Size(100, 20);
-            this.textBoxRech.TabIndex = 20;
+            this.textBoxRechNpo.Location = new System.Drawing.Point(73, 19);
+            this.textBoxRechNpo.Name = "textBoxRechNpo";
+            this.textBoxRechNpo.Size = new System.Drawing.Size(143, 20);
+            this.textBoxRechNpo.TabIndex = 20;
             // 
             // groupBox2
             // 
@@ -122,9 +130,9 @@
             // 
             this.dataGridViewEau.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewEau.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewEau.Location = new System.Drawing.Point(387, 12);
+            this.dataGridViewEau.Location = new System.Drawing.Point(362, 147);
             this.dataGridViewEau.Name = "dataGridViewEau";
-            this.dataGridViewEau.Size = new System.Drawing.Size(456, 341);
+            this.dataGridViewEau.Size = new System.Drawing.Size(606, 341);
             this.dataGridViewEau.TabIndex = 18;
             // 
             // groupBox1
@@ -149,7 +157,7 @@
             this.groupBox1.Controls.Add(this.label29);
             this.groupBox1.Controls.Add(this.label30);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(8, 12);
+            this.groupBox1.Location = new System.Drawing.Point(8, 34);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(323, 341);
             this.groupBox1.TabIndex = 17;
@@ -311,25 +319,92 @@
             this.label30.TabIndex = 38;
             this.label30.Text = "n° Police :";
             // 
-            // enregister
+            // groupBox3
             // 
-            this.enregister.Location = new System.Drawing.Point(768, 451);
-            this.enregister.Name = "enregister";
-            this.enregister.Size = new System.Drawing.Size(75, 37);
-            this.enregister.TabIndex = 7;
-            this.enregister.Text = "Enregistrer";
-            this.enregister.UseVisualStyleBackColor = true;
-            this.enregister.Click += new System.EventHandler(this.enregister_Click);
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Controls.Add(this.textBoxRechNpo);
+            this.groupBox3.Controls.Add(this.textBox1);
+            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Controls.Add(this.textBox3);
+            this.groupBox3.Controls.Add(this.textBox2);
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Location = new System.Drawing.Point(362, 29);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(502, 100);
+            this.groupBox3.TabIndex = 22;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Recherche";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(4, 22);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(55, 13);
+            this.label3.TabIndex = 39;
+            this.label3.Text = "n° Police :";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(2, 58);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(63, 13);
+            this.label4.TabIndex = 38;
+            this.label4.Text = "Reference :";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(71, 55);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(145, 20);
+            this.textBox1.TabIndex = 44;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(228, 23);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(51, 13);
+            this.label5.TabIndex = 37;
+            this.label5.Text = "Adresse :";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(228, 55);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(71, 13);
+            this.label6.TabIndex = 36;
+            this.label6.Text = "n° Compteur :";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(299, 19);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(163, 20);
+            this.textBox2.TabIndex = 43;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(299, 54);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(163, 20);
+            this.textBox3.TabIndex = 42;
             // 
             // FormEau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(863, 500);
-            this.Controls.Add(this.enregister);
+            this.ClientSize = new System.Drawing.Size(980, 500);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.Search);
-            this.Controls.Add(this.textBoxRech);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dataGridViewEau);
             this.Controls.Add(this.groupBox1);
@@ -340,15 +415,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEau)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button Search;
-        private System.Windows.Forms.TextBox textBoxRech;
+        private System.Windows.Forms.TextBox textBoxRechNpo;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button del;
         private System.Windows.Forms.Button edit;
@@ -372,7 +448,14 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateTimePickerEau;
-        private System.Windows.Forms.Button enregister;
         private System.Windows.Forms.ComboBox comboBoxEtat;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }

@@ -37,6 +37,27 @@ namespace Facturation.Migrations
                 .PrimaryKey(t => t.id);
             
             CreateTable(
+                "dbo.RelveeEaux",
+                c => new
+                    {
+                        Id = c.Int(nullable: false),
+                        Annee = c.DateTime(nullable: false),
+                        Trimestre = c.Int(nullable: false),
+                        NIndex = c.Int(nullable: false),
+                        PIndex = c.Int(nullable: false),
+                        NPayer = c.Double(nullable: false),
+                        Eau_NPolice = c.Int(),
+                        Eau_Adresse = c.String(maxLength: 100),
+                        Eau_Date = c.DateTime(),
+                        Eau_Tel = c.String(maxLength: 20),
+                        Eau_NCompteur = c.Int(),
+                        Eau_Reference = c.String(maxLength: 15),
+                    })
+                .PrimaryKey(t => new { t.Id, t.Annee, t.Trimestre })
+                .ForeignKey("dbo.Eaux", t => new { t.Eau_NPolice, t.Eau_Adresse, t.Eau_Date, t.Eau_Tel, t.Eau_NCompteur, t.Eau_Reference })
+                .Index(t => new { t.Eau_NPolice, t.Eau_Adresse, t.Eau_Date, t.Eau_Tel, t.Eau_NCompteur, t.Eau_Reference });
+            
+            CreateTable(
                 "dbo.TypeEaux",
                 c => new
                     {
@@ -66,36 +87,6 @@ namespace Facturation.Migrations
                 .Index(t => t.TypeElec_id);
             
             CreateTable(
-                "dbo.TypeElectricites",
-                c => new
-                    {
-                        id = c.Int(nullable: false, identity: true),
-                        NomTypeElec = c.String(),
-                    })
-                .PrimaryKey(t => t.id);
-            
-            CreateTable(
-                "dbo.RelveeEaux",
-                c => new
-                    {
-                        Id = c.Int(nullable: false),
-                        Annee = c.DateTime(nullable: false),
-                        Trimestre = c.Int(nullable: false),
-                        NIndex = c.Int(nullable: false),
-                        PIndex = c.Int(nullable: false),
-                        NPayer = c.Double(nullable: false),
-                        Eau_NPolice = c.Int(),
-                        Eau_Adresse = c.String(maxLength: 100),
-                        Eau_Date = c.DateTime(),
-                        Eau_Tel = c.String(maxLength: 20),
-                        Eau_NCompteur = c.Int(),
-                        Eau_Reference = c.String(maxLength: 15),
-                    })
-                .PrimaryKey(t => new { t.Id, t.Annee, t.Trimestre })
-                .ForeignKey("dbo.Eaux", t => new { t.Eau_NPolice, t.Eau_Adresse, t.Eau_Date, t.Eau_Tel, t.Eau_NCompteur, t.Eau_Reference })
-                .Index(t => new { t.Eau_NPolice, t.Eau_Adresse, t.Eau_Date, t.Eau_Tel, t.Eau_NCompteur, t.Eau_Reference });
-            
-            CreateTable(
                 "dbo.RelveeElecs",
                 c => new
                     {
@@ -115,6 +106,15 @@ namespace Facturation.Migrations
                 .PrimaryKey(t => new { t.Id, t.Annee, t.Trimestre })
                 .ForeignKey("dbo.Electricites", t => new { t.Elec_NPolice, t.Elec_Adresse, t.Elec_Date, t.Elec_Tel, t.Elec_NCompteur, t.Elec_Reference })
                 .Index(t => new { t.Elec_NPolice, t.Elec_Adresse, t.Elec_Date, t.Elec_Tel, t.Elec_NCompteur, t.Elec_Reference });
+            
+            CreateTable(
+                "dbo.TypeElectricites",
+                c => new
+                    {
+                        id = c.Int(nullable: false, identity: true),
+                        NomTypeElec = c.String(),
+                    })
+                .PrimaryKey(t => t.id);
             
             CreateTable(
                 "dbo.TeleCommunications",
@@ -151,27 +151,27 @@ namespace Facturation.Migrations
         {
             DropForeignKey("dbo.TeleCommunications", "TypeTelecom_id", "dbo.TypeTelecommunications");
             DropForeignKey("dbo.TeleCommunications", "Etat_id", "dbo.Etats");
-            DropForeignKey("dbo.RelveeElecs", new[] { "Elec_NPolice", "Elec_Adresse", "Elec_Date", "Elec_Tel", "Elec_NCompteur", "Elec_Reference" }, "dbo.Electricites");
-            DropForeignKey("dbo.RelveeEaux", new[] { "Eau_NPolice", "Eau_Adresse", "Eau_Date", "Eau_Tel", "Eau_NCompteur", "Eau_Reference" }, "dbo.Eaux");
             DropForeignKey("dbo.Electricites", "TypeElec_id", "dbo.TypeElectricites");
+            DropForeignKey("dbo.RelveeElecs", new[] { "Elec_NPolice", "Elec_Adresse", "Elec_Date", "Elec_Tel", "Elec_NCompteur", "Elec_Reference" }, "dbo.Electricites");
             DropForeignKey("dbo.Electricites", "Etat_id", "dbo.Etats");
             DropForeignKey("dbo.Eaux", "TypeEau_id", "dbo.TypeEaux");
+            DropForeignKey("dbo.RelveeEaux", new[] { "Eau_NPolice", "Eau_Adresse", "Eau_Date", "Eau_Tel", "Eau_NCompteur", "Eau_Reference" }, "dbo.Eaux");
             DropForeignKey("dbo.Eaux", "Etat_id", "dbo.Etats");
             DropIndex("dbo.TeleCommunications", new[] { "TypeTelecom_id" });
             DropIndex("dbo.TeleCommunications", new[] { "Etat_id" });
             DropIndex("dbo.RelveeElecs", new[] { "Elec_NPolice", "Elec_Adresse", "Elec_Date", "Elec_Tel", "Elec_NCompteur", "Elec_Reference" });
-            DropIndex("dbo.RelveeEaux", new[] { "Eau_NPolice", "Eau_Adresse", "Eau_Date", "Eau_Tel", "Eau_NCompteur", "Eau_Reference" });
             DropIndex("dbo.Electricites", new[] { "TypeElec_id" });
             DropIndex("dbo.Electricites", new[] { "Etat_id" });
+            DropIndex("dbo.RelveeEaux", new[] { "Eau_NPolice", "Eau_Adresse", "Eau_Date", "Eau_Tel", "Eau_NCompteur", "Eau_Reference" });
             DropIndex("dbo.Eaux", new[] { "TypeEau_id" });
             DropIndex("dbo.Eaux", new[] { "Etat_id" });
             DropTable("dbo.TypeTelecommunications");
             DropTable("dbo.TeleCommunications");
-            DropTable("dbo.RelveeElecs");
-            DropTable("dbo.RelveeEaux");
             DropTable("dbo.TypeElectricites");
+            DropTable("dbo.RelveeElecs");
             DropTable("dbo.Electricites");
             DropTable("dbo.TypeEaux");
+            DropTable("dbo.RelveeEaux");
             DropTable("dbo.Etats");
             DropTable("dbo.Eaux");
         }

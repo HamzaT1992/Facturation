@@ -60,6 +60,7 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IndexNew = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IndexPrec = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Consom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -278,6 +279,7 @@
             this.confirm.TabIndex = 56;
             this.confirm.Text = "Confirmer";
             this.confirm.UseVisualStyleBackColor = true;
+            this.confirm.Click += new System.EventHandler(this.confirm_Click);
             // 
             // labelTitle
             // 
@@ -324,12 +326,13 @@
             this.dataGridViewTextBoxColumn2,
             this.IndexNew,
             this.IndexPrec,
+            this.Consom,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
-            this.dataGridView2.Location = new System.Drawing.Point(411, 65);
+            this.dataGridView2.Location = new System.Drawing.Point(344, 71);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(631, 428);
+            this.dataGridView2.Size = new System.Drawing.Size(666, 428);
             this.dataGridView2.TabIndex = 61;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
@@ -356,6 +359,12 @@
             this.IndexPrec.HeaderText = "Index Précédent";
             this.IndexPrec.Name = "IndexPrec";
             this.IndexPrec.ReadOnly = true;
+            // 
+            // Consom
+            // 
+            this.Consom.HeaderText = "Consommation";
+            this.Consom.Name = "Consom";
+            this.Consom.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -445,6 +454,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn IndexNew;
         private System.Windows.Forms.DataGridViewTextBoxColumn IndexPrec;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Consom;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     }

@@ -18,5 +18,6 @@ namespace Facturation
         [Key, Column(Order = 8)]
         [MaxLength ( 15)]
         public string Reference { get; set; }
+        public List<RelveeEau> RelveeEaus { get; set; }
     }
 }
