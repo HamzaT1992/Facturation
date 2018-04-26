@@ -53,11 +53,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Eau.cs" />
-    <Compile Include="Electricite.cs" />
-    <Compile Include="Etat.cs" />
-    <Compile Include="FacturationEntities.cs" />
-    <Compile Include="Facture.cs" />
+    <Compile Include="Eau.cs">
+      <DependentUpon>FacturationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Electricite.cs">
+      <DependentUpon>FacturationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Etat.cs">
+      <DependentUpon>FacturationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FacturationModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FacturationModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FacturationModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FacturationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FacturationModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FacturationModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="FormEau.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,11 +107,6 @@
     <Compile Include="MDIParent.Designer.cs">
       <DependentUpon>MDIParent.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201804260922081_init.cs" />
-    <Compile Include="Migrations\201804260922081_init.Designer.cs">
-      <DependentUpon>201804260922081_init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FormReleveElec.cs">
@@ -113,12 +127,24 @@
     <Compile Include="FormRelveeTele.Designer.cs">
       <DependentUpon>FormRelveeTele.cs</DependentUpon>
     </Compile>
-    <Compile Include="RelveeEau.cs" />
-    <Compile Include="RelveeElec.cs" />
-    <Compile Include="Telecommunication.cs" />
-    <Compile Include="TypeEau.cs" />
-    <Compile Include="TypeElectricite.cs" />
-    <Compile Include="TypeTelecommunication.cs" />
+    <Compile Include="RelveeEau.cs">
+      <DependentUpon>FacturationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RelveeElec.cs">
+      <DependentUpon>FacturationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TeleCommunication.cs">
+      <DependentUpon>FacturationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TypeEau.cs">
+      <DependentUpon>FacturationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TypeElectricite.cs">
+      <DependentUpon>FacturationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TypeTelecommunication.cs">
+      <DependentUpon>FacturationModel.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormEau.resx">
       <DependentUpon>FormEau.cs</DependentUpon>
     </EmbeddedResource>
@@ -133,9 +159,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MDIParent.resx">
       <DependentUpon>MDIParent.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804260922081_init.resx">
-      <DependentUpon>201804260922081_init.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -160,6 +183,13 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="ClassDiagram1.cd" />
+    <EntityDeploy Include="FacturationModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>FacturationModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="FacturationModel.edmx.diagram">
+      <DependentUpon>FacturationModel.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -172,9 +202,22 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="FacturationModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FacturationModel.edmx</DependentUpon>
+      <LastGenOutput>FacturationModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="FacturationModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FacturationModel.edmx</DependentUpon>
+      <LastGenOutput>FacturationModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Img\stop.png" />
     <Content Include="Img\go.png" />
     <None Include="Resources\Image1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

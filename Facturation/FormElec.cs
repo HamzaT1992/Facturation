@@ -24,7 +24,7 @@ namespace Facturation
                 comboBoxEtat.DataSource = db.Etats.ToList();
                 comboBoxEtat.DisplayMember = "NomEtat";
                 comboBoxEtat.ValueMember = "id";
-                comboBoxType.DataSource = db.TypeEaus.ToList();
+                comboBoxType.DataSource = db.TypeEaux.ToList();
                 comboBoxType.DisplayMember = "NomTypeElec";
                 comboBoxType.ValueMember = "id";
             }
@@ -35,11 +35,11 @@ namespace Facturation
         {
             using (var db = new FacturationEntities())
             {
-                db.Eaus.Add(new Eau
+                db.Eaux.Add(new Eau
                 {
                     NPolice = int.Parse(textBoxPolice.Text),
                     Etat = db.Etats.Single(et => et.id == (int)comboBoxEtat.SelectedValue),
-                    TypeEau = db.TypeEaus.Single(te => te.id == (int)comboBoxType.SelectedValue),
+                    TypeEau = db.TypeEaux.Single(te => te.id == (int)comboBoxType.SelectedValue),
                     NCompteur = int.Parse(textBoxNcompteur.Text),
                     Tel = textBoxTeli.Text,
                     Date = dateTimePickerElec.Value,
@@ -58,10 +58,10 @@ namespace Facturation
             using (var db = new FacturationEntities())
             {
                 var npolice = int.Parse(textBoxPolice.Text);
-                var eau = db.Eaus.SingleOrDefault(ea => ea.NPolice == npolice);
+                var eau = db.Eaux.SingleOrDefault(ea => ea.NPolice == npolice);
 
                 eau.Etat = db.Etats.Single(et => et.id == (int)comboBoxEtat.SelectedValue);
-                eau.TypeEau = db.TypeEaus.Single(te => te.id == (int)comboBoxType.SelectedValue);
+                eau.TypeEau = db.TypeEaux.Single(te => te.id == (int)comboBoxType.SelectedValue);
                 eau.NCompteur = int.Parse(textBoxNcompteur.Text);
                 eau.Tel = textBoxTeli.Text;
                 eau.Date = dateTimePickerElec.Value;
@@ -78,9 +78,9 @@ namespace Facturation
             using (var db = new FacturationEntities())
             {
                 var npolice = int.Parse(textBoxPolice.Text);
-                var eau = db.Eaus.SingleOrDefault(ea => ea.NPolice == npolice);
+                var eau = db.Eaux.SingleOrDefault(ea => ea.NPolice == npolice);
                 if (eau == null) return;
-                db.Eaus.Remove(eau);
+                db.Eaux.Remove(eau);
                 db.SaveChanges();
             }
         }
