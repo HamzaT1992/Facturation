@@ -4,292 +4,291 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="FacturationModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="Eaux">
-          <Key>
-            <PropertyRef Name="NPolice" />
-            <PropertyRef Name="Adresse" />
-            <PropertyRef Name="Date" />
-            <PropertyRef Name="Tel" />
-            <PropertyRef Name="NCompteur" />
-            <PropertyRef Name="Reference" />
-          </Key>
-          <Property Name="NPolice" Type="int" Nullable="false" />
-          <Property Name="Adresse" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="Date" Type="datetime" Nullable="false" />
-          <Property Name="Tel" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="NCompteur" Type="int" Nullable="false" />
-          <Property Name="Reference" Type="nvarchar" MaxLength="15" Nullable="false" />
-          <Property Name="Annee" Type="smallint" Nullable="false" />
-          <Property Name="Etat_id" Type="int" />
-          <Property Name="TypeEau_id" Type="int" />
-        </EntityType>
-        <EntityType Name="Electricites">
-          <Key>
-            <PropertyRef Name="NPolice" />
-            <PropertyRef Name="Adresse" />
-            <PropertyRef Name="Date" />
-            <PropertyRef Name="Tel" />
-            <PropertyRef Name="NCompteur" />
-            <PropertyRef Name="Reference" />
-          </Key>
-          <Property Name="NPolice" Type="int" Nullable="false" />
-          <Property Name="Adresse" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="Date" Type="datetime" Nullable="false" />
-          <Property Name="Tel" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="NCompteur" Type="int" Nullable="false" />
-          <Property Name="Reference" Type="nvarchar" MaxLength="15" Nullable="false" />
-          <Property Name="Annee" Type="smallint" Nullable="false" />
-          <Property Name="Etat_id" Type="int" />
-          <Property Name="TypeElec_id" Type="int" />
-        </EntityType>
-        <EntityType Name="Etats">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="NomEtat" Type="nvarchar(max)" />
-        </EntityType>
-        <EntityType Name="RelveeEaux">
-          <Key>
-            <PropertyRef Name="Id" />
-            <PropertyRef Name="Annee" />
-            <PropertyRef Name="Trimestre" />
-          </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="Annee" Type="smallint" Nullable="false" />
-          <Property Name="Trimestre" Type="int" Nullable="false" />
-          <Property Name="NIndex" Type="int" Nullable="false" />
-          <Property Name="PIndex" Type="int" Nullable="false" />
-          <Property Name="NPayer" Type="float" Nullable="false" />
-          <Property Name="Eau_NPolice" Type="int" />
-          <Property Name="Eau_Adresse" Type="nvarchar" MaxLength="100" />
-          <Property Name="Eau_Date" Type="datetime" />
-          <Property Name="Eau_Tel" Type="nvarchar" MaxLength="20" />
-          <Property Name="Eau_NCompteur" Type="int" />
-          <Property Name="Eau_Reference" Type="nvarchar" MaxLength="15" />
-          <Property Name="Rapport" Type="nchar" MaxLength="255" />
-        </EntityType>
-        <EntityType Name="RelveeElecs">
-          <Key>
-            <PropertyRef Name="Id" />
-            <PropertyRef Name="Annee" />
-            <PropertyRef Name="Trimestre" />
-          </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="Annee" Type="smallint" Nullable="false" />
-          <Property Name="Trimestre" Type="int" Nullable="false" />
-          <Property Name="NIndex" Type="int" Nullable="false" />
-          <Property Name="PIndex" Type="int" Nullable="false" />
-          <Property Name="NPayer" Type="float" Nullable="false" />
-          <Property Name="Elec_NPolice" Type="int" />
-          <Property Name="Elec_Adresse" Type="nvarchar" MaxLength="100" />
-          <Property Name="Elec_Date" Type="datetime" />
-          <Property Name="Elec_Tel" Type="nvarchar" MaxLength="20" />
-          <Property Name="Elec_NCompteur" Type="int" />
-          <Property Name="Elec_Reference" Type="nvarchar" MaxLength="15" />
-          <Property Name="Rapport" Type="nchar" MaxLength="255" />
-        </EntityType>
-        <EntityType Name="TeleCommunications">
-          <Key>
-            <PropertyRef Name="NPolice" />
-            <PropertyRef Name="Adresse" />
-            <PropertyRef Name="Date" />
-            <PropertyRef Name="Tel" />
-            <PropertyRef Name="MD" />
-          </Key>
-          <Property Name="NPolice" Type="int" Nullable="false" />
-          <Property Name="Adresse" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="Date" Type="datetime" Nullable="false" />
-          <Property Name="Tel" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="MD" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="Forfait" Type="int" Nullable="false" />
-          <Property Name="Montant" Type="float" Nullable="false" />
-          <Property Name="Etat_id" Type="int" />
-          <Property Name="TypeTelecom_id" Type="int" />
-        </EntityType>
-        <EntityType Name="TypeEaux">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="NomTypeEau" Type="nvarchar(max)" />
-        </EntityType>
-        <EntityType Name="TypeElectricites">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="NomTypeElec" Type="nvarchar(max)" />
-        </EntityType>
-        <EntityType Name="TypeTelecommunications">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="NomTypeTelecommunication" Type="nvarchar(max)" />
-        </EntityType>
-        <Association Name="FK_dbo_Eaux_dbo_Etats_Etat_id">
-          <End Role="Etats" Type="Self.Etats" Multiplicity="0..1" />
-          <End Role="Eaux" Type="Self.Eaux" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Etats">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="Eaux">
-              <PropertyRef Name="Etat_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_dbo_Eaux_dbo_TypeEaux_TypeEau_id">
-          <End Role="TypeEaux" Type="Self.TypeEaux" Multiplicity="0..1" />
-          <End Role="Eaux" Type="Self.Eaux" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TypeEaux">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="Eaux">
-              <PropertyRef Name="TypeEau_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_dbo_Electricites_dbo_Etats_Etat_id">
-          <End Role="Etats" Type="Self.Etats" Multiplicity="0..1" />
-          <End Role="Electricites" Type="Self.Electricites" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Etats">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="Electricites">
-              <PropertyRef Name="Etat_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_dbo_Electricites_dbo_TypeElectricites_TypeElec_id">
-          <End Role="TypeElectricites" Type="Self.TypeElectricites" Multiplicity="0..1" />
-          <End Role="Electricites" Type="Self.Electricites" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TypeElectricites">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="Electricites">
-              <PropertyRef Name="TypeElec_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_dbo_RelveeEaux_dbo_Eaux_Eau_NPolice_Eau_Adresse_Eau_Date_Eau_Tel_Eau_NCompteur_Eau_Reference">
-          <End Role="Eaux" Type="Self.Eaux" Multiplicity="0..1" />
-          <End Role="RelveeEaux" Type="Self.RelveeEaux" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Eaux">
-              <PropertyRef Name="NPolice" />
-              <PropertyRef Name="Adresse" />
-              <PropertyRef Name="Date" />
-              <PropertyRef Name="Tel" />
-              <PropertyRef Name="NCompteur" />
-              <PropertyRef Name="Reference" />
-            </Principal>
-            <Dependent Role="RelveeEaux">
-              <PropertyRef Name="Eau_NPolice" />
-              <PropertyRef Name="Eau_Adresse" />
-              <PropertyRef Name="Eau_Date" />
-              <PropertyRef Name="Eau_Tel" />
-              <PropertyRef Name="Eau_NCompteur" />
-              <PropertyRef Name="Eau_Reference" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_dbo_RelveeElecs_dbo_Electricites_Elec_NPolice_Elec_Adresse_Elec_Date_Elec_Tel_Elec_NCompteur_Elec_Reference">
-          <End Role="Electricites" Type="Self.Electricites" Multiplicity="0..1" />
-          <End Role="RelveeElecs" Type="Self.RelveeElecs" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Electricites">
-              <PropertyRef Name="NPolice" />
-              <PropertyRef Name="Adresse" />
-              <PropertyRef Name="Date" />
-              <PropertyRef Name="Tel" />
-              <PropertyRef Name="NCompteur" />
-              <PropertyRef Name="Reference" />
-            </Principal>
-            <Dependent Role="RelveeElecs">
-              <PropertyRef Name="Elec_NPolice" />
-              <PropertyRef Name="Elec_Adresse" />
-              <PropertyRef Name="Elec_Date" />
-              <PropertyRef Name="Elec_Tel" />
-              <PropertyRef Name="Elec_NCompteur" />
-              <PropertyRef Name="Elec_Reference" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_dbo_TeleCommunications_dbo_Etats_Etat_id">
-          <End Role="Etats" Type="Self.Etats" Multiplicity="0..1" />
-          <End Role="TeleCommunications" Type="Self.TeleCommunications" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Etats">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="TeleCommunications">
-              <PropertyRef Name="Etat_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_dbo_TeleCommunications_dbo_TypeTelecommunications_TypeTelecom_id">
-          <End Role="TypeTelecommunications" Type="Self.TypeTelecommunications" Multiplicity="0..1" />
-          <End Role="TeleCommunications" Type="Self.TeleCommunications" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TypeTelecommunications">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="TeleCommunications">
-              <PropertyRef Name="TypeTelecom_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityContainer Name="FacturationModelStoreContainer">
-          <EntitySet Name="Eaux" EntityType="Self.Eaux" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Electricites" EntityType="Self.Electricites" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Etats" EntityType="Self.Etats" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="RelveeEaux" EntityType="Self.RelveeEaux" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="RelveeElecs" EntityType="Self.RelveeElecs" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="TeleCommunications" EntityType="Self.TeleCommunications" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="TypeEaux" EntityType="Self.TypeEaux" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="TypeElectricites" EntityType="Self.TypeElectricites" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="TypeTelecommunications" EntityType="Self.TypeTelecommunications" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_dbo_Eaux_dbo_Etats_Etat_id" Association="Self.FK_dbo_Eaux_dbo_Etats_Etat_id">
-            <End Role="Etats" EntitySet="Etats" />
-            <End Role="Eaux" EntitySet="Eaux" />
-          </AssociationSet>
-          <AssociationSet Name="FK_dbo_Eaux_dbo_TypeEaux_TypeEau_id" Association="Self.FK_dbo_Eaux_dbo_TypeEaux_TypeEau_id">
-            <End Role="TypeEaux" EntitySet="TypeEaux" />
-            <End Role="Eaux" EntitySet="Eaux" />
-          </AssociationSet>
-          <AssociationSet Name="FK_dbo_Electricites_dbo_Etats_Etat_id" Association="Self.FK_dbo_Electricites_dbo_Etats_Etat_id">
-            <End Role="Etats" EntitySet="Etats" />
-            <End Role="Electricites" EntitySet="Electricites" />
-          </AssociationSet>
-          <AssociationSet Name="FK_dbo_Electricites_dbo_TypeElectricites_TypeElec_id" Association="Self.FK_dbo_Electricites_dbo_TypeElectricites_TypeElec_id">
-            <End Role="TypeElectricites" EntitySet="TypeElectricites" />
-            <End Role="Electricites" EntitySet="Electricites" />
-          </AssociationSet>
-          <AssociationSet Name="FK_dbo_RelveeEaux_dbo_Eaux_Eau_NPolice_Eau_Adresse_Eau_Date_Eau_Tel_Eau_NCompteur_Eau_Reference" Association="Self.FK_dbo_RelveeEaux_dbo_Eaux_Eau_NPolice_Eau_Adresse_Eau_Date_Eau_Tel_Eau_NCompteur_Eau_Reference">
-            <End Role="Eaux" EntitySet="Eaux" />
-            <End Role="RelveeEaux" EntitySet="RelveeEaux" />
-          </AssociationSet>
-          <AssociationSet Name="FK_dbo_RelveeElecs_dbo_Electricites_Elec_NPolice_Elec_Adresse_Elec_Date_Elec_Tel_Elec_NCompteur_Elec_Reference" Association="Self.FK_dbo_RelveeElecs_dbo_Electricites_Elec_NPolice_Elec_Adresse_Elec_Date_Elec_Tel_Elec_NCompteur_Elec_Reference">
-            <End Role="Electricites" EntitySet="Electricites" />
-            <End Role="RelveeElecs" EntitySet="RelveeElecs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_dbo_TeleCommunications_dbo_Etats_Etat_id" Association="Self.FK_dbo_TeleCommunications_dbo_Etats_Etat_id">
-            <End Role="Etats" EntitySet="Etats" />
-            <End Role="TeleCommunications" EntitySet="TeleCommunications" />
-          </AssociationSet>
-          <AssociationSet Name="FK_dbo_TeleCommunications_dbo_TypeTelecommunications_TypeTelecom_id" Association="Self.FK_dbo_TeleCommunications_dbo_TypeTelecommunications_TypeTelecom_id">
-            <End Role="TypeTelecommunications" EntitySet="TypeTelecommunications" />
-            <End Role="TeleCommunications" EntitySet="TeleCommunications" />
-          </AssociationSet>
-        </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+    <Schema Namespace="FacturationModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="FacturationModelStoreContainer">
+    <EntitySet Name="Eaux" EntityType="FacturationModel.Store.Eaux" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Electricites" EntityType="FacturationModel.Store.Electricites" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Etats" EntityType="FacturationModel.Store.Etats" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RelveeEaux" EntityType="FacturationModel.Store.RelveeEaux" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RelveeElecs" EntityType="FacturationModel.Store.RelveeElecs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TeleCommunications" EntityType="FacturationModel.Store.TeleCommunications" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TypeEaux" EntityType="FacturationModel.Store.TypeEaux" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TypeElectricites" EntityType="FacturationModel.Store.TypeElectricites" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TypeTelecommunications" EntityType="FacturationModel.Store.TypeTelecommunications" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_dbo_Eaux_dbo_Etats_Etat_id" Association="FacturationModel.Store.FK_dbo_Eaux_dbo_Etats_Etat_id">
+      <End Role="Etats" EntitySet="Etats" />
+      <End Role="Eaux" EntitySet="Eaux" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Eaux_dbo_TypeEaux_TypeEau_id" Association="FacturationModel.Store.FK_dbo_Eaux_dbo_TypeEaux_TypeEau_id">
+      <End Role="TypeEaux" EntitySet="TypeEaux" />
+      <End Role="Eaux" EntitySet="Eaux" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_RelveeEaux_dbo_Eaux_Eau_NPolice_Eau_Adresse_Eau_Date_Eau_Tel_Eau_NCompteur_Eau_Reference" Association="FacturationModel.Store.FK_dbo_RelveeEaux_dbo_Eaux_Eau_NPolice_Eau_Adresse_Eau_Date_Eau_Tel_Eau_NCompteur_Eau_Reference">
+      <End Role="Eaux" EntitySet="Eaux" />
+      <End Role="RelveeEaux" EntitySet="RelveeEaux" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Electricites_dbo_Etats_Etat_id" Association="FacturationModel.Store.FK_dbo_Electricites_dbo_Etats_Etat_id">
+      <End Role="Etats" EntitySet="Etats" />
+      <End Role="Electricites" EntitySet="Electricites" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Electricites_dbo_TypeElectricites_TypeElec_id" Association="FacturationModel.Store.FK_dbo_Electricites_dbo_TypeElectricites_TypeElec_id">
+      <End Role="TypeElectricites" EntitySet="TypeElectricites" />
+      <End Role="Electricites" EntitySet="Electricites" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_RelveeElecs_dbo_Electricites_Elec_NPolice_Elec_Adresse_Elec_Date_Elec_Tel_Elec_NCompteur_Elec_Reference" Association="FacturationModel.Store.FK_dbo_RelveeElecs_dbo_Electricites_Elec_NPolice_Elec_Adresse_Elec_Date_Elec_Tel_Elec_NCompteur_Elec_Reference">
+      <End Role="Electricites" EntitySet="Electricites" />
+      <End Role="RelveeElecs" EntitySet="RelveeElecs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_TeleCommunications_dbo_Etats_Etat_id" Association="FacturationModel.Store.FK_dbo_TeleCommunications_dbo_Etats_Etat_id">
+      <End Role="Etats" EntitySet="Etats" />
+      <End Role="TeleCommunications" EntitySet="TeleCommunications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_TeleCommunications_dbo_TypeTelecommunications_TypeTelecom_id" Association="FacturationModel.Store.FK_dbo_TeleCommunications_dbo_TypeTelecommunications_TypeTelecom_id">
+      <End Role="TypeTelecommunications" EntitySet="TypeTelecommunications" />
+      <End Role="TeleCommunications" EntitySet="TeleCommunications" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Eaux">
+    <Key>
+      <PropertyRef Name="NPolice" />
+      <PropertyRef Name="Adresse" />
+      <PropertyRef Name="Date" />
+      <PropertyRef Name="Tel" />
+      <PropertyRef Name="NCompteur" />
+      <PropertyRef Name="Reference" />
+    </Key>
+    <Property Name="NPolice" Type="int" Nullable="false" />
+    <Property Name="Adresse" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="Tel" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="NCompteur" Type="int" Nullable="false" />
+    <Property Name="Reference" Type="nvarchar" Nullable="false" MaxLength="15" />
+    <Property Name="Annee" Type="smallint" Nullable="false" />
+    <Property Name="Etat_id" Type="int" Nullable="true" />
+    <Property Name="TypeEau_id" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Electricites">
+    <Key>
+      <PropertyRef Name="NPolice" />
+      <PropertyRef Name="Adresse" />
+      <PropertyRef Name="Date" />
+      <PropertyRef Name="Tel" />
+      <PropertyRef Name="NCompteur" />
+      <PropertyRef Name="Reference" />
+    </Key>
+    <Property Name="NPolice" Type="int" Nullable="false" />
+    <Property Name="Adresse" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="Tel" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="NCompteur" Type="int" Nullable="false" />
+    <Property Name="Reference" Type="nvarchar" Nullable="false" MaxLength="15" />
+    <Property Name="Annee" Type="smallint" Nullable="false" />
+    <Property Name="Etat_id" Type="int" Nullable="true" />
+    <Property Name="TypeElec_id" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Etats">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NomEtat" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="RelveeEaux">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Annee" />
+      <PropertyRef Name="Trimestre" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Annee" Type="smallint" Nullable="false" />
+    <Property Name="Trimestre" Type="int" Nullable="false" />
+    <Property Name="NIndex" Type="int" Nullable="false" />
+    <Property Name="PIndex" Type="int" Nullable="false" />
+    <Property Name="NPayer" Type="float" Nullable="false" />
+    <Property Name="Eau_NPolice" Type="int" Nullable="true" />
+    <Property Name="Eau_Adresse" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="Eau_Date" Type="datetime" Nullable="true" />
+    <Property Name="Eau_Tel" Type="nvarchar" Nullable="true" MaxLength="20" />
+    <Property Name="Eau_NCompteur" Type="int" Nullable="true" />
+    <Property Name="Eau_Reference" Type="nvarchar" Nullable="true" MaxLength="15" />
+    <Property Name="Rapport" Type="nchar" Nullable="true" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="RelveeElecs">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Annee" />
+      <PropertyRef Name="Trimestre" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Annee" Type="smallint" Nullable="false" />
+    <Property Name="Trimestre" Type="int" Nullable="false" />
+    <Property Name="NIndex" Type="int" Nullable="false" />
+    <Property Name="PIndex" Type="int" Nullable="false" />
+    <Property Name="NPayer" Type="float" Nullable="false" />
+    <Property Name="Elec_NPolice" Type="int" Nullable="true" />
+    <Property Name="Elec_Adresse" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="Elec_Date" Type="datetime" Nullable="true" />
+    <Property Name="Elec_Tel" Type="nvarchar" Nullable="true" MaxLength="20" />
+    <Property Name="Elec_NCompteur" Type="int" Nullable="true" />
+    <Property Name="Elec_Reference" Type="nvarchar" Nullable="true" MaxLength="15" />
+    <Property Name="Rapport" Type="nchar" Nullable="true" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="TeleCommunications">
+    <Key>
+      <PropertyRef Name="NPolice" />
+      <PropertyRef Name="Adresse" />
+      <PropertyRef Name="Date" />
+      <PropertyRef Name="Tel" />
+      <PropertyRef Name="MD" />
+    </Key>
+    <Property Name="NPolice" Type="int" Nullable="false" />
+    <Property Name="Adresse" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="Tel" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="MD" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="Forfait" Type="int" Nullable="false" />
+    <Property Name="Montant" Type="float" Nullable="false" />
+    <Property Name="Etat_id" Type="int" Nullable="true" />
+    <Property Name="TypeTelecom_id" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="TypeEaux">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NomTypeEau" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="TypeElectricites">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NomTypeElec" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="TypeTelecommunications">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NomTypeTelecommunication" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <Association Name="FK_dbo_Eaux_dbo_Etats_Etat_id">
+    <End Role="Etats" Type="FacturationModel.Store.Etats" Multiplicity="0..1" />
+    <End Role="Eaux" Type="FacturationModel.Store.Eaux" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Etats">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Eaux">
+        <PropertyRef Name="Etat_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Eaux_dbo_TypeEaux_TypeEau_id">
+    <End Role="TypeEaux" Type="FacturationModel.Store.TypeEaux" Multiplicity="0..1" />
+    <End Role="Eaux" Type="FacturationModel.Store.Eaux" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeEaux">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Eaux">
+        <PropertyRef Name="TypeEau_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_RelveeEaux_dbo_Eaux_Eau_NPolice_Eau_Adresse_Eau_Date_Eau_Tel_Eau_NCompteur_Eau_Reference">
+    <End Role="Eaux" Type="FacturationModel.Store.Eaux" Multiplicity="0..1" />
+    <End Role="RelveeEaux" Type="FacturationModel.Store.RelveeEaux" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Eaux">
+        <PropertyRef Name="NPolice" />
+        <PropertyRef Name="Adresse" />
+        <PropertyRef Name="Date" />
+        <PropertyRef Name="Tel" />
+        <PropertyRef Name="NCompteur" />
+        <PropertyRef Name="Reference" />
+      </Principal>
+      <Dependent Role="RelveeEaux">
+        <PropertyRef Name="Eau_NPolice" />
+        <PropertyRef Name="Eau_Adresse" />
+        <PropertyRef Name="Eau_Date" />
+        <PropertyRef Name="Eau_Tel" />
+        <PropertyRef Name="Eau_NCompteur" />
+        <PropertyRef Name="Eau_Reference" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Electricites_dbo_Etats_Etat_id">
+    <End Role="Etats" Type="FacturationModel.Store.Etats" Multiplicity="0..1" />
+    <End Role="Electricites" Type="FacturationModel.Store.Electricites" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Etats">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Electricites">
+        <PropertyRef Name="Etat_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Electricites_dbo_TypeElectricites_TypeElec_id">
+    <End Role="TypeElectricites" Type="FacturationModel.Store.TypeElectricites" Multiplicity="0..1" />
+    <End Role="Electricites" Type="FacturationModel.Store.Electricites" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeElectricites">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Electricites">
+        <PropertyRef Name="TypeElec_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_RelveeElecs_dbo_Electricites_Elec_NPolice_Elec_Adresse_Elec_Date_Elec_Tel_Elec_NCompteur_Elec_Reference">
+    <End Role="Electricites" Type="FacturationModel.Store.Electricites" Multiplicity="0..1" />
+    <End Role="RelveeElecs" Type="FacturationModel.Store.RelveeElecs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Electricites">
+        <PropertyRef Name="NPolice" />
+        <PropertyRef Name="Adresse" />
+        <PropertyRef Name="Date" />
+        <PropertyRef Name="Tel" />
+        <PropertyRef Name="NCompteur" />
+        <PropertyRef Name="Reference" />
+      </Principal>
+      <Dependent Role="RelveeElecs">
+        <PropertyRef Name="Elec_NPolice" />
+        <PropertyRef Name="Elec_Adresse" />
+        <PropertyRef Name="Elec_Date" />
+        <PropertyRef Name="Elec_Tel" />
+        <PropertyRef Name="Elec_NCompteur" />
+        <PropertyRef Name="Elec_Reference" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_TeleCommunications_dbo_Etats_Etat_id">
+    <End Role="Etats" Type="FacturationModel.Store.Etats" Multiplicity="0..1" />
+    <End Role="TeleCommunications" Type="FacturationModel.Store.TeleCommunications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Etats">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="TeleCommunications">
+        <PropertyRef Name="Etat_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_TeleCommunications_dbo_TypeTelecommunications_TypeTelecom_id">
+    <End Role="TypeTelecommunications" Type="FacturationModel.Store.TypeTelecommunications" Multiplicity="0..1" />
+    <End Role="TeleCommunications" Type="FacturationModel.Store.TeleCommunications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeTelecommunications">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="TeleCommunications">
+        <PropertyRef Name="TypeTelecom_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="FacturationModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -596,126 +595,125 @@
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="FacturationModelStoreContainer" CdmEntityContainer="FacturationEntities">
-          <EntitySetMapping Name="Eaux">
-            <EntityTypeMapping TypeName="FacturationModel.Eau">
-              <MappingFragment StoreEntitySet="Eaux">
-                <ScalarProperty Name="NPolice" ColumnName="NPolice" />
-                <ScalarProperty Name="Adresse" ColumnName="Adresse" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="Tel" ColumnName="Tel" />
-                <ScalarProperty Name="NCompteur" ColumnName="NCompteur" />
-                <ScalarProperty Name="Reference" ColumnName="Reference" />
-                <ScalarProperty Name="Annee" ColumnName="Annee" />
-                <ScalarProperty Name="Etat_id" ColumnName="Etat_id" />
-                <ScalarProperty Name="TypeEau_id" ColumnName="TypeEau_id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Electricites">
-            <EntityTypeMapping TypeName="FacturationModel.Electricite">
-              <MappingFragment StoreEntitySet="Electricites">
-                <ScalarProperty Name="NPolice" ColumnName="NPolice" />
-                <ScalarProperty Name="Adresse" ColumnName="Adresse" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="Tel" ColumnName="Tel" />
-                <ScalarProperty Name="NCompteur" ColumnName="NCompteur" />
-                <ScalarProperty Name="Reference" ColumnName="Reference" />
-                <ScalarProperty Name="Annee" ColumnName="Annee" />
-                <ScalarProperty Name="Etat_id" ColumnName="Etat_id" />
-                <ScalarProperty Name="TypeElec_id" ColumnName="TypeElec_id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Etats">
-            <EntityTypeMapping TypeName="FacturationModel.Etat">
-              <MappingFragment StoreEntitySet="Etats">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="NomEtat" ColumnName="NomEtat" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="RelveeEaux">
-            <EntityTypeMapping TypeName="FacturationModel.RelveeEau">
-              <MappingFragment StoreEntitySet="RelveeEaux">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Annee" ColumnName="Annee" />
-                <ScalarProperty Name="Trimestre" ColumnName="Trimestre" />
-                <ScalarProperty Name="NIndex" ColumnName="NIndex" />
-                <ScalarProperty Name="PIndex" ColumnName="PIndex" />
-                <ScalarProperty Name="NPayer" ColumnName="NPayer" />
-                <ScalarProperty Name="Eau_NPolice" ColumnName="Eau_NPolice" />
-                <ScalarProperty Name="Eau_Adresse" ColumnName="Eau_Adresse" />
-                <ScalarProperty Name="Eau_Date" ColumnName="Eau_Date" />
-                <ScalarProperty Name="Eau_Tel" ColumnName="Eau_Tel" />
-                <ScalarProperty Name="Eau_NCompteur" ColumnName="Eau_NCompteur" />
-                <ScalarProperty Name="Eau_Reference" ColumnName="Eau_Reference" />
-                <ScalarProperty Name="Rapport" ColumnName="Rapport" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="RelveeElecs">
-            <EntityTypeMapping TypeName="FacturationModel.RelveeElec">
-              <MappingFragment StoreEntitySet="RelveeElecs">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Annee" ColumnName="Annee" />
-                <ScalarProperty Name="Trimestre" ColumnName="Trimestre" />
-                <ScalarProperty Name="NIndex" ColumnName="NIndex" />
-                <ScalarProperty Name="PIndex" ColumnName="PIndex" />
-                <ScalarProperty Name="NPayer" ColumnName="NPayer" />
-                <ScalarProperty Name="Elec_NPolice" ColumnName="Elec_NPolice" />
-                <ScalarProperty Name="Elec_Adresse" ColumnName="Elec_Adresse" />
-                <ScalarProperty Name="Elec_Date" ColumnName="Elec_Date" />
-                <ScalarProperty Name="Elec_Tel" ColumnName="Elec_Tel" />
-                <ScalarProperty Name="Elec_NCompteur" ColumnName="Elec_NCompteur" />
-                <ScalarProperty Name="Elec_Reference" ColumnName="Elec_Reference" />
-                <ScalarProperty Name="Rapport" ColumnName="Rapport" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TeleCommunications">
-            <EntityTypeMapping TypeName="FacturationModel.TeleCommunication">
-              <MappingFragment StoreEntitySet="TeleCommunications">
-                <ScalarProperty Name="NPolice" ColumnName="NPolice" />
-                <ScalarProperty Name="Adresse" ColumnName="Adresse" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="Tel" ColumnName="Tel" />
-                <ScalarProperty Name="MD" ColumnName="MD" />
-                <ScalarProperty Name="Forfait" ColumnName="Forfait" />
-                <ScalarProperty Name="Montant" ColumnName="Montant" />
-                <ScalarProperty Name="Etat_id" ColumnName="Etat_id" />
-                <ScalarProperty Name="TypeTelecom_id" ColumnName="TypeTelecom_id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TypeEaux">
-            <EntityTypeMapping TypeName="FacturationModel.TypeEau">
-              <MappingFragment StoreEntitySet="TypeEaux">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="NomTypeEau" ColumnName="NomTypeEau" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TypeElectricites">
-            <EntityTypeMapping TypeName="FacturationModel.TypeElectricite">
-              <MappingFragment StoreEntitySet="TypeElectricites">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="NomTypeElec" ColumnName="NomTypeElec" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TypeTelecommunications">
-            <EntityTypeMapping TypeName="FacturationModel.TypeTelecommunication">
-              <MappingFragment StoreEntitySet="TypeTelecommunications">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="NomTypeTelecommunication" ColumnName="NomTypeTelecommunication" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-        </EntityContainerMapping>
-      </Mapping>
-    </edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FacturationModelStoreContainer" CdmEntityContainer="FacturationEntities">
+    <EntitySetMapping Name="Eaux">
+      <EntityTypeMapping TypeName="IsTypeOf(FacturationModel.Eau)">
+        <MappingFragment StoreEntitySet="Eaux">
+          <ScalarProperty Name="NPolice" ColumnName="NPolice" />
+          <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="NCompteur" ColumnName="NCompteur" />
+          <ScalarProperty Name="Reference" ColumnName="Reference" />
+          <ScalarProperty Name="Annee" ColumnName="Annee" />
+          <ScalarProperty Name="Etat_id" ColumnName="Etat_id" />
+          <ScalarProperty Name="TypeEau_id" ColumnName="TypeEau_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Electricites">
+      <EntityTypeMapping TypeName="IsTypeOf(FacturationModel.Electricite)">
+        <MappingFragment StoreEntitySet="Electricites">
+          <ScalarProperty Name="NPolice" ColumnName="NPolice" />
+          <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="NCompteur" ColumnName="NCompteur" />
+          <ScalarProperty Name="Reference" ColumnName="Reference" />
+          <ScalarProperty Name="Annee" ColumnName="Annee" />
+          <ScalarProperty Name="Etat_id" ColumnName="Etat_id" />
+          <ScalarProperty Name="TypeElec_id" ColumnName="TypeElec_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Etats">
+      <EntityTypeMapping TypeName="IsTypeOf(FacturationModel.Etat)">
+        <MappingFragment StoreEntitySet="Etats">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="NomEtat" ColumnName="NomEtat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RelveeEaux">
+      <EntityTypeMapping TypeName="IsTypeOf(FacturationModel.RelveeEau)">
+        <MappingFragment StoreEntitySet="RelveeEaux">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Annee" ColumnName="Annee" />
+          <ScalarProperty Name="Trimestre" ColumnName="Trimestre" />
+          <ScalarProperty Name="NIndex" ColumnName="NIndex" />
+          <ScalarProperty Name="PIndex" ColumnName="PIndex" />
+          <ScalarProperty Name="NPayer" ColumnName="NPayer" />
+          <ScalarProperty Name="Eau_NPolice" ColumnName="Eau_NPolice" />
+          <ScalarProperty Name="Eau_Adresse" ColumnName="Eau_Adresse" />
+          <ScalarProperty Name="Eau_Date" ColumnName="Eau_Date" />
+          <ScalarProperty Name="Eau_Tel" ColumnName="Eau_Tel" />
+          <ScalarProperty Name="Eau_NCompteur" ColumnName="Eau_NCompteur" />
+          <ScalarProperty Name="Eau_Reference" ColumnName="Eau_Reference" />
+          <ScalarProperty Name="Rapport" ColumnName="Rapport" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RelveeElecs">
+      <EntityTypeMapping TypeName="IsTypeOf(FacturationModel.RelveeElec)">
+        <MappingFragment StoreEntitySet="RelveeElecs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Annee" ColumnName="Annee" />
+          <ScalarProperty Name="Trimestre" ColumnName="Trimestre" />
+          <ScalarProperty Name="NIndex" ColumnName="NIndex" />
+          <ScalarProperty Name="PIndex" ColumnName="PIndex" />
+          <ScalarProperty Name="NPayer" ColumnName="NPayer" />
+          <ScalarProperty Name="Elec_NPolice" ColumnName="Elec_NPolice" />
+          <ScalarProperty Name="Elec_Adresse" ColumnName="Elec_Adresse" />
+          <ScalarProperty Name="Elec_Date" ColumnName="Elec_Date" />
+          <ScalarProperty Name="Elec_Tel" ColumnName="Elec_Tel" />
+          <ScalarProperty Name="Elec_NCompteur" ColumnName="Elec_NCompteur" />
+          <ScalarProperty Name="Elec_Reference" ColumnName="Elec_Reference" />
+          <ScalarProperty Name="Rapport" ColumnName="Rapport" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TeleCommunications">
+      <EntityTypeMapping TypeName="IsTypeOf(FacturationModel.TeleCommunication)">
+        <MappingFragment StoreEntitySet="TeleCommunications">
+          <ScalarProperty Name="NPolice" ColumnName="NPolice" />
+          <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="MD" ColumnName="MD" />
+          <ScalarProperty Name="Forfait" ColumnName="Forfait" />
+          <ScalarProperty Name="Montant" ColumnName="Montant" />
+          <ScalarProperty Name="Etat_id" ColumnName="Etat_id" />
+          <ScalarProperty Name="TypeTelecom_id" ColumnName="TypeTelecom_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypeEaux">
+      <EntityTypeMapping TypeName="IsTypeOf(FacturationModel.TypeEau)">
+        <MappingFragment StoreEntitySet="TypeEaux">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="NomTypeEau" ColumnName="NomTypeEau" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypeElectricites">
+      <EntityTypeMapping TypeName="IsTypeOf(FacturationModel.TypeElectricite)">
+        <MappingFragment StoreEntitySet="TypeElectricites">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="NomTypeElec" ColumnName="NomTypeElec" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypeTelecommunications">
+      <EntityTypeMapping TypeName="IsTypeOf(FacturationModel.TypeTelecommunication)">
+        <MappingFragment StoreEntitySet="TypeTelecommunications">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="NomTypeTelecommunication" ColumnName="NomTypeTelecommunication" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
   <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
@@ -729,7 +727,7 @@
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="true" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
-        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>
     </Options>

@@ -207,6 +207,7 @@
       <DependentUpon>FacturationModel.edmx</DependentUpon>
       <LastGenOutput>FacturationModel.Context.cs</LastGenOutput>
     </Content>
+    <Content Include="FacturationModel.edmx.sql" />
     <Content Include="FacturationModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>FacturationModel.edmx</DependentUpon>

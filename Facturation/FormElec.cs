@@ -24,7 +24,7 @@ namespace Facturation
                 comboBoxEtat.DataSource = db.Etats.ToList();
                 comboBoxEtat.DisplayMember = "NomEtat";
                 comboBoxEtat.ValueMember = "id";
-                comboBoxType.DataSource = db.TypeEaux.ToList();
+                comboBoxType.DataSource = db.TypeElectricites.ToList();
                 comboBoxType.DisplayMember = "NomTypeElec";
                 comboBoxType.ValueMember = "id";
             }
