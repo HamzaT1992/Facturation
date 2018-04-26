@@ -31,7 +31,6 @@
             this.textBoxNCompt = new System.Windows.Forms.TextBox();
             this.textBoxAdress = new System.Windows.Forms.TextBox();
             this.textBoxAnnee = new System.Windows.Forms.TextBox();
-            this.textBoxPolice = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
@@ -62,6 +61,7 @@
             this.IndexPrec = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comboBoxNpolice = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -87,13 +87,6 @@
             this.textBoxAnnee.Name = "textBoxAnnee";
             this.textBoxAnnee.Size = new System.Drawing.Size(164, 20);
             this.textBoxAnnee.TabIndex = 51;
-            // 
-            // textBoxPolice
-            // 
-            this.textBoxPolice.Location = new System.Drawing.Point(147, 94);
-            this.textBoxPolice.Name = "textBoxPolice";
-            this.textBoxPolice.Size = new System.Drawing.Size(164, 20);
-            this.textBoxPolice.TabIndex = 52;
             // 
             // label2
             // 
@@ -303,6 +296,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.comboBoxNpolice);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.textBoxNetPayer);
@@ -370,6 +364,15 @@
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
+            // comboBoxNpolice
+            // 
+            this.comboBoxNpolice.FormattingEnabled = true;
+            this.comboBoxNpolice.Location = new System.Drawing.Point(135, 26);
+            this.comboBoxNpolice.Name = "comboBoxNpolice";
+            this.comboBoxNpolice.Size = new System.Drawing.Size(164, 21);
+            this.comboBoxNpolice.TabIndex = 52;
+            this.comboBoxNpolice.SelectedIndexChanged += new System.EventHandler(this.comboBoxNpolice_SelectedIndexChanged);
+            // 
             // FormReleveElec
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -392,7 +395,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBoxNewIndex);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBoxPolice);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label29);
@@ -416,7 +418,6 @@
         private System.Windows.Forms.TextBox textBoxNCompt;
         private System.Windows.Forms.TextBox textBoxAdress;
         private System.Windows.Forms.TextBox textBoxAnnee;
-        private System.Windows.Forms.TextBox textBoxPolice;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label29;
@@ -447,5 +448,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn IndexPrec;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.ComboBox comboBoxNpolice;
     }
 }

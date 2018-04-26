@@ -22,7 +22,14 @@ namespace Facturation
         }
         private void ReleveElec_Load(object sender, EventArgs e)
         {
-
+            using (var db = new FacturationEntities())
+            {
+                comboBoxNpolice.DataSource = db.Electricites.Select(ea => ea.NPolice).ToList();
+                //comboBoxNpolice.DisplayMember = "NPolice";
+                //comboBoxNpolice.ValueMember = "NPolice";
+            }
+            for (int i = 1; i <= 4; i++)
+                comboBoxTrimestre.Items.Add(i);
         }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -53,6 +60,19 @@ namespace Facturation
             var consom = Convert.ToInt32(textBoxNewIndex.Text) - Convert.ToInt32(textBoxPrevIndex.Text);
             var np = consom * firstconst + consom * firstconst * tvaelec + redevencefix + redevencefix * tvaelec;
             textBoxNetPayer.Text = np.ToString();
+        }
+
+        private void comboBoxNpolice_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            using (var db = new FacturationEntities())
+            {
+                int npolice = (int)comboBoxNpolice.SelectedValue;
+
+                var eau = db.Electricites.Single(ea => ea.NPolice == npolice);
+                textBoxAdress.Text = eau.Adresse;
+                textBoxNCompt.Text = eau.NCompteur.ToString();
+
+            }
         }
     }
 }
