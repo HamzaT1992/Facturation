@@ -419,52 +419,61 @@
             this.dataGridViewElec.ReadOnly = true;
             this.dataGridViewElec.Size = new System.Drawing.Size(606, 341);
             this.dataGridViewElec.TabIndex = 28;
-            this.dataGridViewElec.SelectionChanged += new System.EventHandler(this.dataGridViewElec_SelectionChanged);
+            this.dataGridViewElec.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewElec_CellMouseDoubleClick);
             // 
             // npolice
             // 
             this.npolice.HeaderText = "n° Police";
             this.npolice.Name = "npolice";
+            this.npolice.ReadOnly = true;
             // 
             // Reference
             // 
             this.Reference.HeaderText = "Reference";
             this.Reference.Name = "Reference";
+            this.Reference.ReadOnly = true;
             // 
             // nCompteur
             // 
             this.nCompteur.HeaderText = "n°Compteur";
             this.nCompteur.Name = "nCompteur";
+            this.nCompteur.ReadOnly = true;
             // 
             // Type
             // 
             this.Type.HeaderText = "Type";
             this.Type.Name = "Type";
+            this.Type.ReadOnly = true;
             // 
             // etat
             // 
             this.etat.HeaderText = "Etat";
             this.etat.Name = "etat";
+            this.etat.ReadOnly = true;
             // 
             // Annee
             // 
             this.Annee.HeaderText = "Année";
             this.Annee.Name = "Annee";
+            this.Annee.ReadOnly = true;
             // 
             // date
             // 
             this.date.HeaderText = "Date";
             this.date.Name = "date";
+            this.date.ReadOnly = true;
             // 
             // Tele
             // 
             this.Tele.HeaderText = "Télèphone";
             this.Tele.Name = "Tele";
+            this.Tele.ReadOnly = true;
             // 
             // adrsse
             // 
             this.adrsse.HeaderText = "Adresse";
             this.adrsse.Name = "adrsse";
+            this.adrsse.ReadOnly = true;
             // 
             // button1
             // 

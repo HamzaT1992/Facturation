@@ -34,7 +34,6 @@
             this.del = new System.Windows.Forms.Button();
             this.edit = new System.Windows.Forms.Button();
             this.add = new System.Windows.Forms.Button();
-            this.dataGridViewEau = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBoxEtat = new System.Windows.Forms.ComboBox();
             this.dateTimePickerEau = new System.Windows.Forms.DateTimePicker();
@@ -56,16 +55,26 @@
             this.label30 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.textBoxRechRef = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxRechNcomp = new System.Windows.Forms.TextBox();
+            this.textBoxRechAdress = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.dataGridViewEau = new System.Windows.Forms.DataGridView();
+            this.npolice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Reference = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nCompteur = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.etat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Annee = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tele = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adrsse = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEau)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEau)).BeginInit();
             this.SuspendLayout();
             // 
             // Search
@@ -125,15 +134,6 @@
             this.add.Text = "Ajouter";
             this.add.UseVisualStyleBackColor = true;
             this.add.Click += new System.EventHandler(this.add_Click);
-            // 
-            // dataGridViewEau
-            // 
-            this.dataGridViewEau.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridViewEau.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewEau.Location = new System.Drawing.Point(362, 147);
-            this.dataGridViewEau.Name = "dataGridViewEau";
-            this.dataGridViewEau.Size = new System.Drawing.Size(606, 341);
-            this.dataGridViewEau.TabIndex = 18;
             // 
             // groupBox1
             // 
@@ -323,10 +323,10 @@
             // 
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.textBoxRechNpo);
-            this.groupBox3.Controls.Add(this.textBox1);
+            this.groupBox3.Controls.Add(this.textBoxRechRef);
             this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Controls.Add(this.textBox3);
-            this.groupBox3.Controls.Add(this.textBox2);
+            this.groupBox3.Controls.Add(this.textBoxRechNcomp);
+            this.groupBox3.Controls.Add(this.textBoxRechAdress);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Location = new System.Drawing.Point(362, 29);
@@ -346,6 +346,13 @@
             this.label3.TabIndex = 39;
             this.label3.Text = "n° Police :";
             // 
+            // textBoxRechRef
+            // 
+            this.textBoxRechRef.Location = new System.Drawing.Point(71, 55);
+            this.textBoxRechRef.Name = "textBoxRechRef";
+            this.textBoxRechRef.Size = new System.Drawing.Size(145, 20);
+            this.textBoxRechRef.TabIndex = 44;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -356,18 +363,25 @@
             this.label4.TabIndex = 38;
             this.label4.Text = "Reference :";
             // 
-            // textBox1
+            // textBoxRechNcomp
             // 
-            this.textBox1.Location = new System.Drawing.Point(71, 55);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(145, 20);
-            this.textBox1.TabIndex = 44;
+            this.textBoxRechNcomp.Location = new System.Drawing.Point(300, 19);
+            this.textBoxRechNcomp.Name = "textBoxRechNcomp";
+            this.textBoxRechNcomp.Size = new System.Drawing.Size(163, 20);
+            this.textBoxRechNcomp.TabIndex = 42;
+            // 
+            // textBoxRechAdress
+            // 
+            this.textBoxRechAdress.Location = new System.Drawing.Point(300, 54);
+            this.textBoxRechAdress.Name = "textBoxRechAdress";
+            this.textBoxRechAdress.Size = new System.Drawing.Size(163, 20);
+            this.textBoxRechAdress.TabIndex = 43;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(228, 23);
+            this.label5.Location = new System.Drawing.Point(229, 58);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(51, 13);
             this.label5.TabIndex = 37;
@@ -377,25 +391,88 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(228, 55);
+            this.label6.Location = new System.Drawing.Point(227, 22);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(71, 13);
             this.label6.TabIndex = 36;
             this.label6.Text = "n° Compteur :";
             // 
-            // textBox2
+            // dataGridViewEau
             // 
-            this.textBox2.Location = new System.Drawing.Point(299, 19);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(163, 20);
-            this.textBox2.TabIndex = 43;
+            this.dataGridViewEau.AllowUserToAddRows = false;
+            this.dataGridViewEau.AllowUserToDeleteRows = false;
+            this.dataGridViewEau.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewEau.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewEau.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.npolice,
+            this.Reference,
+            this.nCompteur,
+            this.Type,
+            this.etat,
+            this.Annee,
+            this.date,
+            this.Tele,
+            this.adrsse});
+            this.dataGridViewEau.Location = new System.Drawing.Point(362, 144);
+            this.dataGridViewEau.Name = "dataGridViewEau";
+            this.dataGridViewEau.ReadOnly = true;
+            this.dataGridViewEau.Size = new System.Drawing.Size(606, 341);
+            this.dataGridViewEau.TabIndex = 29;
+            this.dataGridViewEau.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewEau_CellDoubleClick);
             // 
-            // textBox3
+            // npolice
             // 
-            this.textBox3.Location = new System.Drawing.Point(299, 54);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(163, 20);
-            this.textBox3.TabIndex = 42;
+            this.npolice.HeaderText = "n° Police";
+            this.npolice.Name = "npolice";
+            this.npolice.ReadOnly = true;
+            // 
+            // Reference
+            // 
+            this.Reference.HeaderText = "Reference";
+            this.Reference.Name = "Reference";
+            this.Reference.ReadOnly = true;
+            // 
+            // nCompteur
+            // 
+            this.nCompteur.HeaderText = "n°Compteur";
+            this.nCompteur.Name = "nCompteur";
+            this.nCompteur.ReadOnly = true;
+            // 
+            // Type
+            // 
+            this.Type.HeaderText = "Type";
+            this.Type.Name = "Type";
+            this.Type.ReadOnly = true;
+            // 
+            // etat
+            // 
+            this.etat.HeaderText = "Etat";
+            this.etat.Name = "etat";
+            this.etat.ReadOnly = true;
+            // 
+            // Annee
+            // 
+            this.Annee.HeaderText = "Année";
+            this.Annee.Name = "Annee";
+            this.Annee.ReadOnly = true;
+            // 
+            // date
+            // 
+            this.date.HeaderText = "Date";
+            this.date.Name = "date";
+            this.date.ReadOnly = true;
+            // 
+            // Tele
+            // 
+            this.Tele.HeaderText = "Télèphone";
+            this.Tele.Name = "Tele";
+            this.Tele.ReadOnly = true;
+            // 
+            // adrsse
+            // 
+            this.adrsse.HeaderText = "Adresse";
+            this.adrsse.Name = "adrsse";
+            this.adrsse.ReadOnly = true;
             // 
             // FormEau
             // 
@@ -403,20 +480,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(980, 500);
+            this.Controls.Add(this.dataGridViewEau);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.Search);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.dataGridViewEau);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormEau";
             this.Text = "L\'Eau";
             this.Load += new System.EventHandler(this.FormEau_Load);
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEau)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEau)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -429,7 +506,6 @@
         private System.Windows.Forms.Button del;
         private System.Windows.Forms.Button edit;
         private System.Windows.Forms.Button add;
-        private System.Windows.Forms.DataGridView dataGridViewEau;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox comboBoxType;
         private System.Windows.Forms.TextBox textBoxTel;
@@ -451,11 +527,21 @@
         private System.Windows.Forms.ComboBox comboBoxEtat;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxRechRef;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxRechNcomp;
+        private System.Windows.Forms.TextBox textBoxRechAdress;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridView dataGridViewEau;
+        private System.Windows.Forms.DataGridViewTextBoxColumn npolice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Reference;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nCompteur;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Type;
+        private System.Windows.Forms.DataGridViewTextBoxColumn etat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Annee;
+        private System.Windows.Forms.DataGridViewTextBoxColumn date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tele;
+        private System.Windows.Forms.DataGridViewTextBoxColumn adrsse;
     }
 }
