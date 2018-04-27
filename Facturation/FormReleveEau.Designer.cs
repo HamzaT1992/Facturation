@@ -52,17 +52,19 @@
             this.annuler = new System.Windows.Forms.Button();
             this.confirm = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.labelTitle = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBoxNpolice = new System.Windows.Forms.ComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Npolice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.adresse = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.annee = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.trim = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IndexNew = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IndexPrev = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.consommation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.netpay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rapport = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.labelTitle = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBoxNpolice = new System.Windows.Forms.ComboBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -282,6 +284,8 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Npolice,
             this.adresse,
+            this.annee,
+            this.trim,
             this.IndexNew,
             this.IndexPrev,
             this.consommation,
@@ -290,51 +294,8 @@
             this.dataGridView1.Location = new System.Drawing.Point(354, 72);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(631, 428);
+            this.dataGridView1.Size = new System.Drawing.Size(946, 428);
             this.dataGridView1.TabIndex = 58;
-            // 
-            // Npolice
-            // 
-            this.Npolice.HeaderText = "N° Police";
-            this.Npolice.Name = "Npolice";
-            this.Npolice.ReadOnly = true;
-            // 
-            // adresse
-            // 
-            this.adresse.HeaderText = "Adresse";
-            this.adresse.Name = "adresse";
-            this.adresse.ReadOnly = true;
-            // 
-            // IndexNew
-            // 
-            this.IndexNew.HeaderText = "Nouveau Index";
-            this.IndexNew.Name = "IndexNew";
-            this.IndexNew.ReadOnly = true;
-            // 
-            // IndexPrev
-            // 
-            this.IndexPrev.HeaderText = "Index Précédent";
-            this.IndexPrev.Name = "IndexPrev";
-            this.IndexPrev.ReadOnly = true;
-            // 
-            // consommation
-            // 
-            this.consommation.HeaderText = "Consommation";
-            this.consommation.Name = "consommation";
-            this.consommation.ReadOnly = true;
-            // 
-            // netpay
-            // 
-            this.netpay.DataPropertyName = "netPayer";
-            this.netpay.HeaderText = "Net à Payer";
-            this.netpay.Name = "netpay";
-            this.netpay.ReadOnly = true;
-            // 
-            // rapport
-            // 
-            this.rapport.HeaderText = "Rapport";
-            this.rapport.Name = "rapport";
-            this.rapport.ReadOnly = true;
             // 
             // labelTitle
             // 
@@ -377,11 +338,66 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // Npolice
+            // 
+            this.Npolice.HeaderText = "N° Police";
+            this.Npolice.Name = "Npolice";
+            this.Npolice.ReadOnly = true;
+            // 
+            // adresse
+            // 
+            this.adresse.HeaderText = "Adresse";
+            this.adresse.Name = "adresse";
+            this.adresse.ReadOnly = true;
+            // 
+            // annee
+            // 
+            this.annee.HeaderText = "Année";
+            this.annee.Name = "annee";
+            this.annee.ReadOnly = true;
+            // 
+            // trim
+            // 
+            this.trim.HeaderText = "Trimméstre";
+            this.trim.Name = "trim";
+            this.trim.ReadOnly = true;
+            // 
+            // IndexNew
+            // 
+            this.IndexNew.HeaderText = "Nouveau Index";
+            this.IndexNew.Name = "IndexNew";
+            this.IndexNew.ReadOnly = true;
+            // 
+            // IndexPrev
+            // 
+            this.IndexPrev.HeaderText = "Index Précédent";
+            this.IndexPrev.Name = "IndexPrev";
+            this.IndexPrev.ReadOnly = true;
+            // 
+            // consommation
+            // 
+            this.consommation.HeaderText = "Consommation";
+            this.consommation.Name = "consommation";
+            this.consommation.ReadOnly = true;
+            // 
+            // netpay
+            // 
+            this.netpay.DataPropertyName = "netPayer";
+            this.netpay.HeaderText = "Net à Payer";
+            this.netpay.Name = "netpay";
+            this.netpay.ReadOnly = true;
+            // 
+            // rapport
+            // 
+            this.rapport.HeaderText = "Rapport";
+            this.rapport.Name = "rapport";
+            this.rapport.ReadOnly = true;
+            // 
             // FormReleveEau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 582);
+            this.ClientSize = new System.Drawing.Size(1302, 582);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.confirm);
@@ -449,13 +465,15 @@
         private System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ComboBox comboBoxNpolice;
         private System.Windows.Forms.DataGridViewTextBoxColumn Npolice;
         private System.Windows.Forms.DataGridViewTextBoxColumn adresse;
+        private System.Windows.Forms.DataGridViewTextBoxColumn annee;
+        private System.Windows.Forms.DataGridViewTextBoxColumn trim;
         private System.Windows.Forms.DataGridViewTextBoxColumn IndexNew;
         private System.Windows.Forms.DataGridViewTextBoxColumn IndexPrev;
         private System.Windows.Forms.DataGridViewTextBoxColumn consommation;
         private System.Windows.Forms.DataGridViewTextBoxColumn netpay;
         private System.Windows.Forms.DataGridViewTextBoxColumn rapport;
-        private System.Windows.Forms.ComboBox comboBoxNpolice;
     }
 }

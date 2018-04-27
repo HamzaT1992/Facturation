@@ -59,18 +59,22 @@ namespace Facturation
 
         private void confirm_Click(object sender, EventArgs e)
         {
-            try
-            {
+            if (textBoxAnnee.Text != "" && comboBoxTrimestre.Text != "" && textBoxNewIndex.Text != "" && textBoxPrevIndex.Text != "" && comboBoxNpolice.Text != "" && textBoxAdress.Text != "" && textBoxNCompt.Text != "" )
+            { 
                 if (MessageBox.Show("Voulez vous vraiment confirmer!", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                 {
-                    dataGridView1.Rows.Add(comboBoxNpolice.Text, textBoxAdress.Text, textBoxNewIndex.Text, textBoxPrevIndex.Text, textBoxConsommation.Text, textBoxNetPayer.Text);
+                    if (textBoxMotif.Text == "")
+                        dataGridView1.Rows.Add(comboBoxNpolice.Text, textBoxAdress.Text, textBoxAnnee.Text, comboBoxTrimestre.Text, textBoxNewIndex.Text, textBoxPrevIndex.Text, textBoxConsommation.Text, textBoxNetPayer.Text);
+                    else
+                        dataGridView1.Rows.Add(comboBoxNpolice.Text, textBoxAdress.Text, textBoxAnnee.Text, comboBoxTrimestre.Text, textBoxNewIndex.Text, textBoxPrevIndex.Text, textBoxConsommation.Text, textBoxNetPayer.Text, textBoxMotif.Text);
                 }
             }
-            catch (Exception)
-            {
+        
+            else
                 MessageBox.Show("Veuillez remplir tous les champs!", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            
 
-            }
+              
         }
 
         private void textBoxConsommation_TextChanged(object sender, EventArgs e)
