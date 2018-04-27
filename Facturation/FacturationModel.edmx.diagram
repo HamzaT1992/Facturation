@@ -6,13 +6,13 @@
     <edmx:Diagrams>
       <Diagram DiagramId="c1fbc7b027b446889180eb99a6ad59c9" Name="Diagram1">
         <EntityTypeShape EntityType="FacturationModel.Eau" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
-        <EntityTypeShape EntityType="FacturationModel.Electricite" Width="1.5" PointX="5.25" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FacturationModel.Electricite" Width="1.5" PointX="5.25" PointY="7" IsExpanded="true" />
         <EntityTypeShape EntityType="FacturationModel.Etat" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
         <EntityTypeShape EntityType="FacturationModel.RelveeEau" Width="1.5" PointX="7.5" PointY="5.625" IsExpanded="true" />
         <EntityTypeShape EntityType="FacturationModel.RelveeElec" Width="1.5" PointX="7.5" PointY="1.875" IsExpanded="true" />
         <EntityTypeShape EntityType="FacturationModel.TeleCommunication" Width="1.5" PointX="3" PointY="1.875" IsExpanded="true" />
         <EntityTypeShape EntityType="FacturationModel.TypeEau" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="FacturationModel.TypeElectricite" Width="1.5" PointX="5.25" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FacturationModel.TypeElectricite" Width="1.5" PointX="5.25" PointY="5.125" IsExpanded="true" />
         <EntityTypeShape EntityType="FacturationModel.TypeTelecommunication" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
         <AssociationConnector Association="FacturationModel.FK_dbo_Eaux_dbo_Etats_Etat_id" ManuallyRouted="false" />
         <AssociationConnector Association="FacturationModel.FK_dbo_Eaux_dbo_TypeEaux_TypeEau_id" ManuallyRouted="false" />
@@ -24,6 +24,8 @@
         <AssociationConnector Association="FacturationModel.FK_dbo_TeleCommunications_dbo_Etats_Etat_id" ManuallyRouted="false" >
         </AssociationConnector>
         <AssociationConnector Association="FacturationModel.FK_dbo_TeleCommunications_dbo_TypeTelecommunications_TypeTelecom_id" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="FacturationModel.RelveeTeleCom" Width="1.5" PointX="5.25" PointY="1.875" />
+        <AssociationConnector Association="FacturationModel.FK_dbo_RelveeTeleCom_dbo_TeleCom" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

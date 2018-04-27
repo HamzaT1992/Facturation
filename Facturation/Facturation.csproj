@@ -133,6 +133,9 @@
     <Compile Include="RelveeElec.cs">
       <DependentUpon>FacturationModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="RelveeTeleCom.cs">
+      <DependentUpon>FacturationModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="TeleCommunication.cs">
       <DependentUpon>FacturationModel.tt</DependentUpon>
     </Compile>

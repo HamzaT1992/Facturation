@@ -14,6 +14,12 @@ namespace Facturation
     
     public partial class TeleCommunication
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public TeleCommunication()
+        {
+            this.RelveeTeleComs = new HashSet<RelveeTeleCom>();
+        }
+    
         public string NPolice { get; set; }
         public string Adresse { get; set; }
         public System.DateTime Date { get; set; }
@@ -26,5 +32,7 @@ namespace Facturation
     
         public virtual Etat Etat { get; set; }
         public virtual TypeTelecommunication TypeTelecommunication { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<RelveeTeleCom> RelveeTeleComs { get; set; }
     }
 }
