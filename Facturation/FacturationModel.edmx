@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="FacturationModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="FacturationModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Eaux">
           <Key>
             <PropertyRef Name="NPolice" />
@@ -68,7 +68,7 @@
           <Property Name="Eau_Tel" Type="nvarchar" MaxLength="20" />
           <Property Name="Eau_NCompteur" Type="nvarchar" MaxLength="50" />
           <Property Name="Eau_Reference" Type="nvarchar" MaxLength="50" />
-          <Property Name="Rapport" Type="nchar" MaxLength="255" />
+          <Property Name="Rapport" Type="nvarchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="RelveeElecs">
           <Key>
@@ -88,7 +88,22 @@
           <Property Name="Elec_Tel" Type="nvarchar" MaxLength="20" />
           <Property Name="Elec_NCompteur" Type="nvarchar" MaxLength="50" />
           <Property Name="Elec_Reference" Type="nvarchar" MaxLength="50" />
-          <Property Name="Rapport" Type="nchar" MaxLength="255" />
+          <Property Name="Rapport" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="RelveeTeleCom">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Mois" Type="smallint" Nullable="false" />
+          <Property Name="NPayer" Type="float" Nullable="false" />
+          <Property Name="TeleCom_NPolice" Type="nvarchar" MaxLength="50" />
+          <Property Name="TeleCom_Adresse" Type="nvarchar" MaxLength="100" />
+          <Property Name="TeleCom_Date" Type="datetime" />
+          <Property Name="TeleCom_Tel" Type="nvarchar" MaxLength="20" />
+          <Property Name="TeleCom_MD" Type="nvarchar" MaxLength="50" />
+          <Property Name="TeleCom_Reference" Type="nvarchar" MaxLength="50" />
+          <Property Name="Rapport" Type="nvarchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="TeleCommunications">
           <Key>
@@ -102,7 +117,7 @@
           <Property Name="Adresse" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Date" Type="datetime" Nullable="false" />
           <Property Name="Tel" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="MD" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="MD" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Forfait" Type="int" Nullable="false" />
           <Property Name="Montant" Type="float" Nullable="false" />
           <Property Name="Etat_id" Type="int" />
@@ -221,6 +236,26 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_dbo_RelveeTeleCom_dbo_TeleCom">
+          <End Role="TeleCommunications" Type="Self.TeleCommunications" Multiplicity="0..1" />
+          <End Role="RelveeTeleCom" Type="Self.RelveeTeleCom" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TeleCommunications">
+              <PropertyRef Name="NPolice" />
+              <PropertyRef Name="Adresse" />
+              <PropertyRef Name="Date" />
+              <PropertyRef Name="Tel" />
+              <PropertyRef Name="MD" />
+            </Principal>
+            <Dependent Role="RelveeTeleCom">
+              <PropertyRef Name="TeleCom_NPolice" />
+              <PropertyRef Name="TeleCom_Adresse" />
+              <PropertyRef Name="TeleCom_Date" />
+              <PropertyRef Name="TeleCom_Tel" />
+              <PropertyRef Name="TeleCom_MD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_dbo_TeleCommunications_dbo_Etats_Etat_id">
           <End Role="Etats" Type="Self.Etats" Multiplicity="0..1" />
           <End Role="TeleCommunications" Type="Self.TeleCommunications" Multiplicity="*" />
@@ -251,6 +286,7 @@
           <EntitySet Name="Etats" EntityType="Self.Etats" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RelveeEaux" EntityType="Self.RelveeEaux" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RelveeElecs" EntityType="Self.RelveeElecs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RelveeTeleCom" EntityType="Self.RelveeTeleCom" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TeleCommunications" EntityType="Self.TeleCommunications" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TypeEaux" EntityType="Self.TypeEaux" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TypeElectricites" EntityType="Self.TypeElectricites" Schema="dbo" store:Type="Tables" />
@@ -279,6 +315,10 @@
             <End Role="Electricites" EntitySet="Electricites" />
             <End Role="RelveeElecs" EntitySet="RelveeElecs" />
           </AssociationSet>
+          <AssociationSet Name="FK_dbo_RelveeTeleCom_dbo_TeleCom" Association="Self.FK_dbo_RelveeTeleCom_dbo_TeleCom">
+            <End Role="TeleCommunications" EntitySet="TeleCommunications" />
+            <End Role="RelveeTeleCom" EntitySet="RelveeTeleCom" />
+          </AssociationSet>
           <AssociationSet Name="FK_dbo_TeleCommunications_dbo_Etats_Etat_id" Association="Self.FK_dbo_TeleCommunications_dbo_Etats_Etat_id">
             <End Role="Etats" EntitySet="Etats" />
             <End Role="TeleCommunications" EntitySet="TeleCommunications" />
@@ -288,8 +328,7 @@
             <End Role="TeleCommunications" EntitySet="TeleCommunications" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="FacturationModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -365,7 +404,7 @@
           <Property Name="Eau_Tel" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Eau_NCompteur" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Eau_Reference" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Rapport" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+          <Property Name="Rapport" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Eau" Relationship="Self.FK_dbo_RelveeEaux_dbo_Eaux_Eau_NPolice_Eau_Adresse_Eau_Date_Eau_Tel_Eau_NCompteur_Eau_Reference" FromRole="RelveeEaux" ToRole="Eaux" />
         </EntityType>
         <EntityType Name="RelveeElec">
@@ -386,7 +425,7 @@
           <Property Name="Elec_Tel" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Elec_NCompteur" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Elec_Reference" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Rapport" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+          <Property Name="Rapport" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Electricite" Relationship="Self.FK_dbo_RelveeElecs_dbo_Electricites_Elec_NPolice_Elec_Adresse_Elec_Date_Elec_Tel_Elec_NCompteur_Elec_Reference" FromRole="RelveeElecs" ToRole="Electricites" />
         </EntityType>
         <EntityType Name="TeleCommunication">
@@ -401,13 +440,14 @@
           <Property Name="Adresse" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Tel" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="MD" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Forfait" Type="Int32" Nullable="false" />
           <Property Name="Montant" Type="Double" Nullable="false" />
           <Property Name="Etat_id" Type="Int32" />
           <Property Name="TypeTelecom_id" Type="Int32" />
           <NavigationProperty Name="Etat" Relationship="Self.FK_dbo_TeleCommunications_dbo_Etats_Etat_id" FromRole="TeleCommunications" ToRole="Etats" />
           <NavigationProperty Name="TypeTelecommunication" Relationship="Self.FK_dbo_TeleCommunications_dbo_TypeTelecommunications_TypeTelecom_id" FromRole="TeleCommunications" ToRole="TypeTelecommunications" />
+          <NavigationProperty Name="RelveeTeleComs" Relationship="FacturationModel.FK_dbo_RelveeTeleCom_dbo_TeleCom" FromRole="TeleCommunication" ToRole="RelveeTeleCom" />
         </EntityType>
         <EntityType Name="TypeEau">
           <Key>
@@ -591,7 +631,48 @@
             <End Role="TypeTelecommunications" EntitySet="TypeTelecommunications" />
             <End Role="TeleCommunications" EntitySet="TeleCommunications" />
           </AssociationSet>
+          <EntitySet Name="RelveeTeleComs" EntityType="FacturationModel.RelveeTeleCom" />
+          <AssociationSet Name="FK_dbo_RelveeTeleCom_dbo_TeleCom" Association="FacturationModel.FK_dbo_RelveeTeleCom_dbo_TeleCom">
+            <End Role="TeleCommunication" EntitySet="TeleCommunications" />
+            <End Role="RelveeTeleCom" EntitySet="RelveeTeleComs" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="RelveeTeleCom">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Mois" Type="Int16" Nullable="false" />
+          <Property Name="NPayer" Type="Double" Nullable="false" />
+          <Property Name="TeleCom_NPolice" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TeleCom_Adresse" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TeleCom_Date" Type="DateTime" Precision="3" />
+          <Property Name="TeleCom_Tel" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TeleCom_MD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TeleCom_Reference" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Rapport" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TeleCommunication" Relationship="FacturationModel.FK_dbo_RelveeTeleCom_dbo_TeleCom" FromRole="RelveeTeleCom" ToRole="TeleCommunication" />
+        </EntityType>
+        <Association Name="FK_dbo_RelveeTeleCom_dbo_TeleCom">
+          <End Type="FacturationModel.TeleCommunication" Role="TeleCommunication" Multiplicity="0..1" />
+          <End Type="FacturationModel.RelveeTeleCom" Role="RelveeTeleCom" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TeleCommunication">
+              <PropertyRef Name="NPolice" />
+              <PropertyRef Name="Adresse" />
+              <PropertyRef Name="Date" />
+              <PropertyRef Name="Tel" />
+              <PropertyRef Name="MD" />
+            </Principal>
+            <Dependent Role="RelveeTeleCom">
+              <PropertyRef Name="TeleCom_NPolice" />
+              <PropertyRef Name="TeleCom_Adresse" />
+              <PropertyRef Name="TeleCom_Date" />
+              <PropertyRef Name="TeleCom_Tel" />
+              <PropertyRef Name="TeleCom_MD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -710,6 +791,22 @@
               <MappingFragment StoreEntitySet="TypeTelecommunications">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="NomTypeTelecommunication" ColumnName="NomTypeTelecommunication" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RelveeTeleComs">
+            <EntityTypeMapping TypeName="FacturationModel.RelveeTeleCom">
+              <MappingFragment StoreEntitySet="RelveeTeleCom">
+                <ScalarProperty Name="Rapport" ColumnName="Rapport" />
+                <ScalarProperty Name="TeleCom_Reference" ColumnName="TeleCom_Reference" />
+                <ScalarProperty Name="TeleCom_MD" ColumnName="TeleCom_MD" />
+                <ScalarProperty Name="TeleCom_Tel" ColumnName="TeleCom_Tel" />
+                <ScalarProperty Name="TeleCom_Date" ColumnName="TeleCom_Date" />
+                <ScalarProperty Name="TeleCom_Adresse" ColumnName="TeleCom_Adresse" />
+                <ScalarProperty Name="TeleCom_NPolice" ColumnName="TeleCom_NPolice" />
+                <ScalarProperty Name="NPayer" ColumnName="NPayer" />
+                <ScalarProperty Name="Mois" ColumnName="Mois" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -34,5 +34,6 @@ namespace Facturation
         public virtual DbSet<TypeEau> TypeEaux { get; set; }
         public virtual DbSet<TypeElectricite> TypeElectricites { get; set; }
         public virtual DbSet<TypeTelecommunication> TypeTelecommunications { get; set; }
+        public virtual DbSet<RelveeTeleCom> RelveeTeleComs { get; set; }
     }
 }
