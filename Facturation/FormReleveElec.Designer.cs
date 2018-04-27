@@ -43,28 +43,31 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.textBoxNewIndex = new System.Windows.Forms.TextBox();
             this.textBoxNetPayer = new System.Windows.Forms.TextBox();
             this.textBoxPrevIndex = new System.Windows.Forms.TextBox();
             this.textBoxConsommation = new System.Windows.Forms.TextBox();
-            this.textBoxMotif = new System.Windows.Forms.TextBox();
-            this.annuler = new System.Windows.Forms.Button();
             this.confirm = new System.Windows.Forms.Button();
             this.labelTitle = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.comboBoxNpolice = new System.Windows.Forms.ComboBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBoxMotif = new System.Windows.Forms.TextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.annee = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Trim = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IndexNew = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IndexPrec = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Consom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -142,10 +145,16 @@
             // comboBoxTrimestre
             // 
             this.comboBoxTrimestre.FormattingEnabled = true;
+            this.comboBoxTrimestre.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4"});
             this.comboBoxTrimestre.Location = new System.Drawing.Point(147, 206);
             this.comboBoxTrimestre.Name = "comboBoxTrimestre";
             this.comboBoxTrimestre.Size = new System.Drawing.Size(164, 21);
             this.comboBoxTrimestre.TabIndex = 53;
+            this.comboBoxTrimestre.Text = "--Entrer Trimmestre--";
             // 
             // label3
             // 
@@ -204,18 +213,6 @@
             this.label7.TabIndex = 47;
             this.label7.Text = "Net à Payer :";
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Enabled = false;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(81, 460);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(36, 13);
-            this.label8.TabIndex = 47;
-            this.label8.Text = "Motif :";
-            this.label8.Visible = false;
-            // 
             // textBoxNewIndex
             // 
             this.textBoxNewIndex.Location = new System.Drawing.Point(147, 263);
@@ -236,7 +233,7 @@
             this.textBoxPrevIndex.Name = "textBoxPrevIndex";
             this.textBoxPrevIndex.Size = new System.Drawing.Size(164, 20);
             this.textBoxPrevIndex.TabIndex = 50;
-            this.textBoxPrevIndex.TextChanged += new System.EventHandler(this.textBoxPrevIndex_TextChanged);
+            this.textBoxPrevIndex.TextChanged += new System.EventHandler(this.TextBoxPrevIndex_TextChanged);
             // 
             // textBoxConsommation
             // 
@@ -244,34 +241,18 @@
             this.textBoxConsommation.Name = "textBoxConsommation";
             this.textBoxConsommation.Size = new System.Drawing.Size(164, 20);
             this.textBoxConsommation.TabIndex = 49;
-            this.textBoxConsommation.TextChanged += new System.EventHandler(this.textBoxConsommation_TextChanged);
-            // 
-            // textBoxMotif
-            // 
-            this.textBoxMotif.Enabled = false;
-            this.textBoxMotif.Location = new System.Drawing.Point(147, 457);
-            this.textBoxMotif.Name = "textBoxMotif";
-            this.textBoxMotif.Size = new System.Drawing.Size(164, 20);
-            this.textBoxMotif.TabIndex = 51;
-            this.textBoxMotif.Visible = false;
-            // 
-            // annuler
-            // 
-            this.annuler.Location = new System.Drawing.Point(236, 509);
-            this.annuler.Name = "annuler";
-            this.annuler.Size = new System.Drawing.Size(75, 25);
-            this.annuler.TabIndex = 56;
-            this.annuler.Text = "Annuler";
-            this.annuler.UseVisualStyleBackColor = true;
+            this.textBoxConsommation.TextChanged += new System.EventHandler(this.TextBoxConsommation_TextChanged);
             // 
             // confirm
             // 
-            this.confirm.Location = new System.Drawing.Point(147, 509);
+            this.confirm.Location = new System.Drawing.Point(249, 508);
             this.confirm.Name = "confirm";
             this.confirm.Size = new System.Drawing.Size(75, 25);
             this.confirm.TabIndex = 56;
             this.confirm.Text = "Confirmer";
-            this.confirm.UseVisualStyleBackColor = true;            // 
+            this.confirm.UseVisualStyleBackColor = true;
+            this.confirm.Click += new System.EventHandler(this.Confirm_Click);
+            // 
             // labelTitle
             // 
             this.labelTitle.AutoSize = true;
@@ -282,31 +263,44 @@
             this.labelTitle.TabIndex = 48;
             this.labelTitle.Text = "Relevé de l\'éléctricité";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.pictureBox1);
+            this.groupBox1.Controls.Add(this.comboBoxNpolice);
+            this.groupBox1.Controls.Add(this.checkBox1);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.textBoxNetPayer);
+            this.groupBox1.Controls.Add(this.textBoxMotif);
+            this.groupBox1.Controls.Add(this.textBoxConsommation);
+            this.groupBox1.Location = new System.Drawing.Point(12, 65);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(312, 419);
+            this.groupBox1.TabIndex = 60;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Les Données";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(14, 337);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(51, 13);
+            this.label9.TabIndex = 65;
+            this.label9.Text = "Autorisé :";
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::Facturation.Properties.Resources.go;
-            this.pictureBox1.Location = new System.Drawing.Point(281, 421);
+            this.pictureBox1.Location = new System.Drawing.Point(267, 326);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(30, 30);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 59;
+            this.pictureBox1.TabIndex = 66;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.comboBoxNpolice);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.textBoxNetPayer);
-            this.groupBox1.Controls.Add(this.textBoxConsommation);
-            this.groupBox1.Location = new System.Drawing.Point(12, 65);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(312, 350);
-            this.groupBox1.TabIndex = 60;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Les Données";
             // 
             // comboBoxNpolice
             // 
@@ -315,7 +309,39 @@
             this.comboBoxNpolice.Name = "comboBoxNpolice";
             this.comboBoxNpolice.Size = new System.Drawing.Size(164, 21);
             this.comboBoxNpolice.TabIndex = 52;
-            this.comboBoxNpolice.SelectedIndexChanged += new System.EventHandler(this.comboBoxNpolice_SelectedIndexChanged);
+            this.comboBoxNpolice.SelectedIndexChanged += new System.EventHandler(this.ComboBoxNpolice_SelectedIndexChanged);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Checked = true;
+            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox1.Location = new System.Drawing.Point(135, 337);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(15, 14);
+            this.checkBox1.TabIndex = 64;
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.CheckBox1_CheckedChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Enabled = false;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(69, 379);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(36, 13);
+            this.label8.TabIndex = 62;
+            this.label8.Text = "Motif :";
+            this.label8.Visible = false;
+            // 
+            // textBoxMotif
+            // 
+            this.textBoxMotif.Location = new System.Drawing.Point(133, 372);
+            this.textBoxMotif.Name = "textBoxMotif";
+            this.textBoxMotif.Size = new System.Drawing.Size(164, 20);
+            this.textBoxMotif.TabIndex = 51;
+            this.textBoxMotif.Visible = false;
             // 
             // dataGridView2
             // 
@@ -325,6 +351,8 @@
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
+            this.annee,
+            this.Trim,
             this.IndexNew,
             this.IndexPrec,
             this.Consom,
@@ -347,6 +375,18 @@
             this.dataGridViewTextBoxColumn2.HeaderText = "Adresse";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // annee
+            // 
+            this.annee.HeaderText = "Annee";
+            this.annee.Name = "annee";
+            this.annee.ReadOnly = true;
+            // 
+            // Trim
+            // 
+            this.Trim.HeaderText = "Trimmèstre";
+            this.Trim.Name = "Trim";
+            this.Trim.ReadOnly = true;
             // 
             // IndexNew
             // 
@@ -385,17 +425,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1054, 611);
             this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.confirm);
-            this.Controls.Add(this.annuler);
             this.Controls.Add(this.dateTimePickerDate);
             this.Controls.Add(this.comboBoxTrimestre);
             this.Controls.Add(this.textBoxNCompt);
             this.Controls.Add(this.textBoxPrevIndex);
             this.Controls.Add(this.textBoxAdress);
-            this.Controls.Add(this.textBoxMotif);
             this.Controls.Add(this.textBoxAnnee);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -410,9 +446,9 @@
             this.Name = "FormReleveElec";
             this.Text = "ReleveEauOuElec";
             this.Load += new System.EventHandler(this.ReleveElec_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -436,25 +472,28 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBoxNewIndex;
         private System.Windows.Forms.TextBox textBoxNetPayer;
         private System.Windows.Forms.TextBox textBoxPrevIndex;
         private System.Windows.Forms.TextBox textBoxConsommation;
-        private System.Windows.Forms.TextBox textBoxMotif;
-        private System.Windows.Forms.Button annuler;
         private System.Windows.Forms.Button confirm;
         private System.Windows.Forms.Label labelTitle;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.ComboBox comboBoxNpolice;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn annee;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Trim;
         private System.Windows.Forms.DataGridViewTextBoxColumn IndexNew;
         private System.Windows.Forms.DataGridViewTextBoxColumn IndexPrec;
         private System.Windows.Forms.DataGridViewTextBoxColumn Consom;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.ComboBox comboBoxNpolice;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBoxMotif;
     }
 }

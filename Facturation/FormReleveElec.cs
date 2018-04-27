@@ -13,45 +13,28 @@ namespace Facturation
 {
     public partial class FormReleveElec : Form
     {
-       
-        
-        private bool imageCheck = true;
+
         public FormReleveElec()
         {
             InitializeComponent();
         }
         private void ReleveElec_Load(object sender, EventArgs e)
         {
+            // Remplissage des N° de Police
             using (var db = new FacturationEntities())
             {
                 comboBoxNpolice.DataSource = db.Electricites.Select(ea => ea.NPolice).ToList();
-                //comboBoxNpolice.DisplayMember = "NPolice";
-                //comboBoxNpolice.ValueMember = "NPolice";
-            }
-            for (int i = 1; i <= 4; i++)
-                comboBoxTrimestre.Items.Add(i);
-        }
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            if (imageCheck)
-            {
-                pictureBox1.Image = Resources.go;
-                label8.Enabled = label8.Visible = textBoxMotif.Enabled = textBoxMotif.Visible = imageCheck = false;
-            }
-            else
-            {
-                pictureBox1.Image = Resources.stop;
-                label8.Enabled = label8.Visible = textBoxMotif.Enabled = textBoxMotif.Visible = imageCheck = true;
             }
         }
 
-
-        private void textBoxPrevIndex_TextChanged(object sender, EventArgs e)
+        // Calcule de la Consommation
+        private void TextBoxPrevIndex_TextChanged(object sender, EventArgs e)
         {
             textBoxConsommation.Text = (Convert.ToInt32(textBoxNewIndex.Text) - Convert.ToInt32(textBoxPrevIndex.Text)).ToString();
         }
 
-        private void textBoxConsommation_TextChanged(object sender, EventArgs e)
+        // Calcule du Net à Payer
+        private void TextBoxConsommation_TextChanged(object sender, EventArgs e)
         {
             const double tvaelec = 0.07, firstconst = 1.18930, redevencefix = 401.13;
             var consom = Convert.ToInt32(textBoxNewIndex.Text) - Convert.ToInt32(textBoxPrevIndex.Text);
@@ -59,7 +42,8 @@ namespace Facturation
             textBoxNetPayer.Text = np.ToString();
         }
 
-        private void comboBoxNpolice_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void ComboBoxNpolice_SelectedIndexChanged(object sender, EventArgs e)
         {
             using (var db = new FacturationEntities())
             {
@@ -70,23 +54,62 @@ namespace Facturation
                 textBoxNCompt.Text = elec.NCompteur.ToString();
                 foreach (var rel in elec.RelveeElecs)
                 {
-                    dataGridView2.Rows.Add(elec.NPolice , elec.Adresse, rel.NIndex, rel.PIndex, rel.NIndex - rel.PIndex, rel.NPayer, rel.Rapport);
+                    dataGridView2.Rows.Add(elec.NPolice, elec.Adresse, rel.NIndex, rel.PIndex, rel.NIndex - rel.PIndex, rel.NPayer, rel.Rapport);
                 }
             }
         }
 
-        private void confirm_Click(object sender, EventArgs e)
+        private void Confirm_Click(object sender, EventArgs e)
         {
-            try
+            var All_Ok = true;
+
+            foreach (Control control in Controls.OfType<TextBox>())
             {
-                if (MessageBox.Show("Voulez vous vraiment confirmer!", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                if (control.Text == "")
                 {
-                    dataGridView2.Rows.Add(comboBoxNpolice.Text, textBoxAdress.Text, textBoxNewIndex.Text, textBoxPrevIndex.Text, textBoxConsommation.Text, textBoxNetPayer.Text);
+                    All_Ok = false;
+                    break;
                 }
             }
-            catch (Exception)
+
+            if (comboBoxTrimestre.Text == "--Entrer Trimmestre--" || (textBoxMotif.Visible && textBoxMotif.Text == ""))
+                All_Ok = false;
+
+            if (!All_Ok)
+                ErrorMbox("Veuiller remplir tous les champs!");
+
+            else if(MessageBox.Show("Voulez vous vraiment confirmer!", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
             {
-                MessageBox.Show("Veuillez remplir tous les champs!", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                dataGridView2.Rows.Add(
+                    comboBoxNpolice.Text,
+                    textBoxAdress.Text,
+                    textBoxAnnee.Text,
+                    comboBoxTrimestre.Text,
+                    textBoxNewIndex.Text,
+                    textBoxPrevIndex.Text,
+                    textBoxConsommation.Text,
+                    textBoxNetPayer.Text,
+                    textBoxMotif.Visible ? textBoxMotif.Text : null
+                );
+            }
+        }
+
+        private static void ErrorMbox(string msg)
+        {
+            MessageBox.Show(msg, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void CheckBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                pictureBox1.Image = Resources.go;
+                label8.Enabled = label8.Visible = textBoxMotif.Enabled = textBoxMotif.Visible = false;
+            }
+            else
+            {
+                pictureBox1.Image = Resources.stop;
+                label8.Enabled = label8.Visible = textBoxMotif.Enabled = textBoxMotif.Visible = true;
             }
         }
     }
