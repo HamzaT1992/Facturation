@@ -17,7 +17,7 @@ namespace Facturation
         {
             InitializeComponent();
         }
-        private void FillDataGridView(IQueryable<Electricite> elecs)
+        private void FillDataGridView(IQueryable<Eau> elecs)
         {
             dataGridViewElec.Rows.Clear();
             foreach (var elec in elecs)
@@ -26,7 +26,7 @@ namespace Facturation
                     elec.NPolice,
                     elec.Reference,
                     elec.NCompteur,
-                    elec.TypeElectricite.NomTypeElec,
+                    elec.TypeEau.NomTypeEau,
                     elec.Etat.NomEtat,
                     elec.Annee,
                     elec.Date,
@@ -48,7 +48,7 @@ namespace Facturation
                 comboBoxType.ValueMember = "id";
 
                 //Remplissage de dataGridView
-                FillDataGridView(db.Electricites);
+                FillDataGridView(db.Eaux);
             }
 
         }
@@ -108,7 +108,7 @@ namespace Facturation
         {
             using (var db = new FacturationEntities())
             {
-                IQueryable<Electricite> elecs = db.Electricites;
+                IQueryable<Eau> elecs = db.Eaux;
                 var countOfAll = elecs.Count();
                 if (textBoxRechNpo.Text != "")
                     elecs = elecs.Where(el => el.NPolice == textBoxRechNpo.Text);
@@ -125,12 +125,16 @@ namespace Facturation
                     MessageBox.Show("Aucun resultat trouvé!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-        private void dataGridViewElec_SelectionChanged(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            //var tr = true;
-            //foreach (DataGridViewCell cell in dataGridViewElec.CurrentRow.Cells)
-            //    if (cell.Value == null) return;
+            using (var db = new FacturationEntities())
+            {
+                FillDataGridView(db.Eaux); 
+            }
+        }
 
+        private void dataGridViewElec_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
             textBoxPolice.Text = dataGridViewElec.CurrentRow.Cells["npolice"].Value.ToString();
             textBoxReference.Text = dataGridViewElec.CurrentRow.Cells["Reference"].Value.ToString();
             textBoxAnnee.Text = dataGridViewElec.CurrentRow.Cells["Annee"].Value.ToString();
@@ -140,15 +144,6 @@ namespace Facturation
             dateTimePickerElec.Value = (DateTime)dataGridViewElec.CurrentRow.Cells["date"].Value;
             textBoxTeli.Text = dataGridViewElec.CurrentRow.Cells["Tele"].Value.ToString();
             comboBoxType.Text = dataGridViewElec.CurrentRow.Cells["Type"].Value.ToString();
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            using (var db = new FacturationEntities())
-            {
-                FillDataGridView(db.Electricites); 
-            }
         }
     }
 }

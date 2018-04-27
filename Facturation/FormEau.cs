@@ -27,6 +27,25 @@ namespace Facturation
                 comboBoxType.DataSource = db.TypeEaux.ToList();
                 comboBoxType.DisplayMember = "NomTypeEau";
                 comboBoxType.ValueMember = "id";
+                FillDataGridView(db.Eaux);
+            }
+        }
+        private void FillDataGridView(IQueryable<Eau> elecs)
+        {
+            dataGridViewEau.Rows.Clear();
+            foreach (var elec in elecs)
+            {
+                dataGridViewEau.Rows.Add(
+                    elec.NPolice,
+                    elec.Reference,
+                    elec.NCompteur,
+                    elec.TypeEau.NomTypeEau,
+                    elec.Etat.NomEtat,
+                    elec.Annee,
+                    elec.Date,
+                    elec.Tel,
+                    elec.Adresse
+                );
             }
         }
 
@@ -90,7 +109,45 @@ namespace Facturation
 
         private void Search_Click(object sender, EventArgs e)
         {
+            using (var db = new FacturationEntities())
+            {
+                IQueryable<Eau> elecs = db.Eaux;
+                var countOfAll = elecs.Count();
+                if (textBoxRechNpo.Text != "")
+                    elecs = elecs.Where(el => el.NPolice == textBoxRechNpo.Text);
+                else if (textBoxRechNcomp.Text != "")
+                    elecs = elecs.Where(el => el.NCompteur == textBoxRechNcomp.Text);
+                else if (textBoxRechRef.Text != "")
+                    elecs = elecs.Where(el => el.Reference == textBoxRechRef.Text);
+                else if (textBoxRechAdress.Text != "")
+                    elecs = elecs.Where(el => el.Adresse.Contains(textBoxRechAdress.Text) || el.Adresse.StartsWith(textBoxRechAdress.Text));
 
+                if (elecs.Count() > 0 && elecs.Count() < countOfAll)
+                    FillDataGridView(elecs);
+                else
+                    MessageBox.Show("Aucun resultat trouvé!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            using (var db = new FacturationEntities())
+            {
+                FillDataGridView(db.Eaux);
+            }
+        }
+
+        private void dataGridViewEau_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            textBoxPolice.Text = dataGridViewEau.CurrentRow.Cells["npolice"].Value.ToString();
+            textBoxRef.Text = dataGridViewEau.CurrentRow.Cells["Reference"].Value.ToString();
+            textBoxAnnee.Text = dataGridViewEau.CurrentRow.Cells["Annee"].Value.ToString();
+            textBoxAdresse.Text = dataGridViewEau.CurrentRow.Cells["adrsse"].Value.ToString();
+            textBoxNCompt.Text = dataGridViewEau.CurrentRow.Cells["nCompteur"].Value.ToString();
+            comboBoxEtat.Text = dataGridViewEau.CurrentRow.Cells["etat"].Value.ToString();
+            dateTimePickerEau.Value = (DateTime)dataGridViewEau.CurrentRow.Cells["date"].Value;
+            textBoxTel.Text = dataGridViewEau.CurrentRow.Cells["Tele"].Value.ToString();
+            comboBoxType.Text = dataGridViewEau.CurrentRow.Cells["Type"].Value.ToString();
         }
     }
 }
