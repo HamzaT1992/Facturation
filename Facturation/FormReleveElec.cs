@@ -20,24 +20,50 @@ namespace Facturation
         }
         private void ReleveElec_Load(object sender, EventArgs e)
         {
-            // Remplissage des N° de Police
+            // Remplissage des numeros de Police
             using (var db = new FacturationEntities())
             {
                 comboBoxNpolice.DataSource = db.Electricites.Select(ea => ea.NPolice).ToList();
+                comboBoxNpolice.AutoCompleteCustomSource.AddRange(db.Electricites.Select(ea => ea.NPolice).ToArray());
+                InitFields();
             }
         }
-
-        // Calcule de la Consommation
-        private void TextBoxPrevIndex_TextChanged(object sender, EventArgs e)
+        // Une Methode pour remlir les champs selon le Numero de Police
+        private void InitFields()
         {
+            using (var db = new FacturationEntities())
+            {
+                // l'année
+                textBoxAnnee.Text = DateTime.Today.Year.ToString();
+                // L'index précèdent
+                var rel = db.RelveeElecs.Where(r => r.Elec_NPolice == comboBoxNpolice.Text).OrderByDescending(r => r.Id).FirstOrDefault();
+                textBoxPrevIndex.Text = rel != null ? rel.NIndex.ToString() : "0";
+                // Trimmestre
+                comboBoxTrimestre.Items.Clear();
+                for (int i = 0; i < 4; i++)
+                    comboBoxTrimestre.Items.Add(i + 1);
+                comboBoxTrimestre.Text = "1";
+                if (rel == null)
+                    return;
+                comboBoxTrimestre.Text = rel.Trimestre != 4 ? (++rel.Trimestre).ToString() : "1"; 
+            }
+        }
+        // Calcule de la Consommation
+        private void TextBoxNewIndex_TextChanged(object sender, EventArgs e)
+        {
+            if (textBoxNewIndex.Text == "" || textBoxPrevIndex.Text == "")
+                return;
             textBoxConsommation.Text = (Convert.ToInt32(textBoxNewIndex.Text) - Convert.ToInt32(textBoxPrevIndex.Text)).ToString();
         }
 
         // Calcule du Net à Payer
         private void TextBoxConsommation_TextChanged(object sender, EventArgs e)
         {
+            if (textBoxNewIndex.Text == "" || textBoxPrevIndex.Text == "" || textBoxConsommation.Text == "")
+                return;
+
             const double tvaelec = 0.07, firstconst = 1.18930, redevencefix = 401.13;
-            var consom = Convert.ToInt32(textBoxNewIndex.Text) - Convert.ToInt32(textBoxPrevIndex.Text);
+            var consom = Convert.ToInt32(textBoxConsommation.Text);
             var np = consom * firstconst + consom * firstconst * tvaelec + redevencefix + redevencefix * tvaelec;
             textBoxNetPayer.Text = np.ToString();
         }
@@ -52,9 +78,11 @@ namespace Facturation
                 var elec = db.Electricites.Single(el => el.NPolice == npolice);
                 textBoxAdress.Text = elec.Adresse;
                 textBoxNCompt.Text = elec.NCompteur.ToString();
+                InitFields();
+                dataGridView2.Rows.Clear();
                 foreach (var rel in elec.RelveeElecs)
                 {
-                    dataGridView2.Rows.Add(elec.NPolice, elec.Adresse, rel.NIndex, rel.PIndex, rel.NIndex - rel.PIndex, rel.NPayer, rel.Rapport);
+                    dataGridView2.Rows.Add(elec.NPolice, elec.Adresse,rel.Annee, rel.Trimestre, rel.NIndex, rel.PIndex, rel.NIndex - rel.PIndex, rel.NPayer, rel.Rapport);
                 }
             }
         }
@@ -80,17 +108,21 @@ namespace Facturation
 
             else if(MessageBox.Show("Voulez vous vraiment confirmer!", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
             {
-                dataGridView2.Rows.Add(
-                    comboBoxNpolice.Text,
-                    textBoxAdress.Text,
-                    textBoxAnnee.Text,
-                    comboBoxTrimestre.Text,
-                    textBoxNewIndex.Text,
-                    textBoxPrevIndex.Text,
-                    textBoxConsommation.Text,
-                    textBoxNetPayer.Text,
-                    textBoxMotif.Visible ? textBoxMotif.Text : null
-                );
+                using (var db = new FacturationEntities())
+                {
+                    db.RelveeElecs.Add(new RelveeElec
+                    {
+                        Electricite = db.Electricites.Single(el => el.NPolice == comboBoxNpolice.Text),
+                        Annee = short.Parse(textBoxAnnee.Text),
+                        Trimestre = int.Parse(comboBoxTrimestre.Text),
+                        NIndex = int.Parse(textBoxNewIndex.Text),
+                        PIndex = int.Parse(textBoxPrevIndex.Text),
+                        NPayer = float.Parse(textBoxNetPayer.Text),
+                        Rapport = textBoxMotif.Visible ? textBoxMotif.Text : null
+                    });
+                    db.SaveChanges();
+                }
+                ComboBoxNpolice_SelectedIndexChanged(sender, e);
             }
         }
 

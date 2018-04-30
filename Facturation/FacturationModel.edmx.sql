@@ -115,7 +115,7 @@ GO
 
 -- Creating table 'RelveeEaux'
 CREATE TABLE [dbo].[RelveeEaux] (
-    [Id] int  NOT NULL,
+    [Id] int  NOT NULL identity(1, 1),
     [Annee] smallint  NOT NULL,
     [Trimestre] int  NOT NULL,
     [NIndex] int  NOT NULL,
@@ -133,7 +133,7 @@ GO
 
 -- Creating table 'RelveeTeleCom'
 CREATE TABLE [dbo].[RelveeTeleCom] (
-    [Id] int  NOT NULL primary key,
+    [Id] int  NOT NULL primary key identity(1, 1),
     [Mois] smallint  NOT NULL,
     [NPayer] float  NOT NULL,
     [TeleCom_NPolice] nvarchar(50)  NULL,
@@ -148,7 +148,7 @@ GO
 
 -- Creating table 'RelveeElecs'
 CREATE TABLE [dbo].[RelveeElecs] (
-    [Id] int  NOT NULL,
+    [Id] int  NOT NULL identity(1, 1),
     [Annee] smallint  NOT NULL,
     [Trimestre] int  NOT NULL,
     [NIndex] int  NOT NULL,

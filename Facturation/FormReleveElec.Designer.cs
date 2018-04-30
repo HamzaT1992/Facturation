@@ -154,7 +154,6 @@
             this.comboBoxTrimestre.Name = "comboBoxTrimestre";
             this.comboBoxTrimestre.Size = new System.Drawing.Size(164, 21);
             this.comboBoxTrimestre.TabIndex = 53;
-            this.comboBoxTrimestre.Text = "--Entrer Trimmestre--";
             // 
             // label3
             // 
@@ -219,6 +218,7 @@
             this.textBoxNewIndex.Name = "textBoxNewIndex";
             this.textBoxNewIndex.Size = new System.Drawing.Size(164, 20);
             this.textBoxNewIndex.TabIndex = 52;
+            this.textBoxNewIndex.TextChanged += new System.EventHandler(this.TextBoxNewIndex_TextChanged);
             // 
             // textBoxNetPayer
             // 
@@ -233,7 +233,6 @@
             this.textBoxPrevIndex.Name = "textBoxPrevIndex";
             this.textBoxPrevIndex.Size = new System.Drawing.Size(164, 20);
             this.textBoxPrevIndex.TabIndex = 50;
-            this.textBoxPrevIndex.TextChanged += new System.EventHandler(this.TextBoxPrevIndex_TextChanged);
             // 
             // textBoxConsommation
             // 
@@ -257,7 +256,7 @@
             // 
             this.labelTitle.AutoSize = true;
             this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitle.Location = new System.Drawing.Point(308, 25);
+            this.labelTitle.Location = new System.Drawing.Point(433, 25);
             this.labelTitle.Name = "labelTitle";
             this.labelTitle.Size = new System.Drawing.Size(188, 24);
             this.labelTitle.TabIndex = 48;
@@ -304,12 +303,15 @@
             // 
             // comboBoxNpolice
             // 
+            this.comboBoxNpolice.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBoxNpolice.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBoxNpolice.FormattingEnabled = true;
             this.comboBoxNpolice.Location = new System.Drawing.Point(135, 26);
             this.comboBoxNpolice.Name = "comboBoxNpolice";
             this.comboBoxNpolice.Size = new System.Drawing.Size(164, 21);
             this.comboBoxNpolice.TabIndex = 52;
             this.comboBoxNpolice.SelectedIndexChanged += new System.EventHandler(this.ComboBoxNpolice_SelectedIndexChanged);
+            this.comboBoxNpolice.SelectionChangeCommitted += new System.EventHandler(this.ComboBoxNpolice_SelectedIndexChanged);
             // 
             // checkBox1
             // 
@@ -347,6 +349,7 @@
             // 
             this.dataGridView2.AllowUserToAddRows = false;
             this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -361,7 +364,7 @@
             this.dataGridView2.Location = new System.Drawing.Point(344, 71);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(666, 428);
+            this.dataGridView2.Size = new System.Drawing.Size(942, 428);
             this.dataGridView2.TabIndex = 61;
             // 
             // dataGridViewTextBoxColumn1
@@ -423,7 +426,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1054, 611);
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ClientSize = new System.Drawing.Size(1292, 611);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.confirm);
             this.Controls.Add(this.dateTimePickerDate);

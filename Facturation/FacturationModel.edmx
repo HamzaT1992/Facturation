@@ -56,7 +56,7 @@
             <PropertyRef Name="Annee" />
             <PropertyRef Name="Trimestre" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Annee" Type="smallint" Nullable="false" />
           <Property Name="Trimestre" Type="int" Nullable="false" />
           <Property Name="NIndex" Type="int" Nullable="false" />
@@ -76,7 +76,7 @@
             <PropertyRef Name="Annee" />
             <PropertyRef Name="Trimestre" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Annee" Type="smallint" Nullable="false" />
           <Property Name="Trimestre" Type="int" Nullable="false" />
           <Property Name="NIndex" Type="int" Nullable="false" />
@@ -94,7 +94,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Mois" Type="smallint" Nullable="false" />
           <Property Name="NPayer" Type="float" Nullable="false" />
           <Property Name="TeleCom_NPolice" Type="nvarchar" MaxLength="50" />

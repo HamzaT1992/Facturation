@@ -41,6 +41,8 @@ namespace Facturation
             ActiveForm.MdiParent = this;
             ActiveForm.WindowState = FormWindowState.Maximized;
             ActiveForm.ControlBox = false;
+            Width = form.Width;
+            Height = form.Height;
             ActiveForm.Show();
         }
 
