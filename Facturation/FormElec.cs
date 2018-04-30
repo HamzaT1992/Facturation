@@ -34,6 +34,7 @@ namespace Facturation
                     elec.Adresse
                 );
             }
+            
         }
 
         private void FormElec_Load(object sender, EventArgs e)
@@ -49,6 +50,9 @@ namespace Facturation
 
                 //Remplissage de dataGridView
                 FillDataGridView(db.Eaux);
+
+                textBoxRechNpo.AutoCompleteCustomSource.AddRange(db.Electricites.Select(el => el.NPolice).ToArray());
+                textBoxRechAdress.AutoCompleteCustomSource.AddRange(db.Electricites.Select(el => el.Adresse).ToArray());
             }
 
         }
@@ -144,6 +148,16 @@ namespace Facturation
             dateTimePickerElec.Value = (DateTime)dataGridViewElec.CurrentRow.Cells["date"].Value;
             textBoxTeli.Text = dataGridViewElec.CurrentRow.Cells["Tele"].Value.ToString();
             comboBoxType.Text = dataGridViewElec.CurrentRow.Cells["Type"].Value.ToString();
+        }
+
+        private void textBoxRechNpo_TextChanged(object sender, EventArgs e)
+        {
+            using (var db = new FacturationEntities())
+            {
+                IQueryable<Eau> elecs = db.Eaux;
+                elecs = elecs.Where(el => el.NPolice == textBoxRechNpo.Text);
+                FillDataGridView(elecs.Count() > 0 ? elecs : db.Eaux);
+            }
         }
     }
 }
