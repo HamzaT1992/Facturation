@@ -100,7 +100,7 @@ namespace Facturation
                 }
             }
 
-            if (comboBoxTrimestre.Text == "--Entrer Trimmestre--" || (textBoxMotif.Visible && textBoxMotif.Text == ""))
+            if (comboBoxTrimestre.Text == "" || (textBoxMotif.Visible && textBoxMotif.Text == ""))
                 All_Ok = false;
 
             if (!All_Ok)
