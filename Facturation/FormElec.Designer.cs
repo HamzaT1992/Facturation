@@ -336,6 +336,7 @@
             this.textBoxRechNpo.Name = "textBoxRechNpo";
             this.textBoxRechNpo.Size = new System.Drawing.Size(143, 20);
             this.textBoxRechNpo.TabIndex = 20;
+            this.textBoxRechNpo.TextChanged += new System.EventHandler(this.textBoxRechNpo_TextChanged);
             // 
             // textBoxRechRef
             // 
@@ -417,7 +418,7 @@
             this.dataGridViewElec.Location = new System.Drawing.Point(368, 138);
             this.dataGridViewElec.Name = "dataGridViewElec";
             this.dataGridViewElec.ReadOnly = true;
-            this.dataGridViewElec.Size = new System.Drawing.Size(606, 341);
+            this.dataGridViewElec.Size = new System.Drawing.Size(923, 341);
             this.dataGridViewElec.TabIndex = 28;
             this.dataGridViewElec.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewElec_CellMouseDoubleClick);
             // 
@@ -490,7 +491,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(989, 502);
+            this.ClientSize = new System.Drawing.Size(1294, 502);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.Search);

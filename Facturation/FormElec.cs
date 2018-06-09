@@ -17,7 +17,7 @@ namespace Facturation
         {
             InitializeComponent();
         }
-        private void FillDataGridView(IQueryable<Electricite> elecs)
+        private void FillDataGridView(IQueryable<Eau> elecs)
         {
             dataGridViewElec.Rows.Clear();
             foreach (var elec in elecs)
@@ -26,7 +26,7 @@ namespace Facturation
                     elec.NPolice,
                     elec.Reference,
                     elec.NCompteur,
-                    elec.TypeElectricite.NomTypeElec,
+                    elec.TypeEau.NomTypeEau,
                     elec.Etat.NomEtat,
                     elec.Annee,
                     elec.Date,
@@ -34,6 +34,7 @@ namespace Facturation
                     elec.Adresse
                 );
             }
+            
         }
 
         private void FormElec_Load(object sender, EventArgs e)
@@ -48,7 +49,10 @@ namespace Facturation
                 comboBoxType.ValueMember = "id";
 
                 //Remplissage de dataGridView
-                FillDataGridView(db.Electricites);
+                FillDataGridView(db.Eaux);
+
+                textBoxRechNpo.AutoCompleteCustomSource.AddRange(db.Electricites.Select(el => el.NPolice).ToArray());
+                textBoxRechAdress.AutoCompleteCustomSource.AddRange(db.Electricites.Select(el => el.Adresse).ToArray());
             }
 
         }
@@ -70,7 +74,6 @@ namespace Facturation
                     Annee = short.Parse(textBoxAnnee.Text)
                 });
                 db.SaveChanges();
-                FillDataGridView(db.Electricites);
             }
 
         }
@@ -84,10 +87,14 @@ namespace Facturation
 
                 eau.Etat = db.Etats.Single(et => et.id == (int)comboBoxEtat.SelectedValue);
                 eau.TypeEau = db.TypeEaux.Single(te => te.id == (int)comboBoxType.SelectedValue);
+                eau.NCompteur = textBoxNcompteur.Text;
+                eau.Tel = textBoxTeli.Text;
+                eau.Date = dateTimePickerElec.Value;
+                eau.Reference = textBoxReference.Text;
+                eau.Adresse = textBoxAdresse.Text;
                 eau.Annee = short.Parse(textBoxAnnee.Text);
 
                 db.SaveChanges();
-                FillDataGridView(db.Electricites);
             }
         }
 
@@ -99,7 +106,6 @@ namespace Facturation
                 if (eau == null) return;
                 db.Eaux.Remove(eau);
                 db.SaveChanges();
-                FillDataGridView(db.Electricites);
             }
         }
         private void Search_Click(object sender, EventArgs e)
@@ -118,7 +124,7 @@ namespace Facturation
                     elecs = elecs.Where(el => el.Adresse.Contains(textBoxRechAdress.Text) || el.Adresse.StartsWith(textBoxRechAdress.Text));
                 
                 if (elecs.Count() > 0 && elecs.Count() < countOfAll)
-                    FillDataGridView(db.Electricites);
+                    FillDataGridView(elecs);
                 else
                     MessageBox.Show("Aucun resultat trouvé!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -127,7 +133,7 @@ namespace Facturation
         {
             using (var db = new FacturationEntities())
             {
-                FillDataGridView(db.Electricites);
+                FillDataGridView(db.Eaux); 
             }
         }
 
@@ -142,6 +148,16 @@ namespace Facturation
             dateTimePickerElec.Value = (DateTime)dataGridViewElec.CurrentRow.Cells["date"].Value;
             textBoxTeli.Text = dataGridViewElec.CurrentRow.Cells["Tele"].Value.ToString();
             comboBoxType.Text = dataGridViewElec.CurrentRow.Cells["Type"].Value.ToString();
+        }
+
+        private void textBoxRechNpo_TextChanged(object sender, EventArgs e)
+        {
+            using (var db = new FacturationEntities())
+            {
+                IQueryable<Eau> elecs = db.Eaux;
+                elecs = elecs.Where(el => el.NPolice == textBoxRechNpo.Text);
+                FillDataGridView(elecs.Count() > 0 ? elecs : db.Eaux);
+            }
         }
     }
 }

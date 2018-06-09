@@ -349,7 +349,7 @@
             // 
             // textBoxRechRef
             // 
-            this.textBoxRechRef.Location = new System.Drawing.Point(71, 55);
+            this.textBoxRechRef.Location = new System.Drawing.Point(73, 55);
             this.textBoxRechRef.Name = "textBoxRechRef";
             this.textBoxRechRef.Size = new System.Drawing.Size(145, 20);
             this.textBoxRechRef.TabIndex = 44;
@@ -417,7 +417,7 @@
             this.dataGridViewEau.Location = new System.Drawing.Point(362, 144);
             this.dataGridViewEau.Name = "dataGridViewEau";
             this.dataGridViewEau.ReadOnly = true;
-            this.dataGridViewEau.Size = new System.Drawing.Size(606, 341);
+            this.dataGridViewEau.Size = new System.Drawing.Size(933, 341);
             this.dataGridViewEau.TabIndex = 29;
             this.dataGridViewEau.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewEau_CellDoubleClick);
             // 
@@ -490,7 +490,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(980, 500);
+            this.ClientSize = new System.Drawing.Size(1288, 500);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridViewEau);
             this.Controls.Add(this.groupBox3);
