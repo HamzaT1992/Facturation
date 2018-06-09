@@ -92,7 +92,7 @@ namespace Facturation
                 {
                     db.RelveeEaux.Add(new RelveeEau
                     {
-                        Eau = db.Eaux.Single(el => el.NPolice == comboBoxNpolice.Text),
+                        Eau_NPolice = comboBoxNpolice.Text,
                         Annee = short.Parse(textBoxAnnee.Text),
                         Trimestre = int.Parse(comboBoxTrimestre.Text),
                         NIndex = int.Parse(textBoxNewIndex.Text),

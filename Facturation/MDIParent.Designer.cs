@@ -42,6 +42,7 @@
             this.relevéToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.paiementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.paiementToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.acceuilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,6 +63,7 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.acceuilToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
@@ -70,7 +72,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "Quitter";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -158,6 +160,13 @@
             this.paiementToolStripMenuItem1.Text = "Paiement";
             this.paiementToolStripMenuItem1.Click += new System.EventHandler(this.paiementToolStripMenuItem1_Click);
             // 
+            // acceuilToolStripMenuItem
+            // 
+            this.acceuilToolStripMenuItem.Name = "acceuilToolStripMenuItem";
+            this.acceuilToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.acceuilToolStripMenuItem.Text = "Acceuil";
+            this.acceuilToolStripMenuItem.Click += new System.EventHandler(this.acceuilToolStripMenuItem_Click);
+            // 
             // MDIParent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -192,6 +201,7 @@
         private System.Windows.Forms.ToolStripMenuItem paiementToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem acceuilToolStripMenuItem;
     }
 }
 

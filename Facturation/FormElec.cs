@@ -17,7 +17,7 @@ namespace Facturation
         {
             InitializeComponent();
         }
-        private void FillDataGridView(IQueryable<Eau> elecs)
+        private void FillDataGridView(IQueryable<Electricite> elecs)
         {
             dataGridViewElec.Rows.Clear();
             foreach (var elec in elecs)
@@ -26,7 +26,7 @@ namespace Facturation
                     elec.NPolice,
                     elec.Reference,
                     elec.NCompteur,
-                    elec.TypeEau.NomTypeEau,
+                    elec.TypeElectricite.NomTypeElec,
                     elec.Etat.NomEtat,
                     elec.Annee,
                     elec.Date,
@@ -48,7 +48,7 @@ namespace Facturation
                 comboBoxType.ValueMember = "id";
 
                 //Remplissage de dataGridView
-                FillDataGridView(db.Eaux);
+                FillDataGridView(db.Electricites);
             }
 
         }
@@ -70,6 +70,7 @@ namespace Facturation
                     Annee = short.Parse(textBoxAnnee.Text)
                 });
                 db.SaveChanges();
+                FillDataGridView(db.Electricites);
             }
 
         }
@@ -83,14 +84,10 @@ namespace Facturation
 
                 eau.Etat = db.Etats.Single(et => et.id == (int)comboBoxEtat.SelectedValue);
                 eau.TypeEau = db.TypeEaux.Single(te => te.id == (int)comboBoxType.SelectedValue);
-                eau.NCompteur = textBoxNcompteur.Text;
-                eau.Tel = textBoxTeli.Text;
-                eau.Date = dateTimePickerElec.Value;
-                eau.Reference = textBoxReference.Text;
-                eau.Adresse = textBoxAdresse.Text;
                 eau.Annee = short.Parse(textBoxAnnee.Text);
 
                 db.SaveChanges();
+                FillDataGridView(db.Electricites);
             }
         }
 
@@ -102,6 +99,7 @@ namespace Facturation
                 if (eau == null) return;
                 db.Eaux.Remove(eau);
                 db.SaveChanges();
+                FillDataGridView(db.Electricites);
             }
         }
         private void Search_Click(object sender, EventArgs e)
@@ -120,7 +118,7 @@ namespace Facturation
                     elecs = elecs.Where(el => el.Adresse.Contains(textBoxRechAdress.Text) || el.Adresse.StartsWith(textBoxRechAdress.Text));
                 
                 if (elecs.Count() > 0 && elecs.Count() < countOfAll)
-                    FillDataGridView(elecs);
+                    FillDataGridView(db.Electricites);
                 else
                     MessageBox.Show("Aucun resultat trouvé!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -129,7 +127,7 @@ namespace Facturation
         {
             using (var db = new FacturationEntities())
             {
-                FillDataGridView(db.Eaux); 
+                FillDataGridView(db.Electricites);
             }
         }
 

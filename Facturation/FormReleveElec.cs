@@ -112,7 +112,7 @@ namespace Facturation
                 {
                     db.RelveeElecs.Add(new RelveeElec
                     {
-                        Electricite = db.Electricites.Single(el => el.NPolice == comboBoxNpolice.Text),
+                        Elec_NPolice = comboBoxNpolice.Text,
                         Annee = short.Parse(textBoxAnnee.Text),
                         Trimestre = int.Parse(comboBoxTrimestre.Text),
                         NIndex = int.Parse(textBoxNewIndex.Text),

@@ -17,7 +17,7 @@ namespace Facturation
         public MDIParent()
         {
             InitializeComponent();
-            
+            lancerForm(new Acceuil());
         }
         private void identificationToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -76,6 +76,11 @@ namespace Facturation
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void acceuilToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            lancerForm(new Acceuil());
         }
     }
 }

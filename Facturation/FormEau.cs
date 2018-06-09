@@ -66,7 +66,8 @@ namespace Facturation
                         Adresse = textBoxAdresse.Text,
                         Annee = short.Parse(textBoxAnnee.Text)
                     });
-                    db.SaveChanges();   
+                    db.SaveChanges();
+                FillDataGridView(db.Eaux);
             } 
         }
 
@@ -78,16 +79,12 @@ namespace Facturation
             {
                 var eau = db.Eaux.SingleOrDefault(ea => ea.NPolice == textBoxPolice.Text);
                 
-                eau.Etat = db.Etats.Single(et => et.id == (int)comboBoxEtat.SelectedValue);
-                eau.TypeEau = db.TypeEaux.Single(te => te.id == (int)comboBoxType.SelectedValue);
-                eau.NCompteur = textBoxNCompt.Text;
-                eau.Tel = textBoxTel.Text;
-                eau.Date = dateTimePickerEau.Value;
-                eau.Reference = textBoxRef.Text;
-                eau.Adresse = textBoxAdresse.Text;
+                eau.Etat_id = (int)comboBoxEtat.SelectedValue;
+                eau.TypeEau_id = (int)comboBoxType.SelectedValue;
                 eau.Annee = short.Parse(textBoxAnnee.Text);
 
                 db.SaveChanges();
+                FillDataGridView(db.Eaux);
             }
         }
 
@@ -99,6 +96,7 @@ namespace Facturation
                 if (eau == null) return;
                 db.Eaux.Remove(eau);
                 db.SaveChanges();
+                FillDataGridView(db.Eaux);
             }
         }
 
